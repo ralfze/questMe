@@ -3,10 +3,13 @@
 Dies ist das Repository von Team questMe.
 
 Folgend werden die Teammitglieder mit ihren Spezialisierungen aufgelistet:
+
 Name                 - Spezialisierung
 
 Kevin Sautner        - Keycloak
+
 Pavithra Sureshkumar - Angular
+
 Ralf Zeller          - Node.js
 
 
@@ -21,9 +24,12 @@ dass hier CI and CD verwendet werden kann.
 Folgende Branches wollen wir in unserem Repository führen:
 
 main Branch         - Branch ist das Ergebnis durch mergen von Features
+
 production Branch   - Branch ist das Ergebnis einer funktionierenden main Branch
 
 Ticket Branch        - Branch hat Name des Tickets
+
 documentation Branch - Branch ist zum festhalten der Dokumentation da
+
 presentation Branch  - Branch hat die Quelle der Präsentation
 
