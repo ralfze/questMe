@@ -1,0 +1,22 @@
+{
+  "name": "web-server",
+  "version": "1.0.0",
+  "description": "Testing NLP with mondoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ralf Zeller",
+  "license": "ISC",
+  "dependencies": {
+    "@nlpjs/basic": "^4.22.0",
+    "@nlpjs/console-connector": "^4.22.0",
+    "@nlpjs/database": "^4.22.0",
+    "@nlpjs/directline-connector": "^4.22.0",
+    "@nlpjs/express-api-server": "^4.22.0",
+    "@nlpjs/lang-de": "^4.22.0",
+    "@nlpjs/lang-en": "^4.22.0",
+    "@nlpjs/mongodb-adapter": "^4.22.0",
+    "formidable": "^2.0.1"
+  }
+}
