@@ -111,25 +111,48 @@ Damit die Integration von NLP.js in den Chatbot später immernoch möglich ist.
 \end{center}
 
 \subsection{Technologie Diagramme}
+ Hier werden die Zusammenhänge der Technologien in Form von verschiedenen Diagrammen vorgestellt.
+
+\subsubsection{Komponentendiagramme}
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[width=0.5\textwidth]{bilder/technologien/KomponentendiagramClient.png}
+\caption{Komponentendiagramm Client}
+\label{fig:Komponentendiagramm_Client}
+\end{figure}
+Hier wird die Client Seite bildlich dargestellt. Man sieht, dass der Webbrowseer durch die 
+Socket.io Client deployed wird und dadurch wird dann eine Beziehung zur Serverseite auifgebaut (siehe Abbildung 2).
+
+\begin{figure}[!hbt]
+\centering
+\includegraphics[width=0.9\textwidth]{bilder/technologien/KomponentendiagramServer.png}
+\caption{Komponentendiagramm Server}
+\label{fig:Komponentendiagramm_Server}
+\end{figure}
+In der Serverseite wird dann durch den Socket.io Server die Verbindug zum Clienten aufrecht gehalten.
+Im Server befindet sich Angular, node.js, KeyCloak und die Datenbank mongoDB und haben jeweils einen eigenen Dockercontainer. 
+Die Erkennung von der eingegeben Sprache möchten wir zunächst mit RegEx ermöglichen, 
+um das Minimal Virable Product hinzubekommen. Optional dann mit NLP (Natural Language Processing) erweitern.
 
 \begin{figure}[!hbt]
 \centering
 \includegraphics[width=1.0\textwidth]{bilder/technologien/Komponentendiagram v1.2.png}
-\caption{Komponentendiagram v1.2}
-\label{fig:Komponentendiagram_v1.2}
+\caption{Komponentendiagramm v1.2}
+\label{fig:Komponentendiagramm_v1.2}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{bilder/technologien/Komponentendiagram v1.1.png}
-\caption{Komponentendiagram v1.1}
-\label{fig:Komponentendiagram_v1.1}
+\caption{Komponentendiagramm v1.1}
+\label{fig:Komponentendiagramm_v1.1}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics[width=1.0\textwidth]{bilder/technologien/Komponenten-Diagram-v1.png}
-\caption{Komponentendiagram v1.0}
-\label{fig:Komponentendiagram_v1.0}
+\caption{Komponentendiagramm v1.0}
+\label{fig:Komponentendiagramm_v1.0}
 \end{figure}
 \FloatBarrier % prevent pictures from appearing under a different section
