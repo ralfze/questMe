@@ -13,5 +13,5 @@
         "serveBot": true
       }
     },
-    "use": ["Basic","LangDe","ExpressApiServer","DirectlineConnector"]
+    "use": ["Basic","LangDe"]
   }
