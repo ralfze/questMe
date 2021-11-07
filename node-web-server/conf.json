@@ -9,9 +9,9 @@
         "debug": true
       },
       "api-server": {
-        "port": 3000,
-        "serveBot": true
+        "port": 0,
+        "serveBot": false
       }
     },
-    "use": ["Basic","LangDe"]
+    "use": ["Basic","LangDe","ExpressApiServer"]
   }

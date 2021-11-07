@@ -1,50 +1,79 @@
 $background: white;
 $chat-color: royalblue;
-
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
+  box-sizing: border-box;
 }
 
-.card{
-    background: $background;
-    min-height: 500px;
-    height: 500px;
-    min-width: 500px;
-    width: 500px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0.5));
-    padding: 16px;
+.container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  float: left;
+  //justify-content: center;
+  //align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.card {
+  background: $background;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  //float: left;
+  justify-content: flex-end;
+  height: 90%;
+  width: 100%;
+  //margin: auto;
+  //flex-direction: column;
+  //filter: drop-shadow(0px 0px 5px rgb(0, 0, 0.5));
+  //padding: 16px;
 }
 
-.chat-list{
+.chat-list {
+  left: 0;
   //background-color: lightsalmon;
   margin-top: auto;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   overflow-y: scroll;
-  .chat-item{
-    max-width: 80%;
+  //height: 100%;
+
+  .chat-item {
+    width: 95%;
     margin: 8px 0px;
     //padding: 8px 16px;
-    border-radius: 8px;
     display: flex;
+    //flex-wrap: wrap;
     flex-direction: row;
     //background: palevioletred;
 
-    #message-body{
+    #message-body {
+      width: 70%;
+      //justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      // flex-direction: column;
+      //overflow-x: scroll;
+      //max-width: 90%;
+      //height: 100%;
+      //height: 500px;
+      word-wrap: break-word;
+      word-break: keep-all;
       margin: auto 8px;
       padding: 8px 24px;
-      border-radius: 30px;
+      border-radius: 1em;
       background: $chat-color;
       color: white;
     }
 
-    #avatar{
+    #avatar {
       height: 36px;
       width: 36px;
       object-fit: cover;
@@ -52,88 +81,85 @@ $chat-color: royalblue;
       z-index: 99;
       border: 3px solid $background;
     }
-    #time-details{
+    #time-details {
+      width: 20%;
       //background-color: black;
       //height: fit-content;
       margin: auto 0;
       padding-top: 16px;
-
     }
-
   }
-  .left{
+  .left {
     margin-right: auto;
     margin-left: 8px;
     #message-body {
-      margin-left: -10px;
-      margin-top: 18px;
+      margin-left: -15px;
+      margin-top: 1em;
     }
   }
 
-  .right{
+  .right {
     margin-right: 8px;
     margin-left: auto;
     flex-direction: row-reverse;
     #message-body {
       margin-right: -15px;
-      margin-top: 18px;
+      margin-top: 1em;
     }
   }
 }
 
-.chat-footer{
+.chat-footer {
   display: flex;
   flex-direction: row;
-  padding: 16px;
-  min-height: 50px;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  //float: left;
+  //justify-content: center;
+  //align-items: center;
+  height: 10%;
+  width: 100%;
+  resize: none;
   //border-top: 2px solid $chat-color;
   //background: $chat-color;
-#chat-textarea{
-  flex: 1;
-  margin: 0 10px;
-  border: 0px;
-  box-shadow: 0 0 8px rgb(0, 0, 0.5);
-  padding: 16px;
-}
-
-#send-button{
-  border: 0;
-  box-shadow: 0 0 8px rgb(0, 0, 0.5);
-  background: white;
-  padding: 0 8px;
-
-}
-
-#send-button:hover{
-background-color: pink;
-}
-}
-
-@media screen and (max-width: 481px){
-
-
-  .container{
-    display: flex;
+  #chat-textarea {
+    flex: 1;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    border: 0px;
+    box-shadow: 0 0 8px rgb(0, 0, 0.5);
+    padding: 0;
+    resize: none;
+    width: 80%;
+    height: 85%;
+    margin: 2vw;
+    padding: 4%;
+    border-radius: 5px;
+  }
+
+  #send-button {
+    background: white;
+    text-align: center;
+    color: black;
+    border: 0;
+    border-radius: 5px;
+    //justify-content: center;
+    box-shadow: 0 0 8px rgb(0, 0, 0.5);
+    //padding: 0 8px;
+    width: 15%;
+    height: 85%;
+    margin: 2vw;
+    padding: 1%;
+  }
+
+  #send-button:hover {
+    background-color: pink;
+  }
 }
+/*
+@media screen and (min-width: 481px) {
 
-.card{
-    background: $background;
-    min-height: 300px;
-    height: 400px;
-    min-width: 280px;
-    width: 400px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0.5));
-    padding: 16px;
-}
-
-
-
-
-
-}
+}*/

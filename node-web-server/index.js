@@ -43,26 +43,43 @@ const { dockStart } = require("@nlpjs/basic");
     console.log("listening on *:3001");
   });
 */
-  //console.log(dock.containers);
 
+  //////////////////////////////////////////////
   // Integrate own Modules
   // Needs Module Address
   // Needs the Docking container 'default'
   // Needs the use of container.use(Module,Module.name, Module.isSingleton)
+  // some Modules need to be started like DirectLine start()
 
-  const { SocketioConnector } = require("./socketioConnector/index");
+  //const { SocketioConnector } = require("./socketioConnector/index");
 
   // Check what is in the contaienrs of dock 'default'
   //console.log(dock.containers["default"]);
 
-  let container = dock.containers["default"];
-  container.use(SocketioConnector, "socketio", SocketioConnector.isSingleton);
+  //let container = dock.containers["default"];
+  //container.use(SocketioConnector, "socketio", SocketioConnector.isSingleton);
 
-  console.log(dock.containers["default"]);
+  //console.log(dock.containers["default"]);
   // END Integrate own Modules
 
+  //const { SocketioConnector } = require("./socketioConnector/index");
+
+  // let container = dock.containers["default"];
+  //container.use(SocketioConnector, "socketio", SocketioConnector.isSingleton);
+  //const socket = dock.get("socketio");
+  //socket.start();
+  //console.log(dock.containers["default"]);
+
   // NLP Part
-  const nlp = dock.get("nlp");
+  const nlp = dock.get('nlp');
   await nlp.train();
 
+  // SOCKET.IO ///////////////////////////////////////
+  const { SocketioConnector } = require("./socketioConnector/index");
+  // gets the 'default' container (has all containers nlp,core,...)
+  let container = dock.getContainer();
+  container.use(SocketioConnector, "socketio", SocketioConnector.isSingleton);
+  // start the module
+  container.start();
+  // END SOCKET IO ///////////////////////////////////////
 })();
