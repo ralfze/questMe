@@ -1,0 +1,139 @@
+$background: white;
+$chat-color: royalblue;
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background: $background;
+    min-height: 500px;
+    height: 500px;
+    min-width: 500px;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0.5));
+    padding: 16px;
+}
+
+.chat-list{
+  //background-color: lightsalmon;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  .chat-item{
+    max-width: 80%;
+    margin: 8px 0px;
+    //padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    //background: palevioletred;
+
+    #message-body{
+      margin: auto 8px;
+      padding: 8px 24px;
+      border-radius: 30px;
+      background: $chat-color;
+      color: white;
+    }
+
+    #avatar{
+      height: 36px;
+      width: 36px;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 99;
+      border: 3px solid $background;
+    }
+    #time-details{
+      //background-color: black;
+      //height: fit-content;
+      margin: auto 0;
+      padding-top: 16px;
+
+    }
+
+  }
+  .left{
+    margin-right: auto;
+    margin-left: 8px;
+    #message-body {
+      margin-left: -10px;
+      margin-top: 18px;
+    }
+  }
+
+  .right{
+    margin-right: 8px;
+    margin-left: auto;
+    flex-direction: row-reverse;
+    #message-body {
+      margin-right: -15px;
+      margin-top: 18px;
+    }
+  }
+}
+
+.chat-footer{
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  min-height: 50px;
+  //border-top: 2px solid $chat-color;
+  //background: $chat-color;
+#chat-textarea{
+  flex: 1;
+  margin: 0 10px;
+  border: 0px;
+  box-shadow: 0 0 8px rgb(0, 0, 0.5);
+  padding: 16px;
+}
+
+#send-button{
+  border: 0;
+  box-shadow: 0 0 8px rgb(0, 0, 0.5);
+  background: white;
+  padding: 0 8px;
+
+}
+
+#send-button:hover{
+background-color: pink;
+}
+}
+
+@media screen and (max-width: 481px){
+
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    background: $background;
+    min-height: 300px;
+    height: 400px;
+    min-width: 280px;
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(0px 0px 5px rgb(0, 0, 0.5));
+    padding: 16px;
+}
+
+
+
+
+
+}
