@@ -2,43 +2,84 @@
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[table]{xcolor} % to use colors
+
+% Font settings
 \usepackage[T1]{fontenc} % T1 Schrift Encoding
 \usepackage{helvet} % Helvetica Font
 \renewcommand{\familydefault}{\sfdefault}
+
 \usepackage{graphicx}  % Use Pictures
+\usepackage{tabularx} % to use different tabulars
 \usepackage{array,multirow} % Use Arrays
+\usepackage{float} % to let table contain caption
 \usepackage{placeins} % Helps holding pictures in sections 
-\usepackage[hyphens]{url} % Package for URLs
+%\usepackage[hyphens]{url} % Package for URLs
 \usepackage[breaklinks]{hyperref} %% Helps intergrating URLs
+%\usepackage[nobiblatex]{xurl}
+\usepackage{url}
+\usepackage{ragged2e} % To change the text alignment
+
+% Biblatex Part of the Preamble
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,        % if we want unicode and many other features (biber is already by default)
+  style=iso-authoryear, % or iso-numeric for numeric citation method
+]{biblatex}
+\addbibresource{literatur/literatur.bib}
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburlnumpenalty}{8000}
+
+
 % Preamble end
+
+
 
 \title{Dokumentation Projekt questMe}
 \author{Pavithra Sureshkumar, Kevin Sautner, Ralf Zeller}
-\date{Geändert 29.10.2021}
+\date{Geändert 11.11.2021}
 \begin{document}
 
-    \maketitle
+\maketitle
 
-    \tableofcontents
+%Inhaltsverzeichnis
+\tableofcontents
 
-    \newpage
+%Abbildungsverzeichnis
+\newpage
+\listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 
-    \input{vorwort/vorwort}
-    \input{aboutus/aboutus}
-    \newpage
-    \input{uidesigns/uidesigns} 
-    \newpage
-    \input{zielgruppe_problem_alleinstellungsmerkmal/zielgruppe_problem_alleinstellungsmerkmal}
-    \newpage
-    \input{userstories/userstories}
-    \newpage
-    \input{technologien/technologien}
-    \newpage
-    \input{meilensteine/meilensteine}
-    \newpage
-    \input{zeitmanagement/zeitmanagement}
-    \newpage
-    \input{risiko/risiko}
-    \newpage
-    \input{quellen/quellen}
+%Tabellenverzeichnis
+\newpage
+\listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+
+\newpage
+
+\input{vorwort/vorwort}
+\input{aboutus/aboutus}
+\newpage
+\input{uidesigns/uidesigns}
+\newpage
+\input{userstories/userstories}
+\newpage
+\input{zielgruppe_problem_alleinstellungsmerkmal/zielgruppe_problem_alleinstellungsmerkmal}
+\newpage
+\input{technologien/technologien1}
+\input{technologien/technologien2}
+\input{technologien/technologien3}
+\newpage
+\input{meilensteine/meilensteine}
+\newpage
+\input{zeitmanagement/zeitmanagement}
+\newpage
+\input{risiko/risiko}
+\newpage
+%\include{literatur/literatur}
+\printbibliography
+\addcontentsline{toc}{section}{Literatur}
+%\input{quellen/quellen}
 \end{document}
