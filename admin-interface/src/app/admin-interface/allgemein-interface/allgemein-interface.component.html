@@ -1,0 +1,57 @@
+<!--
+  Infoseite
+ -->
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="questMe icon-button with a menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a [routerLink]="['/admin-interface/allgemein-interface']"
+      ><button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Allgemein</span>
+      </button>
+    </a>
+    <button mat-menu-item>
+      <mat-icon>library_books</mat-icon>
+      <span>Korpus</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Einstellungen</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>power_settings_new</mat-icon>
+      <span>LogOut</span>
+    </button>
+  </mat-menu>
+  <a [routerLink]="['/admin-interface/infopage']">
+    <span>questMe</span>
+  </a>
+</div>
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+    <img
+      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
+      alt="ChatBot"
+    />
+    <span>Willkommen zu allgemein-interface !</span>
+  </div>
+
+  <!-- Information -->
+  <h2>Information</h2>
+  <p>
+    Links oben befindet sich das Hamburger Menu. <br />
+    Im Menu kann man die Punkte Allgemein, Korpus, Einstellungen und LogOut
+    auswählen.
+  </p>
+
+</div>
