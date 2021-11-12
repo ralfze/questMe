@@ -6,12 +6,13 @@
 <div class="toolbar" role="banner">
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="questMe icon-button with a menu">
     <mat-icon>menu</mat-icon>
-  </button>
+    </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <a [routerLink]="['/allgemeininterface']"><button mat-menu-item>
       <mat-icon>person</mat-icon>
       <span>Allgemein</span>
     </button>
+  </a>
     <button mat-menu-item>
       <mat-icon>library_books</mat-icon>
       <span>Korpus</span>
@@ -25,7 +26,9 @@
       <span>LogOut</span>
     </button>
   </mat-menu>
-  <span>questMe</span>
+  <a [routerLink]="['/app-root']">
+    <span>questMe</span>
+   </a>
 
 </div>
 
@@ -35,8 +38,6 @@
   <div class="card highlight-card card-small">
     <img src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg" alt="ChatBot">
    <span>Willkommen zu {{ title }} !</span>
-
-
   </div>
 
   <!-- Information -->
@@ -45,18 +46,18 @@
   Im Menu kann man die Punkte Allgemein, Korpus, Einstellungen
   und LogOut auswählen.</p>
 
-
+<!-- Beispiel von Routing
   <h1>Angular Router App</h1>
-  <!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
+   This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule)
   <nav>
     <ul>
-      <li><a routerLink="/first-component" routerLinkActive="active">First Component</a></li>
-      <li><a routerLink="/second-component" routerLinkActive="active">Second Component</a></li>
+      <li><a routerLink="/allgemein-interface" routerLinkActive="active">First Component</a></li>
+      <li><a routerLink="/app-root" routerLinkActive="active">Second Component</a></li>
     </ul>
   </nav>
-  <!-- The routed views render in the <router-outlet>-->
+  The routed views render in the <router-outlet>
   <router-outlet></router-outlet>
-
+  -->
 
 
 
