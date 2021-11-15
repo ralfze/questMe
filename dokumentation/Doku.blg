@@ -1,0 +1,17 @@
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'Doku.blg'
+[87] biber-MSWIN32:340> INFO - === 
+[117] Biber.pm:415> INFO - Reading 'Doku.bcf'
+[199] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
+[211] Biber.pm:4340> INFO - Processing section 0
+[221] Biber.pm:4531> INFO - Looking for bibtex format file 'literatur/literatur.bib' for section 0
+[260] bibtex.pm:1689> INFO - LaTeX decoding ...
+[271] bibtex.pm:1494> INFO - Found BibTeX data source 'literatur/literatur.bib'
+[272] Utils.pm:395> WARN - Duplicate entry key: 'shiboleth' in file 'literatur/literatur.bib', skipping ...
+[308] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[308] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[308] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[309] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[319] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
+[321] bbl.pm:757> INFO - Output to Doku.bbl
+[322] Biber.pm:128> INFO - WARNINGS: 1

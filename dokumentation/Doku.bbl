@@ -1,0 +1,259 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{angularicon}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Angular Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://angular.io/assets/images/logos/angular/angular.svg#
+      \endverb
+      \verb{url}
+      \verb https://angular.io/assets/images/logos/angular/angular.svg#
+      \endverb
+    \endentry
+    \entry{blackberry}{online}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Blackberry-messenger-live-free}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.google.com/search?sa=G&hl=en_GB&tbs=simg:CAQSigIJhkYKQeZpo2ga_1gELELCMpwgaOgo4CAQSFNwjrhOGH5Yp4ArFNOYozArhA70rGhqMV02g86-J4LEEe7o2NhCoXzI40sOavczyMSAFMAQMCxCOrv4IGgoKCAgBEgS8yhvGDAsQne3BCRqeAQobCgh2ZXJ0aWNhbNqliPYDCwoJL2EvNGhoM3AwChYKA2RvdNqliPYDCwoJL20vMDI3Y3RnChsKCGxhbmd1YWdl2qWI9gMLCgkvai8yc2hfeTQKKwoXdGVjaG5vbG9neSBhcHBsaWNhdGlvbnPapYj2AwwKCi9tLzBjMHNxOXQKHQoKaG9yaXpvbnRhbNqliPYDCwoJL2EvMm1xdnpjDA&sxsrf=AOaemvIqBE_CBQnc5LbSVstD8aZ_tE0m5A:1635361908652&q=vertical&tbm=isch&ved=2ahUKEwjnj5PtpevzAhVESvEDHdixBtAQwg4oAHoECAEQMg&biw=958&bih=967&dpr=1#imgrc=WbybuUumcvn6WM
+      \endverb
+      \verb{url}
+      \verb https://www.google.com/search?sa=G&hl=en_GB&tbs=simg:CAQSigIJhkYKQeZpo2ga_1gELELCMpwgaOgo4CAQSFNwjrhOGH5Yp4ArFNOYozArhA70rGhqMV02g86-J4LEEe7o2NhCoXzI40sOavczyMSAFMAQMCxCOrv4IGgoKCAgBEgS8yhvGDAsQne3BCRqeAQobCgh2ZXJ0aWNhbNqliPYDCwoJL2EvNGhoM3AwChYKA2RvdNqliPYDCwoJL20vMDI3Y3RnChsKCGxhbmd1YWdl2qWI9gMLCgkvai8yc2hfeTQKKwoXdGVjaG5vbG9neSBhcHBsaWNhdGlvbnPapYj2AwwKCi9tLzBjMHNxOXQKHQoKaG9yaXpvbnRhbNqliPYDCwoJL2EvMm1xdnpjDA&sxsrf=AOaemvIqBE_CBQnc5LbSVstD8aZ_tE0m5A:1635361908652&q=vertical&tbm=isch&ved=2ahUKEwjnj5PtpevzAhVESvEDHdixBtAQwg4oAHoECAEQMg&biw=958&bih=967&dpr=1#imgrc=WbybuUumcvn6WM
+      \endverb
+    \endentry
+    \entry{briar}{online}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Briar}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.google.com/search?sa=G&hl=en_GB&tbs=simg:CAESigIJsqta7umNdmEa_1gELELCMpwgaOgo4CAQSFNwj4QOhHYYfxTTAPuYokibTFM0LGhooxkKxDJXZDHqsS0d-jgch2_1GBemxZC9KE5yAFMAQMCxCOrv4IGgoKCAgBEgRtBijYDAsQne3BCRqeAQobCghsYW5ndWFnZdqliPYDCwoJL2ovMnNoX3k0ChsKCHZlcnRpY2Fs2qWI9gMLCgkvYS80aGgzcDAKKwoXdGVjaG5vbG9neSBhcHBsaWNhdGlvbnPapYj2AwwKCi9tLzBjMHNxOXQKHQoKaG9yaXpvbnRhbNqliPYDCwoJL2EvMm1xdnpjChYKA2RvdNqliPYDCwoJL20vMDI3Y3RnDA&sxsrf=AOaemvKD2G5sh2A-CGziL7iecZAZ4Im_gg:1635365049125&q=Briar&tbm=isch&ved=2ahUKEwjKxdLGsevzAhVLNOwKHTKuDcsQjJkEegQIAhAC&biw=958&bih=967&dpr=1#imgrc=OZdYEumydcv8_M
+      \endverb
+      \verb{url}
+      \verb https://www.google.com/search?sa=G&hl=en_GB&tbs=simg:CAESigIJsqta7umNdmEa_1gELELCMpwgaOgo4CAQSFNwj4QOhHYYfxTTAPuYokibTFM0LGhooxkKxDJXZDHqsS0d-jgch2_1GBemxZC9KE5yAFMAQMCxCOrv4IGgoKCAgBEgRtBijYDAsQne3BCRqeAQobCghsYW5ndWFnZdqliPYDCwoJL2ovMnNoX3k0ChsKCHZlcnRpY2Fs2qWI9gMLCgkvYS80aGgzcDAKKwoXdGVjaG5vbG9neSBhcHBsaWNhdGlvbnPapYj2AwwKCi9tLzBjMHNxOXQKHQoKaG9yaXpvbnRhbNqliPYDCwoJL2EvMm1xdnpjChYKA2RvdNqliPYDCwoJL20vMDI3Y3RnDA&sxsrf=AOaemvKD2G5sh2A-CGziL7iecZAZ4Im_gg:1635365049125&q=Briar&tbm=isch&ved=2ahUKEwjKxdLGsevzAhVLNOwKHTKuDcsQjJkEegQIAhAC&biw=958&bih=967&dpr=1#imgrc=OZdYEumydcv8_M
+      \endverb
+    \endentry
+    \entry{chatbotcostcalc}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Chatbot-cost-calculator}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://risingmax.com/blog/ai-based-chatbot-cost-calculator/
+      \endverb
+      \verb{url}
+      \verb https://risingmax.com/blog/ai-based-chatbot-cost-calculator/
+      \endverb
+    \endentry
+    \entry{cleverbot}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Cleverbot}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.cleverbot.com/
+      \endverb
+      \verb{url}
+      \verb https://www.cleverbot.com/
+      \endverb
+    \endentry
+    \entry{keycloakicon}{online}{}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{KeyCloak Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.katacoda.com/sebastienblanc/avatar
+      \endverb
+      \verb{url}
+      \verb https://www.katacoda.com/sebastienblanc/avatar
+      \endverb
+    \endentry
+    \entry{mongodbicon}{online}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{MongoDB Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://webimages.mongodb.com/_com_assets/cms/kpo5kblefbjq79065-Horizontal_Default.svg?auto=format%252Ccompress
+      \endverb
+      \verb{url}
+      \verb https://webimages.mongodb.com/_com_assets/cms/kpo5kblefbjq79065-Horizontal_Default.svg?auto=format%252Ccompress
+      \endverb
+    \endentry
+    \entry{nlpicon}{online}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{NLP Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://ecomschool.uk/wp-content/uploads/2020/01/NLP.png
+      \endverb
+      \verb{url}
+      \verb https://ecomschool.uk/wp-content/uploads/2020/01/NLP.png
+      \endverb
+    \endentry
+    \entry{nodejsicon}{online}{}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Node.js Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://cdn.freebiesupply.com/logos/thumbs/2x/nodejs-1-logo.png
+      \endverb
+      \verb{url}
+      \verb https://cdn.freebiesupply.com/logos/thumbs/2x/nodejs-1-logo.png
+      \endverb
+    \endentry
+    \entry{regexicon}{online}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Regex Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Toolbaricon_RegEx.svg/1280px-Toolbaricon_RegEx.svg.png
+      \endverb
+      \verb{url}
+      \verb https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Toolbaricon_RegEx.svg/1280px-Toolbaricon_RegEx.svg.png
+      \endverb
+    \endentry
+    \entry{socketioicon}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Socket.io Icon}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://socket.io/images/logo.svg
+      \endverb
+      \verb{url}
+      \verb https://socket.io/images/logo.svg
+      \endverb
+    \endentry
+    \entry{telegrambild}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Telegram Bild}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.google.comsearchhl=en-DE&tbs=simgCAQSogIJUI-dpxAardkalgILELCMpwgaOgo4CAQSFNwjhh-SJsU02SnNC-ED5ijTFMA-GhoGCpX8eV4QQlxr-b4VAGNT5Ytk_1AXwF_1iISSAFMAQMCxCOrv4IGgoKCAgBEgRskiUNDAsQne3BCRq2AQorChd0ZWNobm9sb2d5IGFwcGxpY2F0aW9uc9qliPYDDAoKL20vMGMwc3E5dAobCghsYW5ndWFnZdqliPYDCwoJL2ovMnNoX3k0CiUKEm9ubGluZSBhZHZlcnRpc2luZ9qliPYDCwoJL20vMDViMXJ4ChsKCHZlcnRpY2Fs2qWI9gMLCgkvYS80aGgzcDAKJgoTZGlzcGxheSBhZHZlcnRpc2luZ9qliPYDCwoJL20vMDJfNzg0DA&sxsrf=AOaemvJvagbVoMqxsxUbYQiI7Fv6tUIP9g1635361458787&q=telegram+ios+vs+android&tbm=isch&sa=X&ved=2ahUKEwjTu9GWpOvzAhWaQ_EDHWQ6A28Qwg4oAHoECAEQMg&biw=958&bih=967#imgrc=gxSx6Qs4XJtkXM
+      \endverb
+      \verb{url}
+      \verb https://www.google.comsearchhl=en-DE&tbs=simgCAQSogIJUI-dpxAardkalgILELCMpwgaOgo4CAQSFNwjhh-SJsU02SnNC-ED5ijTFMA-GhoGCpX8eV4QQlxr-b4VAGNT5Ytk_1AXwF_1iISSAFMAQMCxCOrv4IGgoKCAgBEgRskiUNDAsQne3BCRq2AQorChd0ZWNobm9sb2d5IGFwcGxpY2F0aW9uc9qliPYDDAoKL20vMGMwc3E5dAobCghsYW5ndWFnZdqliPYDCwoJL2ovMnNoX3k0CiUKEm9ubGluZSBhZHZlcnRpc2luZ9qliPYDCwoJL20vMDViMXJ4ChsKCHZlcnRpY2Fs2qWI9gMLCgkvYS80aGgzcDAKJgoTZGlzcGxheSBhZHZlcnRpc2luZ9qliPYDCwoJL20vMDJfNzg0DA&sxsrf=AOaemvJvagbVoMqxsxUbYQiI7Fv6tUIP9g1635361458787&q=telegram+ios+vs+android&tbm=isch&sa=X&ved=2ahUKEwjTu9GWpOvzAhWaQ_EDHWQ6A28Qwg4oAHoECAEQMg&biw=958&bih=967#imgrc=gxSx6Qs4XJtkXM
+      \endverb
+    \endentry
+    \entry{timwhatsApp}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labeldatesource}{nodate}
+      \field{labeltitlesource}{title}
+      \field{langid}{german}
+      \field{title}{Tim WhatsApp}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.google.com/search?sa=G&hl=en_GB&tbs=simg:CAQSigIJYJLGGKoHCBAa_1gELELCMpwgaOgo4CAQSFJIm0xT6N_1US2SnAPocq3CO7D5AHGhpsfM7hd25s-lRkutwfYnlWyH9_1iS-0s6y7cSAFMAQMCxCOrv4IGgoKCAgBEgSYbcOlDAsQne3BCRqeAQoWCgNkb3TapYj2AwsKCS9tLzAyN2N0ZwobCghsYW5ndWFnZdqliPYDCwoJL2ovMnNoX3k0ChsKCHZlcnRpY2Fs2qWI9gMLCgkvYS80aGgzcDAKKwoXdGVjaG5vbG9neSBhcHBsaWNhdGlvbnPapYj2AwwKCi9tLzBjMHNxOXQKHQoKaG9yaXpvbnRhbNqliPYDCwoJL2EvMm1xdnpjDA&sxsrf=AOaemvLsZC-YyfElRY8Tji4kbglIZi-EMQ:1635361825460&q=whats+app+chat&tbm=isch&ved=2ahUKEwjQr73FpevzAhUeSfEDHWuqCZ0Qwg4oAHoECAEQMg&biw=958&bih=967&dpr=1#imgrc=OpXSl5IgMFRLdM
+      \endverb
+      \verb{url}
+      \verb https://www.google.com/search?sa=G&hl=en_GB&tbs=simg:CAQSigIJYJLGGKoHCBAa_1gELELCMpwgaOgo4CAQSFJIm0xT6N_1US2SnAPocq3CO7D5AHGhpsfM7hd25s-lRkutwfYnlWyH9_1iS-0s6y7cSAFMAQMCxCOrv4IGgoKCAgBEgSYbcOlDAsQne3BCRqeAQoWCgNkb3TapYj2AwsKCS9tLzAyN2N0ZwobCghsYW5ndWFnZdqliPYDCwoJL2ovMnNoX3k0ChsKCHZlcnRpY2Fs2qWI9gMLCgkvYS80aGgzcDAKKwoXdGVjaG5vbG9neSBhcHBsaWNhdGlvbnPapYj2AwwKCi9tLzBjMHNxOXQKHQoKaG9yaXpvbnRhbNqliPYDCwoJL2EvMm1xdnpjDA&sxsrf=AOaemvLsZC-YyfElRY8Tji4kbglIZi-EMQ:1635361825460&q=whats+app+chat&tbm=isch&ved=2ahUKEwjQr73FpevzAhUeSfEDHWuqCZ0Qwg4oAHoECAEQMg&biw=958&bih=967&dpr=1#imgrc=OpXSl5IgMFRLdM
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
