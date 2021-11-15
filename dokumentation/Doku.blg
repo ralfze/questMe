@@ -1,15 +1,15 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'Doku.blg'
-[137] biber-MSWIN32:340> INFO - === 
-[178] Biber.pm:415> INFO - Reading 'Doku.bcf'
-[321] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
-[344] Biber.pm:4340> INFO - Processing section 0
-[359] Biber.pm:4531> INFO - Looking for bibtex format file 'literatur/literatur.bib' for section 0
-[408] bibtex.pm:1689> INFO - LaTeX decoding ...
-[426] bibtex.pm:1494> INFO - Found BibTeX data source 'literatur/literatur.bib'
-[491] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[138] biber-MSWIN32:340> INFO - === 
+[180] Biber.pm:415> INFO - Reading 'Doku.bcf'
+[324] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
+[346] Biber.pm:4340> INFO - Processing section 0
+[361] Biber.pm:4531> INFO - Looking for bibtex format file 'literatur/literatur.bib' for section 0
+[407] bibtex.pm:1689> INFO - LaTeX decoding ...
+[425] bibtex.pm:1494> INFO - Found BibTeX data source 'literatur/literatur.bib'
 [491] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[491] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
 [491] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
 [491] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
-[508] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
-[512] bbl.pm:757> INFO - Output to Doku.bbl
+[509] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
+[513] bbl.pm:757> INFO - Output to Doku.bbl
