@@ -1,8 +1,13 @@
 \subsection{Technologie Vergleich}
 In diesem Bereich wollen wir unsere Design Entscheidung für eine Technologie durch einen Vergleich darstellen.
-Dafür haben wir für die ''Themen Angular vs Vue.js'' und ''MongoDB vs PostgreSQL'' eine Tabelle erstellt.
+Dafür haben wir für die Themen ''Vergleich zwischen Angular und Vue.js'' und ''Vergleich zwischen MongoDB und PostgreSQL'' eine Tabelle erstellt.
 
-\subsubsection{Angular vs Vue.js}
+\subsubsection{Vergleich zwischen Angular und Vue.js}
+
+Wir haben uns die Unterschiede zwischen den beiden Frameworks Angular und Vue.js mal genauer angeschaut, 
+um uns einen besseren Eindruck zu verschaffen, bevor wir uns entscheiden.
+Nach einer Teambesprechung haben wir uns für Angular entschieden, da es eine sehr hohe Testbarkeit hat 
+und wir auf Angular Materials zurückgreifen können, um unser UI effektiver zu gestalten.
 
 \begin{center}
     \begin{table}[H]
@@ -41,12 +46,17 @@ Dafür haben wir für die ''Themen Angular vs Vue.js'' und ''MongoDB vs PostgreS
             \textbf{Lizenz}                               & MIT License                                          & MIT License                           \\
             \hline
         \end{tabular}
-        \caption{Angular vs Vue.js}
-        \label{Angular vs Vue.js}
+        \caption{Vergleich zwischen Angular und Vue.js}
+        \label{Vergleich zwischen Angular und Vue.js}
     \end{table}
 \end{center}
 
-\subsubsection{MongoDB vs PostgreSQL}
+\subsubsection{Vergleich zwischen MongoDB und PostgreSQL}
+
+Im Vergleich zwischen MongoDB und PostgreSQL sticht MongoDB besonders durch das Dokumentenorientierte Datenbankmodell hervor.
+Da wir in unserer Datenbank den Korpus unseres Chatbots in Form von JSON-Dateien speichern wollen,
+kommt uns das sehr gelegen. Einziger Nachteil ist die Maximale Dateigröße von 16 MB, da wir aber nicht damit rechnen, 
+dass unsere Dateien so groß werden, stellt das für uns kein Hindernis dar.
 
 \begin{center}
     \begin{table}[H]
@@ -54,7 +64,7 @@ Dafür haben wir für die ''Themen Angular vs Vue.js'' und ''MongoDB vs PostgreS
             \hline
             \textbf{}                                 & \textbf{MongoDB}        & \textbf{PostgreSQL}                         \\
             \hline
-            \textbf{Primäres\newline Datenbankmodell} & Dokumentation           & Relationales DBMS                           \\
+            \textbf{Primäres\newline Datenbankmodell} & Dokumentenorientiert           & Relationales DBMS                           \\
             \hline
             \textbf{Entwickler}                       & MongoDB. Inc            & PostgreSQL Global\newline Development Group \\
             \hline
@@ -75,8 +85,8 @@ Dafür haben wir für die ''Themen Angular vs Vue.js'' und ''MongoDB vs PostgreS
             \textbf{Lizenz}                           & Open Source             & Open Source                                 \\
             \hline
         \end{tabular}
-        \caption{MongoDB vs PostgreSQL}
-        \label{tab:MongoDB vs PostgreSQL}
+        \caption{Vergleich zwischen MongoDB und PostgreSQL}
+        \label{tab:Vergleich zwischen MongoDB und PostgreSQL}
     \end{table}
 \end{center}
 
