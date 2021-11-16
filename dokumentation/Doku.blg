@@ -1,6 +1,7 @@
 [0] Config.pm:311> INFO - This is Biber 2.16
 [0] Config.pm:314> INFO - Logfile is 'Doku.blg'
 <<<<<<< HEAD
+<<<<<<< HEAD
 [87] biber-MSWIN32:340> INFO - === 
 [120] Biber.pm:415> INFO - Reading 'Doku.bcf'
 [203] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
@@ -31,3 +32,18 @@
 [318] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
 [320] bbl.pm:757> INFO - Output to Doku.bbl
 >>>>>>> 48f68518 (Add "add Appendix" to documentation #40)
+=======
+[137] biber-MSWIN32:340> INFO - === 
+[179] Biber.pm:415> INFO - Reading 'Doku.bcf'
+[324] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
+[348] Biber.pm:4340> INFO - Processing section 0
+[363] Biber.pm:4531> INFO - Looking for bibtex format file 'literatur/literatur.bib' for section 0
+[410] bibtex.pm:1689> INFO - LaTeX decoding ...
+[427] bibtex.pm:1494> INFO - Found BibTeX data source 'literatur/literatur.bib'
+[492] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[493] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[493] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[493] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[509] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
+[513] bbl.pm:757> INFO - Output to Doku.bbl
+>>>>>>> 0996d7a4 (Change Technologien entries, adjust the table #38)

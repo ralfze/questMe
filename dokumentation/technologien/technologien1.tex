@@ -3,7 +3,7 @@ In diesem Kapitel soll alles zum Thema Technologien zusammengefasst sein.
 Zusätzlich sollen Schaubilder und Diagramme das Verständies für die Technologien erleichtern.
 Sowie Beschreibungen und Erklärungen zu der Wahl der einzelnen Technologien.
 
-\subsection{Entscheidung für die Technologien}
+\subsection{Kriterien für die Technologien}
 Bei der Wahl der Technologien haben wir nach Möglichkeit LTS Versionen gesucht.
 Damit wir eine Applikation erstellen können, die für lange Zeit Sicherheitsupdates
 bekommt. Zusätzlich haben wir als Ziel, dass die Software als ingesamtes Paket sehr lange
@@ -12,28 +12,29 @@ stabil läuft und dadurch Ausfälle minimiert werden.
 \subsection{Technologie Versionen}
 Hier sollen die einzelnen Technologien im Einzelnen beschrieben werden.
 Sowie ihre geplante Funktion in unserem Projekt.
+In der unten angegebenen Liste soll ein Überblick über die im Projekt verwendeten Technologien bereitstellt gestellt werden.
 
 \begin{table}[H]
     \begin{center}
         \begin{tabular}{|c|c|}
             \hline
-            \includegraphics[width=0.15\textwidth]{bilder/technologien/NodeJS.png}    &
-            \multirow[c]{1}[1]{*}[30pt]{Node.js 16.13.0 LTS}                            \\
+            \includegraphics[width=0.1\textwidth]{bilder/technologien/NodeJS.png}    &
+            \multirow[c]{1}[1]{*}[20pt]{Node.js 16.13.0 LTS}                           \\
             \hline
-            \includegraphics[width=0.15\textwidth]{bilder/technologien/Angular.png}   &
-            \multirow[c]{1}[1]{*}[30pt]{Angular 13.0.1}                                 \\
+            \includegraphics[width=0.1\textwidth]{bilder/technologien/Angular.png}   &
+            \multirow[c]{1}[1]{*}[20pt]{Angular 13.0.1}                                \\
             \hline
-            \includegraphics[width=0.15\textwidth]{bilder/technologien/Socket.io.png} &
-            \multirow[c]{1}[1]{*}[30pt]{Socket.io 4.3.2}                                \\
+            \includegraphics[width=0.1\textwidth]{bilder/technologien/Socket.io.png} &
+            \multirow[c]{1}[1]{*}[20pt]{Socket.io 4.3.2}                               \\
             \hline
-            \includegraphics[width=0.15\textwidth]{bilder/technologien/mongoDB.png}   &
-            \multirow[c]{1}[1]{*}[30pt]{MongoDB Community Edition 5.0.3}                \\
+            \includegraphics[width=0.1\textwidth]{bilder/technologien/mongoDB.png}   &
+            \multirow[c]{1}[1]{*}[20pt]{MongoDB Community Edition 5.0.3}               \\
             \hline
-            \includegraphics[width=0.15\textwidth]{bilder/technologien/KeyCloak.png}  &
-            \multirow[c]{1}[1]{*}[30pt]{KeyCloak 15.0.2}                                \\
+            \includegraphics[width=0.1\textwidth]{bilder/technologien/KeyCloak.png}  &
+            \multirow[c]{1}[1]{*}[20pt]{KeyCloak 15.0.2}                               \\
             \hline
-            \includegraphics[width=0.15\textwidth]{bilder/technologien/NLP.png}       &
-            \multirow[c]{1}[1]{*}[30pt]{NLP.js 4.22.2 (optional)}                       \\
+            \includegraphics[width=0.1\textwidth]{bilder/technologien/NLP.png}       &
+            \multirow[c]{1}[1]{*}[20pt]{NLP.js 4.22.2}                                 \\
             \hline
         \end{tabular}
         \caption{Technologie Liste}
@@ -76,21 +77,26 @@ Bildquelle:\cite{mongodbicon}
 In unserem Projekt verwenden wir KeyCloak, damit sich der Admin sicher in das Admin-Webinterface einloggen kann.
 Zusätzlich werden wir das Shibboleth Single-Sign-On Verfahren von der Hochschule integrieren.
 Damit Hochschulangehörige die Möglichkeit haben mit ihrem Hochschul Account sich einloggen zu können.
-Dadurch können wir zusätzlichbegrenzen welche Personengruppen auf welche Daten Zugriff haben.
+Dadurch können wir zusätzlich begrenzen welche Personengruppen auf welche Daten Zugriff haben.
 Bildquelle:\cite{keycloakicon}
 
 \subsubsection{RegEx}
 Wir haben in unserem Projekt anfangs aus Sicherheitsgründen RegEx eingeplant.
+RegEx dient in unserem Projekt als Fallback.
 Um ein Scheitern des Projektes zu verhindern, falls NLP.js sich nicht in unser Projekt integrieren lassen sollte.
-Somit der Chatbot dennoch Begriffe und Sätze verstehen kann.
+Damit der Chatbot dennoch Begriffe und Sätze verstehen kann.
 Nach unserem derzeitigen Stand brauchen wir nicht auf eine RegEx Implementation zurückzugreifen,
-da NLP.js sich sehr gut in unser Projekt integrieren lässt.
+da NLP.js sich sehr gut in unser Projekt integrieren lässt. 
+
+\noindent \newline Als Beispiel für den Satz "Wie geht es dir?".
+Müsste ein User oder Admin folgenden RegEx Befehl integrieren:\\
+\newline \verb/(Wie|wie)\s*geht\s*es\s*dir\s*\?/ \\
+\newline Damit man nach ''Wie/wie geht es dir ?'' mit und ohne Leerzeichen prüfen kann.\\
 Bildquelle:\cite{regexicon}
 
-\subsubsection{NLP.js 4.22.2 (optional)}
+\subsubsection{NLP.js 4.22.2}
 Damit wir NLP.js nutzen können benötigen wir eine LTS Version von Node.js.
 Diese Begrenzung haben wir zusätzlich in die Technologie Entscheidung einbezogen.
-Wir haben den NLP.js ausführlich getestet und werden es als Basis für den Chatbot verwenden.
 Indem NLP.js ab der Version 4 und höher modular ist. Wird uns ermöglicht leichter eigene Module/Plugins
 für das Framework zu schreiben.
 Dadurch können wir einen ChatBot mit verbesserter Spracherkennung gestalten.
