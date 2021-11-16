@@ -1,6 +1,8 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}\relax 
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {1}{\ignorespaces UML Komponentendiagramm Client}}{31}{figure.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2}{\ignorespaces UML Komponentendiagramm Server}}{32}{figure.2}%
@@ -20,6 +22,22 @@
 =======
 \contentsline {figure}{\numberline {4}{\ignorespaces UML Verteilungsdiagramm}}{34}{figure.4}%
 >>>>>>> 13650a9d (add explanation to the diagrams)
+=======
+\contentsline {figure}{\numberline {1}{\ignorespaces Komponentendiagramm Client}}{32}{figure.1}%
+=======
+\contentsline {figure}{\numberline {1}{\ignorespaces Komponentendiagramm Client}}{33}{figure.1}%
+>>>>>>> d03068b9 (add user story unregistered user)
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2}{\ignorespaces Komponentendiagramm Server}}{34}{figure.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3}{\ignorespaces Komponentendiagramm v1.2}}{35}{figure.3}%
+\defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
+\contentsline {figure}{\numberline {4}{\ignorespaces Verteilungsdiagramm}}{35}{figure.4}%
+>>>>>>> c7f0fa48 (add user story student)
+=======
+\contentsline {figure}{\numberline {4}{\ignorespaces Verteilungsdiagramm}}{36}{figure.4}%
+>>>>>>> d03068b9 (add user story unregistered user)
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {german}{}\relax 
@@ -125,6 +143,8 @@
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm Client}}{42}{figure.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6}{\ignorespaces Komponentendiagramm Server}}{43}{figure.6}%
@@ -134,5 +154,15 @@
 \contentsline {figure}{\numberline {8}{\ignorespaces Komponentendiagramm v1.1}}{44}{figure.8}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {9}{\ignorespaces Komponentendiagramm v1.2}}{45}{figure.9}%
+=======
+\contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm v1.0}}{43}{figure.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces Komponentendiagramm v1.1}}{44}{figure.6}%
+>>>>>>> c7f0fa48 (add user story student)
+=======
+\contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm v1.0}}{44}{figure.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces Komponentendiagramm v1.1}}{45}{figure.6}%
+>>>>>>> d03068b9 (add user story unregistered user)
 \defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

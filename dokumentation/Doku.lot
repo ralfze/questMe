@@ -1,21 +1,45 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}\relax 
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
+<<<<<<< HEAD
 \contentsline {table}{\numberline {1}{\ignorespaces Technologie Liste}}{26}{table.1}%
+=======
+\contentsline {table}{\numberline {1}{\ignorespaces Technologie Liste}}{28}{table.1}%
+>>>>>>> c7f0fa48 (add user story student)
+=======
+\contentsline {table}{\numberline {1}{\ignorespaces Technologie Liste}}{29}{table.1}%
+>>>>>>> d03068b9 (add user story unregistered user)
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2}{\ignorespaces Vergleich zwischen Angular und Vue.js}}{29}{table.2}%
+\contentsline {table}{\numberline {2}{\ignorespaces Vergleich zwischen Angular und Vue.js}}{31}{table.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3}{\ignorespaces Vergleich zwischen MongoDB und PostgreSQL}}{30}{table.3}%
+\contentsline {table}{\numberline {3}{\ignorespaces Vergleich zwischen MongoDB und PostgreSQL}}{32}{table.3}%
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD
 \contentsline {table}{\numberline {4}{\ignorespaces Meilenstein Liste}}{36}{table.4}%
 =======
 \contentsline {table}{\numberline {4}{\ignorespaces Meilenstein Liste}}{35}{table.4}%
+=======
+\contentsline {table}{\numberline {4}{\ignorespaces Meilenstein Liste}}{36}{table.4}%
+>>>>>>> c7f0fa48 (add user story student)
+=======
+\contentsline {table}{\numberline {4}{\ignorespaces Meilenstein Liste}}{37}{table.4}%
+>>>>>>> d03068b9 (add user story unregistered user)
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {5}{\ignorespaces Risikoanalyse Tabelle Teil 1}}{38}{table.5}%
+\contentsline {table}{\numberline {5}{\ignorespaces Risikoanalyse Tabelle Teil 1}}{40}{table.5}%
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
+<<<<<<< HEAD
 \contentsline {table}{\numberline {6}{\ignorespaces Risikoanalyse Tabelle Teil 2}}{39}{table.6}%
 >>>>>>> 48f68518 (Add "add Appendix" to documentation #40)
+=======
+\contentsline {table}{\numberline {6}{\ignorespaces Risikoanalyse Tabelle Teil 2}}{40}{table.6}%
+>>>>>>> c7f0fa48 (add user story student)
+=======
+\contentsline {table}{\numberline {6}{\ignorespaces Risikoanalyse Tabelle Teil 2}}{41}{table.6}%
+>>>>>>> d03068b9 (add user story unregistered user)
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {german}{}\relax 
