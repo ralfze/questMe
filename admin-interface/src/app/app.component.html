@@ -1,52 +1,11 @@
-<!--
-  Infoseite
- -->
-
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <button
-    mat-icon-button
-    [matMenuTriggerFor]="menu"
-    aria-label="questMe icon-button with a menu"
-  >
-    <mat-icon>menu</mat-icon>
+<div class="example-button-container">
+  <a [routerLink]="['/admin-interface']"
+  ><button mat-fab color="accent" aria-label="Example icon button with a heart icon">
+    <mat-icon>favorite</mat-icon>
+    <span>Click me</span>
   </button>
-  <mat-menu #menu="matMenu">
-    <a [routerLink]="['/admin-interface/allgemein-interface']"
-      ><button mat-menu-item>
-        <mat-icon>person</mat-icon>
-        <span>Allgemein</span>
-      </button>
-    </a>
-    <button mat-menu-item>
-      <mat-icon>library_books</mat-icon>
-      <span>Korpus</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>settings</mat-icon>
-      <span>Einstellungen</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>power_settings_new</mat-icon>
-      <span>LogOut</span>
-    </button>
-  </mat-menu>
-  <a [routerLink]="['/admin-interface/infopage']">
-    <span>questMe</span>
-  </a>
+
+</a>
 </div>
 
 <router-outlet></router-outlet>
-
- <!-- Beispiel von Routing
-  <h1>Angular Router App</h1>
-   This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule)
-  <nav>
-    <ul>
-      <li><a routerLink="/allgemein-interface" routerLinkActive="active">First Component</a></li>
-      <li><a routerLink="/app-root" routerLinkActive="active">Second Component</a></li>
-    </ul>
-  </nav>
-  The routed views render in the <router-outlet>
-  <router-outlet></router-outlet>
-  -->

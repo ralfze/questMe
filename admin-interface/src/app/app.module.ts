@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AllgemeinInterfaceComponent } from './admin-interface/allgemein-interface/allgemein-interface.component';
 import { InfopageComponent } from './admin-interface/infopage/infopage.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 
 
 
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     AllgemeinInterfaceComponent,
-    InfopageComponent
+    InfopageComponent,
+    AdminInterfaceComponent
   ],
   imports: [
     BrowserModule,
