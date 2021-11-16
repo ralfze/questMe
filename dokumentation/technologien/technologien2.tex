@@ -4,10 +4,9 @@ Dafür haben wir für die Themen ''Vergleich zwischen Angular und Vue.js'' und '
 
 \subsubsection{Vergleich zwischen Angular und Vue.js}
 
-Wir haben uns die Unterschiede zwischen den beiden Frameworks Angular und Vue.js mal genauer angeschaut, 
-um uns einen besseren Eindruck zu verschaffen, bevor wir uns entscheiden.
-Nach einer Teambesprechung haben wir uns für Angular entschieden, da es eine sehr hohe Testbarkeit hat 
-und wir auf Angular Materials zurückgreifen können, um unser UI effektiver zu gestalten.
+Als wir uns für ein Framework zur Entwicklung des Front-Ends entscheiden mussten, kamen Angular und Vue.js in unsere engere Auswahl.
+Damit wir uns einen besseren Überblick über die Eigenschaften dieser Kandidaten verschaffen und ihre Vor- und Nachteile besser abwägen können, 
+haben wir uns diese Tabelle erstellt.
 
 \begin{center}
     \begin{table}[H]
@@ -51,12 +50,19 @@ und wir auf Angular Materials zurückgreifen können, um unser UI effektiver zu 
     \end{table}
 \end{center}
 
+\noindent Unsere Entscheidung fiel schlussendlich auf Angular. 
+Da es bereits länger auf dem Markt ist und auch einen höheren Marktanteil hat, ist es generell schon interessant es sich mal anzuschauen und damit zu arbeiten.
+Hinzu kommt die sehr gute Testbarkeit, für die man lediglich ein einziges Tool benötigt. 
+Ein großer Nachteil, der beim Blick auf die Tabelle sofort ins Auge sticht, ist aber die Performance.
+Allerdings haben wir sie nur auf niedrig eingestuft, da am Anfang viel mitgeladen werden muss.
+Bei größeren Projekten bietet Angular mehr Stabilität und Performance als seine Konkurrenz in diesem Vergleich.
+
 \subsubsection{Vergleich zwischen MongoDB und PostgreSQL}
 
-Im Vergleich zwischen MongoDB und PostgreSQL sticht MongoDB besonders durch das Dokumentenorientierte Datenbankmodell hervor.
-Da wir in unserer Datenbank den Korpus unseres Chatbots in Form von JSON-Dateien speichern wollen,
-kommt uns das sehr gelegen. Einziger Nachteil ist die Maximale Dateigröße von 16 MB, da wir aber nicht damit rechnen, 
-dass unsere Dateien so groß werden, stellt das für uns kein Hindernis dar.
+Ähnliche Gedanken wie für unser Front-End mussten wir uns auch für unser Back-End stellen. 
+Genauer, welche Datenbank wollen wir verwenden? 
+Da wir in der Datenbank den Korpus unseres Chatbots in Form von JSON-Dateien speichern wollen, 
+haben wir uns zwei der populärsten Lösungen rausgesucht und diese in einer Tabelle gegenübergestellt.
 
 \begin{center}
     \begin{table}[H]
@@ -64,7 +70,7 @@ dass unsere Dateien so groß werden, stellt das für uns kein Hindernis dar.
             \hline
             \textbf{}                                 & \textbf{MongoDB}        & \textbf{PostgreSQL}                         \\
             \hline
-            \textbf{Primäres\newline Datenbankmodell} & Dokumentenorientiert           & Relationales DBMS                           \\
+            \textbf{Primäres\newline Datenbankmodell} & Dokumentenorientiert    & Relationales DBMS                           \\
             \hline
             \textbf{Entwickler}                       & MongoDB. Inc            & PostgreSQL Global\newline Development Group \\
             \hline
@@ -90,3 +96,7 @@ dass unsere Dateien so groß werden, stellt das für uns kein Hindernis dar.
     \end{table}
 \end{center}
 
+\noindent Wir haben uns schlussendlich dafür entschieden, MongoDB zu nutzen. 
+Da es bereits ein schemafreies und Dokumentenorientiertes Datenbankmodell ist, kommt uns das sehr gelegen.
+Ein Nachteil, der sofort auffällt, ist die Maximale Dateigröße von gerade einmal 16 MB.
+Da wir aber nicht davon ausgehen, dass unsere Dateien diese Größe erreichen werden, stellt das für uns kein Hindernis dar.
