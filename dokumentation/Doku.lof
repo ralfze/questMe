@@ -7,11 +7,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3}{\ignorespaces Komponentendiagramm v1.2}}{33}{figure.3}%
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 \contentsline {figure}{\numberline {4}{\ignorespaces Komponentendiagramm v1.1}}{33}{figure.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm v1.0}}{34}{figure.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6}{\ignorespaces Verteilungsdiagramm}}{35}{figure.6}%
+=======
+\contentsline {figure}{\numberline {4}{\ignorespaces Verteilungsdiagramm}}{34}{figure.4}%
+>>>>>>> 48f68518 (Add "add Appendix" to documentation #40)
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {german}{}\relax 
@@ -116,5 +120,9 @@
 \babel@toc {ngerman}{}\relax 
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm v1.0}}{42}{figure.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces Komponentendiagramm v1.1}}{43}{figure.6}%
 \defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
