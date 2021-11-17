@@ -1,3 +1,6 @@
+\newcommand{\indentitem}{\setlength\itemindent{30pt}}
+
+
 \section{Use Cases}
 In diesem Kapitel haben wir unsere Use Cases gesammelt.
 
@@ -8,17 +11,19 @@ Hier listen wir unsere ersten Ideen auf, die wir erfüllen möchten.
 \\
 
 \textbf{Chatfenster}
-\begin{enumerate}
-    \item Als Nutzer möchte ich einen Sendebutton betätigen, um eine Nachricht abzuschicken. 
-    \item Als Nutzer möchte ich ein Eingabefeld für meine Fragen haben, um eine Antwort zu erhalten.
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{10000}
+   \item Als Nutzer möchte ich einen Sendebutton betätigen, um eine Nachricht abzuschicken. 
+  \item Als Nutzer möchte ich ein Eingabefeld für meine Fragen haben, um eine Antwort zu erhalten.
     \item Als Nutzer möchte ich einen Chatfenster haben, um eine Nachricht zu erhalten. 
     \item Als Nutzer möchte ich das Icon vom Bot sehen, um die Nachricht des Bots von meiner zu unterscheiden. 
-    \item Als Nutzer möcht ich verschieden farbige Sprechblasen sehen, um die Nachricht des Bots von meiner zu unterscheiden. 
-    \item Als Nutzer möchte ich hingewiesen werden, wo ich zu Schreiben habe, um eine Nachricht verfassen zu können. 
+  \item Als Nutzer möcht ich verschieden farbige Sprechblasen sehen, um die Nachricht des Bots von meiner zu unterscheiden. 
+   \item Als Nutzer möchte ich hingewiesen werden, wo ich zu Schreiben habe, um eine Nachricht verfassen zu können. 
 \end{enumerate}
 
 \textbf{Admin Interface: Allgemein}
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{20000}
     \item Als Admin möchte ich ein dropdown Menü oder etwas gleichwertiges haben, um auf mein Allgemein zu wechseln. 
     \item Als Admin möchte ich verschiede Icons zur Auswahl haben, um mein Bot Avatar zu wechseln. 
     \item Als Admin möchte ich ein Haken als Bestätigung sehen, um zu sehen, welchen Bot Avatar ich gewählt habe. 
@@ -28,8 +33,31 @@ Hier listen wir unsere ersten Ideen auf, die wir erfüllen möchten.
     \item Als Admin möchte ich die ausgewählte Fläche in einer anderen Farbe sehen, um zu Erkennen ob ich im Allgemein bin. 
 \end{enumerate}
 
+\textbf{Admin Interface: Korpus}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{30000}
+    \item Als Administrator möchte ich eine Liste mit allen Fragen und Antworten, um einen Überblick über den Korpus zu haben.
+    \item Als Administrator möchte ich einen Button, der einen neue Eintrag hinzufügt, um neue Fragen und Antworten hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Fragen, um neue Fragen hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Fragen, um neue Fragen hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Antworten, um neue Antworten hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Entfernen von Fragen, um Fragen entfernen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Entfernen von Antworten, um Anworten entfernen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit einen Eintrag „Fragen und Antworten“ bearbeiten zu können, um den Eintrag zu ändern.
+\end{enumerate}
+
+\textbf{Node.js Allgemein}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{40000}
+    \item Als Nutzer möchte ich eine bidirektionale Kommunikation zwischen dem Client und Server, um direkt mit dem Bot kommunizieren zu können.
+    \item Als Nutzer möchte ich, dass der ChatBot meinen Kontext versteht, um mit dem Bot nach Kontext zu chatten.
+    \item Als Administrator möchte ich die Möglichkeit den Korpus des ChatBots persistent zu speichern, um auf den Korpus zuzugreifen zu können.
+    \item Als Nutzer möchte ich, dass der ChatBot über eine Webadresse erreichbar ist, um mit dem ChatBot online zu kommunizieren.
+\end{enumerate}
+
 \textbf{KeyCloak}
-\begin{enumerate}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{50000}
     \item Als Admin möchte ich mich in KeyCloak einloggen können, um es zu verwalten.
     \item Als Admin möchte ich mich in das Admin-Interface einloggen können, um die Einstellungen des Chatbots zu verwalten.
     \item Als Hochschulangehöriger möchte ich mich mit dem Shibboleth SSO der Hochschule einloggen, um relevante Daten mitzuteilen.
@@ -41,23 +69,5 @@ Hier listen wir unsere ersten Ideen auf, die wir erfüllen möchten.
     \item Als Admin möchte ich die Login-Seite anpassen, um sie nach meinen Vorstellungen zu ändern.
 \end{enumerate}
 
-\textbf{Node.js Allgemein}
-\begin{enumerate}
-    \item Als Nutzer möchte ich eine bidirektionale Kommunikation zwischen dem Client und Server, um direkt mit dem Bot kommunizieren zu können.
-    \item Als Nutzer möchte ich, dass der ChatBot meinen Kontext versteht, um mit dem Bot nach Kontext zu chatten.
-    \item Als Administrator möchte ich die Möglichkeit den Korpus des ChatBots persistent zu speichern, um auf den Korpus zuzugreifen zu können.
-    \item Als Nutzer möchte ich, dass der ChatBot über eine Webadresse erreichbar ist, um mit dem ChatBot online zu kommunizieren.
-\end{enumerate}
 
-\textbf{Admin Interface: Korpus}
-\begin{enumerate}
-    \item Als Administrator möchte ich eine Liste mit allen Fragen und Antworten, um einen Überblick über den Korpus zu haben.
-    \item Als Administrator möchte ich einen Button, der einen neue Eintrag hinzufügt, um neue Fragen und Antworten hinzuzufügen zu können.
-    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Fragen, um neue Fragen hinzuzufügen zu können.
-    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Fragen, um neue Fragen hinzuzufügen zu können.
-    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Antworten, um neue Antworten hinzuzufügen zu können.
-    \item Als Administrator möchte ich eine Möglichkeit zum Entfernen von Fragen, um Fragen entfernen zu können.
-    \item Als Administrator möchte ich eine Möglichkeit zum Entfernen von Antworten, um Anworten entfernen zu können.
-    \item Als Administrator möchte ich eine Möglichkeit einen Eintrag „Fragen und Antworten“ bearbeiten zu können, um den Eintrag zu ändern.
-\end{enumerate}
 
