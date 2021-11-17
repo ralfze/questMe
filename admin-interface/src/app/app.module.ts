@@ -10,6 +10,7 @@ import { AllgemeinInterfaceComponent } from './admin-interface/allgemein-interfa
 import { InfopageComponent } from './admin-interface/infopage/infopage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
+import { KorpusComponent } from './admin-interface/korpus/korpus.component';
 
 
 
@@ -19,7 +20,8 @@ import { AdminInterfaceComponent } from './admin-interface/admin-interface.compo
     AppComponent,
     AllgemeinInterfaceComponent,
     InfopageComponent,
-    AdminInterfaceComponent
+    AdminInterfaceComponent,
+    KorpusComponent
   ],
   imports: [
     BrowserModule,

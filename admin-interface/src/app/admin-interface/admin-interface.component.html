@@ -4,36 +4,9 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <button
-    mat-icon-button
-    [matMenuTriggerFor]="menu"
-    aria-label="questMe icon-button with a menu"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <a [routerLink]="['/admin-interface/allgemein-interface']"
-      ><button mat-menu-item>
-        <mat-icon>person</mat-icon>
-        <span>Allgemein</span>
-      </button>
-    </a>
-    <button mat-menu-item>
-      <mat-icon>library_books</mat-icon>
-      <span>Korpus</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>settings</mat-icon>
-      <span>Einstellungen</span>
-    </button>
-    <button mat-menu-item>
-      <mat-icon>power_settings_new</mat-icon>
-      <span>LogOut</span>
-    </button>
-  </mat-menu>
-  <a [routerLink]="['/admin-interface/infopage']">
-    <span>questMe</span>
-  </a>
+
+    <span>questMe Single Sign On</span>
+
 </div>
 
 <div class="content" role="main">
@@ -43,9 +16,12 @@
       src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
       alt="ChatBot"
     />
-    <span>Sind sind jetzt eingeloggt !</span>
+    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"><button>Login</button></a>
   </div>
 
+
+
+<p>Please Sign in with Single Sign</p>
 
  <!-- Beispiel von Routing
   <h1>Angular Router App</h1>

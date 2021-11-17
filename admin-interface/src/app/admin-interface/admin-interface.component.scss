@@ -81,7 +81,18 @@ a:hover {
   align-items: center;
 }
 
+.content button {
+  background-color: lavender;
+  border-style: none;
+  margin: 3em;
+  width: 10em;
+  height: 3em;
+  font-weight: bold;
+}
 
+.content button:hover {
+  background-color: pink;
+}
 
 .card-container {
   display: flex;
@@ -118,7 +129,7 @@ a:hover {
 
 
 .card img {
-  width: 5em;
+  width: 10em;
   padding: 0;
   margin: 0;
   border-radius: 5em;
@@ -131,7 +142,10 @@ a:hover {
   border: none;
   width: auto;
   min-width: 30%;
+  height: 20em;
   position: relative;
+  flex-direction: column;
+  border-radius: 0.5em;
 }
 
 .card.card.highlight-card span {

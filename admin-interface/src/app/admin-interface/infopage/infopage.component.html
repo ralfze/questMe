@@ -18,10 +18,12 @@
         <span>Allgemein</span>
       </button>
     </a>
-    <button mat-menu-item>
+    <a [routerLink]="['/admin-interface/korpus']"
+    ><button mat-menu-item>
       <mat-icon>library_books</mat-icon>
       <span>Korpus</span>
     </button>
+    </a>
     <button mat-menu-item>
       <mat-icon>settings</mat-icon>
       <span>Einstellungen</span>
