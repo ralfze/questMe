@@ -2,6 +2,8 @@
 [0] Config.pm:314> INFO - Logfile is 'Doku.blg'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 [87] biber-MSWIN32:340> INFO - === 
 [120] Biber.pm:415> INFO - Reading 'Doku.bcf'
 [203] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
@@ -47,3 +49,33 @@
 [509] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
 [513] bbl.pm:757> INFO - Output to Doku.bbl
 >>>>>>> 0996d7a4 (Change Technologien entries, adjust the table #38)
+=======
+[90] biber-MSWIN32:340> INFO - === 
+[122] Biber.pm:415> INFO - Reading 'Doku.bcf'
+[214] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
+[226] Biber.pm:4340> INFO - Processing section 0
+[236] Biber.pm:4531> INFO - Looking for bibtex format file 'literatur/literatur.bib' for section 0
+[275] bibtex.pm:1689> INFO - LaTeX decoding ...
+[287] bibtex.pm:1494> INFO - Found BibTeX data source 'literatur/literatur.bib'
+[325] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[325] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[325] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[326] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[336] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
+[339] bbl.pm:757> INFO - Output to Doku.bbl
+>>>>>>> 728cc50e (add UML Komponentendiagramm and old in appendix)
+=======
+[94] biber-MSWIN32:340> INFO - === 
+[125] Biber.pm:415> INFO - Reading 'Doku.bcf'
+[207] Biber.pm:952> INFO - Found 13 citekeys in bib section 0
+[219] Biber.pm:4340> INFO - Processing section 0
+[229] Biber.pm:4531> INFO - Looking for bibtex format file 'literatur/literatur.bib' for section 0
+[266] bibtex.pm:1689> INFO - LaTeX decoding ...
+[277] bibtex.pm:1494> INFO - Found BibTeX data source 'literatur/literatur.bib'
+[313] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[313] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[314] Biber.pm:4168> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'de-DE'
+[314] Biber.pm:4174> INFO - No sort tailoring available for locale 'de-DE'
+[323] bbl.pm:654> INFO - Writing 'Doku.bbl' with encoding 'UTF-8'
+[325] bbl.pm:757> INFO - Output to Doku.bbl
+>>>>>>> 13650a9d (add explanation to the diagrams)

@@ -2,47 +2,65 @@
 \subsection{Technologie Diagramme}
  Hier werden die Zusammenhänge der Technologien in Form von verschiedenen Diagrammen vorgestellt.
 
-\subsubsection{Komponentendiagramme}
+\subsubsection{UML Komponentendiagramme}
+Hier werden die UML Verteilungsdiagramme von der Server- und Client-Seite dargestellt.
+
+\subsubsection{UML Komponentendiagramm: Client}
+Hier wird fer UML-Komponentendiagramm Client dargestellt.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.5\textwidth]{bilder/technologien/KomponentendiagramClient.png}
-\caption{Komponentendiagramm Client}
-\label{fig:Komponentendiagramm_Client}
-\end{figure}
-Hier wird die Client Seite bildlich dargestellt. Man sieht, dass der Webbrowseer durch die 
-Socket.io Client deployed wird und dadurch wird dann eine Beziehung zur Serverseite aufgebaut. (Siehe Abbildung \ref{fig:Komponentendiagramm_Client})
+    \centering
+    \includegraphics[width=1.0\textwidth]{bilder/technologien/UML_Komponentendiagramm_Client.png}
+    \caption{UML Komponentendiagramm Client}
+    \label{fig:UML Komponentendiagramm Client}
+    \end{figure}
+\noindent In der Abbildung sieht man, dass der Webbrowser und das Fronted auf der Client Seite.
+Das Fronted wird mit Angular entwickelt. Das besitzt aber selber auch einen node.js Server.
+Per Socket.io Client wird dann eine Verbindung zwischen den Backend produziert. Per HTTP/S
+wird eine Vebindung zwischen Webbrowseerund dem Fronted entwickelt. Das Frontend component 
+sendet eine Frage und erhält anschließend eine Antwort vom Backend.   
+
+\newpage
+
+\subsubsection{UML Komponentendiagramm: Server}
+Hier wird der UML-Komponentendiagramm Server dargestellt.
 
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{bilder/technologien/KomponentendiagramServer.png}
-\caption{Komponentendiagramm Server}
-\label{fig:Komponentendiagramm_Server}
-\end{figure}
+    \centering
+    \includegraphics[width=1.0\textwidth]{bilder/technologien/UML_Komponentendiagramm_Server.png}
+    \caption{UML Komponentendiagramm Server}
+    \label{fig:UML Komponentendiagramm Server}
+    \end{figure}
+\noindent In der Server-Seite befindet sich das Backend, die Datenbank und das KeyCloak.
+Im Backend befindet sich das Socket.io Server, NLP und ein node.js Server.
+Das Backend erhält die Frage vom Fronted und schickt daraufhin eine Antwort mit dem Socket.io Server.
+Von der Datenbank wird der Korpus, and das Backend, vermittelt. KeyCloak dient zur Authentifizierung und
+hat ebenfalls einen node.js Server. 
 
-\noindent In der Serverseite wird dann durch den Socket.io Server die Verbindug zum Clienten aufrecht gehalten.
-Im Server befindet sich Angular, node.js, KeyCloak und die Datenbank mongoDB und haben jeweils einen eigenen Dockercontainer. 
-Die Erkennung von der eingegeben Sprache möchten wir zunächst mit RegEx ermöglichen, 
-um das Minimal Viable Product hinzubekommen. Optional dann mit NLP (Natural Language Processing) erweitern.
+\newpage
 
-\begin{figure}[!hbt]
-\centering
-\includegraphics[width=1.0\textwidth]{bilder/technologien/Komponentendiagram v1.2.png}
-\caption{Komponentendiagramm v1.2}
-\label{fig:Komponentendiagramm_v1.2}
-\end{figure}
-\FloatBarrier % prevent pictures from appearing under a different section
+\subsubsection{UML Komponentendiagramm}
+Hier sieht man die ganze Darstellung von dem Komponentendiagramm mit Server- und Client-Seite.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{bilder/technologien/UML_Komponentendiagramm.png}
+    \caption{UML Komponentendiagramm}
+    \label{fig:UML Komponentendiagramm}
+    \end{figure}
+\noindent In dieser Abbildung sieht man die Client- und Server-Seite. 
+Als Austausch zwischen Fronted und Backend haben wir eine Frage und eine Anwort dargestellt.
+Des weiteren besitzt das Froneted, das Backend und KeyCloak einen node.js Server.
 
-\subsubsection{Verteilungsdiagramm}
+\newpage
+
+\subsubsection{UML Verteilungsdiagramm}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{bilder/technologien/Verteilunsgdiagramm.png}
-\caption{Verteilungsdiagramm}
-\label{fig:Verteilungsdiagramm}
+\caption{UML Verteilungsdiagramm}
+\label{fig:UML Verteilungsdiagramm}
 \end{figure}
-In unserem Verteilungsdiagramm kann man sehen, 
+\noindent In unserem Verteilungsdiagramm kann man sehen, 
 wie die verschiedenen Technologien verschachtelt und wie sie miteinander verbunden sind.
 Außerdem kann man sehen, was wir in unsere einzelnen Dockercontainer hineinlegen.
-\newline
-(Siehe Abbildung \ref{fig:Verteilungsdiagramm})

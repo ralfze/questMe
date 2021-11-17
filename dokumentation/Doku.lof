@@ -1,12 +1,13 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {ngerman}{}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Komponentendiagramm Client}}{31}{figure.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces UML Komponentendiagramm Client}}{31}{figure.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Komponentendiagramm Server}}{32}{figure.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces UML Komponentendiagramm Server}}{32}{figure.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Komponentendiagramm v1.2}}{33}{figure.3}%
+\contentsline {figure}{\numberline {3}{\ignorespaces UML Komponentendiagramm}}{33}{figure.3}%
 \defcounter {refsection}{0}\relax 
+<<<<<<< HEAD
 <<<<<<< HEAD
 \contentsline {figure}{\numberline {4}{\ignorespaces Komponentendiagramm v1.1}}{33}{figure.4}%
 \defcounter {refsection}{0}\relax 
@@ -16,6 +17,9 @@
 =======
 \contentsline {figure}{\numberline {4}{\ignorespaces Verteilungsdiagramm}}{34}{figure.4}%
 >>>>>>> 48f68518 (Add "add Appendix" to documentation #40)
+=======
+\contentsline {figure}{\numberline {4}{\ignorespaces UML Verteilungsdiagramm}}{34}{figure.4}%
+>>>>>>> 13650a9d (add explanation to the diagrams)
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {german}{}\relax 
@@ -121,8 +125,14 @@
 \babel@toc {german}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm v1.0}}{42}{figure.5}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Komponentendiagramm Client}}{42}{figure.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces Komponentendiagramm v1.1}}{43}{figure.6}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Komponentendiagramm Server}}{43}{figure.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7}{\ignorespaces Komponentendiagramm v1.0}}{44}{figure.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8}{\ignorespaces Komponentendiagramm v1.1}}{44}{figure.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Komponentendiagramm v1.2}}{45}{figure.9}%
 \defcounter {refsection}{0}\relax 
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
