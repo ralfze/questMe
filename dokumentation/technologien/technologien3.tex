@@ -12,9 +12,9 @@ Hier wird fer UML-Komponentendiagramm Client dargestellt.
     \centering
     \includegraphics[width=1.0\textwidth]{bilder/technologien/UML_Komponentendiagramm_Client.png}
     \caption{UML Komponentendiagramm Client}
-    \label{fig:UML Komponentendiagramm Client}
+    \label{fig:UML_Komponentendiagramm_Client}
     \end{figure}
-\noindent In der Abbildung sieht man, dass der Webbrowser und das Fronted auf der Client Seite.
+\noindent In der Abbildung \ref{fig:UML_Komponentendiagramm_Client} sieht man, dass der Webbrowser und das Fronted auf der Client Seite.
 Das Fronted wird mit Angular entwickelt. Das besitzt aber selber auch einen node.js Server.
 Per Socket.io Client wird dann eine Verbindung zwischen den Backend produziert. Per HTTP/S
 wird eine Vebindung zwischen Webbrowseerund dem Fronted entwickelt. Das Frontend component 
@@ -29,11 +29,11 @@ Hier wird der UML-Komponentendiagramm Server dargestellt.
     \centering
     \includegraphics[width=1.0\textwidth]{bilder/technologien/UML_Komponentendiagramm_Server.png}
     \caption{UML Komponentendiagramm Server}
-    \label{fig:UML Komponentendiagramm Server}
+    \label{fig:UML_Komponentendiagramm_Server}
     \end{figure}
 \noindent In der Server-Seite befindet sich das Backend, die Datenbank und das KeyCloak.
-Im Backend befindet sich das Socket.io Server, NLP und ein node.js Server.
-Das Backend erhält die Frage vom Fronted und schickt daraufhin eine Antwort mit dem Socket.io Server.
+Im Backend befindet sich der Socket.io Server, NLP und ein node.js Server.
+Das Backend erhält die Frage vom Fronted und schickt daraufhin eine Antwort mit Hilfe des Socket.io Servers zurück.
 Von der Datenbank wird der Korpus, and das Backend, vermittelt. KeyCloak dient zur Authentifizierung und
 hat ebenfalls einen node.js Server. 
 
@@ -45,21 +45,21 @@ Hier sieht man die ganze Darstellung von dem Komponentendiagramm mit Server- und
     \centering
     \includegraphics[width=1.0\textwidth]{bilder/technologien/UML_Komponentendiagramm.png}
     \caption{UML Komponentendiagramm}
-    \label{fig:UML Komponentendiagramm}
+    \label{fig:UML_Komponentendiagramm}
     \end{figure}
-\noindent In dieser Abbildung sieht man die Client- und Server-Seite. 
+\noindent In dieser Abbildung \ref{fig:UML_Komponentendiagramm} sieht man die Client- und Server-Seite. 
 Als Austausch zwischen Fronted und Backend haben wir eine Frage und eine Anwort dargestellt.
-Des weiteren besitzt das Froneted, das Backend und KeyCloak einen node.js Server.
+Des weiteren besitzt das Frontend, das Backend und KeyCloak einen node.js Server.
 
 \newpage
 
 \subsubsection{UML Verteilungsdiagramm}
-
+Hier sieht man die ganze Darstellung unseres Verteilungsdiagramms
 \begin{figure}[H]
 \centering
 \includegraphics[width=1.0\textwidth]{bilder/technologien/Verteilunsgdiagramm.png}
 \caption{UML Verteilungsdiagramm}
-\label{fig:UML Verteilungsdiagramm}
+\label{fig:UML_Verteilungsdiagramm}
 \end{figure}
 \noindent In unserem Verteilungsdiagramm kann man sehen, 
 wie die verschiedenen Technologien verschachtelt und wie sie miteinander verbunden sind.
