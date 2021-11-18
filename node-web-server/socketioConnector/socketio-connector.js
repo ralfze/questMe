@@ -123,19 +123,6 @@ class SocketioConnector extends Connector {
     });
   }
 
-  createAnswer(srcActivity) {
-    return this.controller.createAnswer(srcActivity);
-  }
-
-  say(srcActivity, text) {
-    if (typeof text === "string") {
-      const answer = this.createAnswer(srcActivity.activity || srcActivity);
-      answer.text = text || srcActivity.text;
-      this.controller.say(answer);
-    } else {
-      this.controller.say(srcActivity);
-    }
-  }
 }
 
 module.exports = SocketioConnector;

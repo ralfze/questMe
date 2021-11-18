@@ -1,48 +1,7 @@
 const { dockStart } = require("@nlpjs/basic");
 
 (async () => {
-  const dock = await dockStart(); /*
-  const database = dock.get('database');
-  await database.connect();
-  // Testing Database
-  /*
-  const collection = database.getCollection('items');
-  const items = [];
-  for (let i = 0; i < 100; i += 1) {
-    const item = { num: i, mod: i % 10 };
-    items.push(item);
-  }
-  await collection.insertMany(items);
-  const actual = await collection.find({ mod: 3 });
-  await database.disconnect();
-  console.log(actual);
-*/
-  //,"ExpressApiServer","DirectlineConnector"
-  // Socket IO Part
-  // dock.containers displays all containers
-  //const apiserver = dock.get("api-server");
-  //const server = http.createServer(app);
-  /*
-  const express = require("express");
-  const app = express();
-  const http = require("http");
-  const server = http.createServer(app);
-  const { Server } = require("socket.io");
-  const io = new Server(server);
-  app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-  });
-
-  io.on("connection", (socket) => {
-    socket.on("chat message", (msg) => {
-      io.emit("chat message", msg);
-    });
-  });
-
-  server.listen(3001, () => {
-    console.log("listening on *:3001");
-  });
-*/
+  const dock = await dockStart();
 
   //////////////////////////////////////////////
   // Integrate own Modules
@@ -69,15 +28,69 @@ const { dockStart } = require("@nlpjs/basic");
   //const socket = dock.get("socketio");
   //socket.start();
   //console.log(dock.containers["default"]);
+  // Load the Corpus
 
+  //Database mongoDB
+  const MongoClient = require("mongodb").MongoClient;
+  const fs = require("fs");
+  const dbName = "corpus";
+  const client = new MongoClient("mongodb://localhost:2717", {
+    useUnifiedTopology: true,
+  });
+
+  client.connect(function (err) {
+    //assert.equal(null, err);
+    console.log("Connected successfully to server");
+    const db = client.db(dbName);
+
+    getDocuments(db, function (docs) {
+      console.log("Closing connection.");
+      client.close();
+      // Write to file
+      try {
+        //fs.writeFileSync("out_file.json", JSON.stringify(docs[0]));
+        console.log("Done writing to file.");
+        //console.log(fs.readFileSync("out_file.json", "utf8"));
+      } catch (err) {
+        console.log("Error writing to file", err);
+      }
+    });
+  });
+
+  const getDocuments = function (db, callback) {
+    const query = {}; // this is your query criteria
+    db.collection("dataC")
+      .find(query)
+      .toArray(function (err, result) {
+        if (err) throw err;
+        callback(result);
+      });
+  };
+  // let the Chatbot answer
+
+  //END Database mongoDB
+  /*
   // NLP Part
-  const nlp = dock.get('nlp');
-  await nlp.train();
+  const nlp = dock.get("nlp");
+  // Load the Corpus
 
+  // Add the created corpus
+  console.log("Load Corpus");
+  //const data = fs.readFileSync("out_file.json", "utf8");
+  //console.log(data);
+  console.log("Add Corpus");
+  try {
+    await nlp.addCorpus("out_file.json");
+    // let the Chatbot answer
+    await nlp.train();
+  } catch (e) {
+    console.log(e);
+  }
+*/
   // SOCKET.IO ///////////////////////////////////////
   const { SocketioConnector } = require("./socketioConnector/index");
   // gets the 'default' container (has all containers nlp,core,...)
-  let container = dock.getContainer();
+  container = dock.getContainer();
   container.use(SocketioConnector, "socketio", SocketioConnector.isSingleton);
   // start the module
   container.start();

@@ -1,9 +1,7 @@
 {
     "settings": {
       "nlp": {
-        "corpora": [
-          "./corpus-de.json"
-        ]
+        "corpora": []
       },
       "console": {
         "debug": true
