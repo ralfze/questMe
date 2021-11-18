@@ -10,6 +10,7 @@ import { EinstellungenComponent } from './admin-interface/einstellungen/einstell
 const routes: Routes = [{path: 'admin-interface/allgemein', component: AllgemeinComponent},
 {path: 'admin-interface/infopage', component: InfopageComponent},
 {path: 'admin-interface', component: AdminInterfaceComponent},
+{path: '', redirectTo:'/admin-interface', pathMatch: 'full'},
 {path: 'admin-interface/korpus', component: KorpusComponent},
 {path: 'admin-interface/einstellungen', component: EinstellungenComponent}];
 
