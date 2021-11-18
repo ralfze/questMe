@@ -6,11 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
-import { AllgemeinInterfaceComponent } from './admin-interface/allgemein-interface/allgemein-interface.component';
+import { AllgemeinComponent} from './admin-interface/allgemein/allgemein.component';
 import { InfopageComponent } from './admin-interface/infopage/infopage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { KorpusComponent } from './admin-interface/korpus/korpus.component';
+import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
 
 
 
@@ -18,10 +19,11 @@ import { KorpusComponent } from './admin-interface/korpus/korpus.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AllgemeinInterfaceComponent,
+    AllgemeinComponent,
     InfopageComponent,
     AdminInterfaceComponent,
-    KorpusComponent
+    KorpusComponent,
+    EinstellungenComponent
   ],
   imports: [
     BrowserModule,
