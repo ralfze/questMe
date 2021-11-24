@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-allgemein',
   templateUrl: './allgemein.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllgemeinComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
 }
+

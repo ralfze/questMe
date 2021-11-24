@@ -6,7 +6,12 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
+
+
+
 
 h1,
 h2,
@@ -16,6 +21,8 @@ h5,
 h6 {
   margin: 8px 0;
 }
+
+
 
 p {
   margin: 0;
@@ -34,7 +41,6 @@ a {
 a:hover {
   color: pink;
 }
-
 
 
 .toolbar {
@@ -137,16 +143,44 @@ a:hover {
 .card.card.highlight-card span {
   margin-left: 0.5em;
 }
+//image flicker
+.p-4 {
+  padding: 1rem !important;
+}
+.mb-4, .my-4 {
+  margin-bottom: 1rem !important;
+}
+.has-background-grey-lighter {
+  background-color: #dbdbdb !important;
+}
+.flicking-viewport {
+  transition: height .5s;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow-x: hidden;
+  background-color: lavender;
 
-.custom-slider-main{
-  display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
 }
 
-.info-box{
-  width: 50px;
-  height:50px
+
+
+.button{
+  background-color: transparent;
+  padding: calc(.5em - 1px) 1em;
+  white-space: nowrap;
+  border-width: 1px;
+  justify-content: center;
+  text-align: center;
+}
+.button img:hover{
+  border-color: royalblue;
+  border-style: double;
+}
+
+.mr-2, .mx-2 {
+  margin-right: .10rem !important;
 }
 
 /* Responsive Styles */
@@ -156,6 +190,8 @@ a:hover {
   .card.highlight-card span {
     margin-left: 72px;
   }
+
+
 }
 
 @media screen and (max-width: 575px) {

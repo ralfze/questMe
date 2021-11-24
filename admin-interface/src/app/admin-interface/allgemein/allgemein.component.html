@@ -53,6 +53,19 @@
     />
     <span>Allgemein</span>
   </div>
+ <div class="flicking-viewport has background-grey-lighter p-4 mb-4" style="touch-action: pan-y; user-select: none;">
 
+  <ngx-flicking [options]="{ moveType: 'freeScroll', bound: true }">
+    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture.png" alt="Bot picture 01"></span>
+    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02"></span>
+    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03"></span>
+    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04">.</span>
+    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/image 10.png" alt="Bot picture default"></span>
+    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/image 16.png" alt=""></span>
+  </ngx-flicking>
+
+
+ </div>
 
 </div>
+

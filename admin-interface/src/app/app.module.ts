@@ -13,9 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { KorpusComponent } from './admin-interface/korpus/korpus.component';
 import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
-
-
-
+import { NgxFlickingModule } from '@egjs/ngx-flicking';
 
 @NgModule({
   declarations: [
@@ -32,7 +30,7 @@ import { EinstellungenComponent } from './admin-interface/einstellungen/einstell
     MatMenuModule,
     MatIconModule,
     AppRoutingModule,
-    AppRoutingModule
+    NgxFlickingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
