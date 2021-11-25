@@ -1,2 +1,99 @@
-<p>korpus works!</p>
+<!--
+  Korpus-Seite
+ -->
 
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="questMe icon-button with a menu"
+  >
+    <!-- Hamburger menu mit Verlinkung-->
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a [routerLink]="['/admin-interface/allgemein']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Allgemein</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface/korpus']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Korpus</span>
+      </button>
+    </a>
+    <a
+      [routerLink]="['/admin-interface/einstellungen']"
+      routerLinkActive="active"
+    >
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Einstellungen</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface']">
+      <button mat-menu-item>
+        <mat-icon>power_settings_new</mat-icon>
+        <span>LogOut</span>
+      </button>
+    </a>
+  </mat-menu>
+  <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active">
+    <span>questMe</span>
+  </a>
+</div>
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+    <img
+      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
+      alt="ChatBot"
+    />
+    <span>Korpus</span>
+  </div>
+
+  <!-- List -->
+  <h1>{{ title }}</h1>
+  <table>
+    <td>
+      <!-- Question -->
+      <input class="input" type="text" placeholder="Enter Question" #task />
+
+      <button class="add" (click)="addTask(task.value)"><mat-icon>add_circle_outline</mat-icon></button>
+    </td>
+    <td>
+      <!-- Answer -->
+      <input class="input" type="text" placeholder="Enter Answer" #task2 />
+
+      <button class="add" (click)="addTask2(task2.value)"><mat-icon>add_circle_outline</mat-icon></button>
+    </td>
+  </table>
+
+  <!-- Flicking for the list -->
+<div class="scroll">
+
+
+  <div class="output-div1">
+          <ul *ngFor="let item of list">
+            <li class="output-list">
+              {{ item.name }}
+              <button class="remove" (click)="removeTask(item.id)"><mat-icon>delete_outline</mat-icon></button>
+            </li>
+          </ul>
+        </div>
+<hr class="rounded">
+
+        <div class="output-div2">
+          <ul *ngFor="let item2 of list2">
+            <li class="output-list">
+              {{ item2.name }}
+              <button class="remove" (click)="removeTask2(item2.id)"><mat-icon>delete_outline</mat-icon></button>
+            </li>
+          </ul>
+         </div>
+</div>
+</div>

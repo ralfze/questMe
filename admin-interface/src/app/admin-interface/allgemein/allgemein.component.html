@@ -1,5 +1,5 @@
 <!--
-  Infoseite
+  Allgemein-Seite
  -->
 
 <!-- Toolbar -->
@@ -9,6 +9,7 @@
     [matMenuTriggerFor]="menu"
     aria-label="questMe icon-button with a menu"
   >
+  <!-- Hamburger menu mit Verlinkung-->
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -19,17 +20,19 @@
       </button>
     </a>
     <a [routerLink]="['/admin-interface/korpus']" routerLinkActive="active"
-    ><button mat-menu-item>
-      <mat-icon>library_books</mat-icon>
-      <span>Korpus</span>
-    </button>
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Korpus</span>
+      </button>
     </a>
-    <a [routerLink]="['/admin-interface/einstellungen']" routerLinkActive="active"
+    <a
+      [routerLink]="['/admin-interface/einstellungen']"
+      routerLinkActive="active"
     >
-    <button mat-menu-item>
-      <mat-icon>settings</mat-icon>
-      <span>Einstellungen</span>
-    </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Einstellungen</span>
+      </button>
     </a>
     <a [routerLink]="['/admin-interface']">
       <button mat-menu-item>
@@ -43,7 +46,6 @@
   </a>
 </div>
 
-
 <div class="content" role="main">
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
@@ -53,19 +55,41 @@
     />
     <span>Allgemein</span>
   </div>
- <div class="flicking-viewport has background-grey-lighter p-4 mb-4" style="touch-action: pan-y; user-select: none;">
 
-  <ngx-flicking [options]="{ moveType: 'freeScroll', bound: true }">
-    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture.png" alt="Bot picture 01"></span>
-    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02"></span>
-    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03"></span>
-    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04">.</span>
-    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/image 10.png" alt="Bot picture default"></span>
-    <span flicking-panel class="button mr-2 is-white"><img src="assets/images/image 16.png" alt=""></span>
-  </ngx-flicking>
+  <!-- Image Slider with <Flicking>-->
+  <div
+    class="flicking-viewport has background-grey-lighter p-4 mb-4"
+    style="touch-action: pan-y; user-select: none"
+  >
+    <ngx-flicking [options]="{ moveType: 'freeScroll', bound: true }">
+      <span flicking-panel class="button mr-2 is-white"
+        ><img src="assets/images/Bot Picture.png" alt="Bot picture 01"
+      /></span>
+      <span flicking-panel class="button mr-2 is-white"
+        ><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02"
+      /></span>
+      <span flicking-panel class="button mr-2 is-white"
+        ><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03"
+      /></span>
+      <span flicking-panel class="button mr-2 is-white"
+        ><img
+          src="assets/images/Bot Picture(3).png"
+          alt="Bot picture 04"
+        /></span
+      >
+      <span flicking-panel class="button mr-2 is-white"
+        ><img src="assets/images/image 10.png" alt="Bot picture default"
+      /></span>
+      <span flicking-panel class="button mr-2 is-white"
+        ><img src="assets/images/image 16.png" alt="Bot picture fun"
+      /></span>
 
+    </ngx-flicking>
+  </div>
 
- </div>
-
+  <!-- Input Field for Bot name -->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Bot name</mat-label>
+    <input matInput placeholder="default name" value="questMe"/>
+  </mat-form-field>
 </div>
-

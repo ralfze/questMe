@@ -12,7 +12,7 @@
 
 
 
-
+//toolbar and highlight card
 h1,
 h2,
 h3,
@@ -143,23 +143,27 @@ a:hover {
 .card.card.highlight-card span {
   margin-left: 0.5em;
 }
+
+
 //image flicker
 .p-4 {
   padding: 1rem !important;
 }
 .mb-4, .my-4 {
   margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
 }
 .has-background-grey-lighter {
   background-color: #dbdbdb !important;
 }
 .flicking-viewport {
+
   transition: height .5s;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   position: relative;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   background-color: lavender;
 
 }
@@ -182,6 +186,20 @@ a:hover {
 .mr-2, .mx-2 {
   margin-right: .10rem !important;
 }
+
+//Input Field
+.example-full-width {
+  width: 90%;
+}
+
+.mat-form-field{
+  margin-top: 2em;
+}
+
+.mat-form-field:hover{
+  background-color: lavender;
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {

@@ -1,1 +1,63 @@
-<p>einstellungen works!</p>
+<!--
+  Einstellungen-Seite
+ -->
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="questMe icon-button with a menu"
+  >
+  <!-- Hamburger menu mit Verlinkung-->
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <a [routerLink]="['/admin-interface/allgemein']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Allgemein</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface/korpus']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Korpus</span>
+      </button>
+    </a>
+    <a
+      [routerLink]="['/admin-interface/einstellungen']"
+      routerLinkActive="active"
+    >
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Einstellungen</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface']">
+      <button mat-menu-item>
+        <mat-icon>power_settings_new</mat-icon>
+        <span>LogOut</span>
+      </button>
+    </a>
+  </mat-menu>
+  <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active">
+    <span>questMe</span>
+  </a>
+</div>
+
+<div class="content" role="main">
+  <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+    <img
+      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
+      alt="ChatBot"
+    />
+    <span>Einstellungen</span>
+  </div>
+
+
+</div>
+
+
+

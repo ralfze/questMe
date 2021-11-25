@@ -14,6 +14,8 @@ import { AdminInterfaceComponent } from './admin-interface/admin-interface.compo
 import { KorpusComponent } from './admin-interface/korpus/korpus.component';
 import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NgxFlickingModule } from '@egjs/ngx-flicking';
     MatMenuModule,
     MatIconModule,
     AppRoutingModule,
-    NgxFlickingModule
+    NgxFlickingModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
