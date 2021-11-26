@@ -144,6 +144,12 @@ a:hover {
   margin-left: 0.5em;
 }
 
+/*
+  *
+  *CSS Code for the Allgemein-site
+  *
+  *
+*/
 
 //image flicker
 .p-4 {
@@ -194,10 +200,15 @@ a:hover {
 
 .mat-form-field{
   margin-top: 2em;
+  border-radius: 0.5em;
+  background-color: lavender;
+  border-color: royalblue;
+  border-style: groove;
+  font-weight: 500;
 }
 
 .mat-form-field:hover{
-  background-color: lavender;
+  background-color: pink;
 }
 
 

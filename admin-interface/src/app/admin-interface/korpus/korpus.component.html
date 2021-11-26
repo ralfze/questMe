@@ -56,44 +56,72 @@
     <span>Korpus</span>
   </div>
 
-  <!-- List -->
-  <h1>{{ title }}</h1>
-  <table>
-    <td>
-      <!-- Question -->
-      <input class="input" type="text" placeholder="Enter Question" #task />
+  <!--Korpus Domains
+      "basis" is per default selected
+      with 2-way binding-->
+  <div class="card card-korpusdaten">
+    <mat-form-field class="korpus-daten" appearance="fill">
+      <mat-label>Korpusdaten Thema</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="basis">Basis</mat-option>
+        <mat-option value="hochschule">Hochschule</mat-option>
+        <mat-option value="interna">Interna</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-      <button class="add" (click)="addTask(task.value)"><mat-icon>add_circle_outline</mat-icon></button>
-    </td>
-    <td>
-      <!-- Answer -->
-      <input class="input" type="text" placeholder="Enter Answer" #task2 />
+    <p class="selected-p">Du hast gewählt: {{ selected }}</p>
+  </div>
 
-      <button class="add" (click)="addTask2(task2.value)"><mat-icon>add_circle_outline</mat-icon></button>
-    </td>
-  </table>
+  <!--Korpus List -->
 
-  <!-- Flicking for the list -->
-<div class="scroll">
+  <div class="card card-title"><h1>{{ title }}</h1></div>
 
+  <!-- Add field with table -->
+  <div class="card card-add">
+    <table>
+      <td>
+        <!-- Question -->
+        <input class="input" type="text" placeholder="Schreibe Frage" #task />
 
-  <div class="output-div1">
-          <ul *ngFor="let item of list">
-            <li class="output-list">
-              {{ item.name }}
-              <button class="remove" (click)="removeTask(item.id)"><mat-icon>delete_outline</mat-icon></button>
-            </li>
-          </ul>
-        </div>
-<hr class="rounded">
+        <button class="add" (click)="addTask(task.value)">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </td>
+      <td>
+        <!-- Answer -->
+        <input class="input" type="text" placeholder="Schreibe Antwort" #task2 />
 
-        <div class="output-div2">
-          <ul *ngFor="let item2 of list2">
-            <li class="output-list">
-              {{ item2.name }}
-              <button class="remove" (click)="removeTask2(item2.id)"><mat-icon>delete_outline</mat-icon></button>
-            </li>
-          </ul>
-         </div>
-</div>
+        <button class="add" (click)="addTask2(task2.value)">
+          <mat-icon>add_circle_outline</mat-icon>
+        </button>
+      </td>
+    </table>
+  </div>
+  <!-- List with y-scroll -->
+  <div class="scroll">
+    <div class="output-div1">
+      <ul *ngFor="let item of list">
+        <li class="output-list">
+          {{ item.name }}
+          <button class="remove" (click)="removeTask(item.id)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!--added a divider for the lists-->
+    <hr class="rounded" />
+
+    <div class="output-div2">
+      <ul *ngFor="let item2 of list2">
+        <li class="output-list">
+          {{ item2.name }}
+          <button class="remove" (click)="removeTask2(item2.id)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

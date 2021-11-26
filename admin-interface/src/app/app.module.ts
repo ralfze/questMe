@@ -16,7 +16,8 @@ import { EinstellungenComponent } from './admin-interface/einstellungen/einstell
 import { NgxFlickingModule } from '@egjs/ngx-flicking';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     NgxFlickingModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

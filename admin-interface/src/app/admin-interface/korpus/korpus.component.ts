@@ -12,9 +12,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./korpus.component.scss']
 })
 export class KorpusComponent implements OnInit {
-  title = 'Korpus-List';
+  title = 'Korpus-Liste';
 
-
+  selected = 'basis';
 
 
   list:any[]=[];

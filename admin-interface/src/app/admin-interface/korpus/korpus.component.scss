@@ -134,7 +134,69 @@ a:hover {
   margin-left: 0.5em;
 }
 
-//CSS Code for the Korpus-List
+
+/*
+  *
+  *CSS Code for the Korpusdaten Form-field
+  *
+  *
+*/
+
+.korpus-daten{
+  background-color: lavender;
+  border-radius: 0.5em;
+  font-weight: 500;
+}
+
+//the div card
+.card-korpusdaten{
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: 92%;
+  min-width: 30%;
+  position: relative;
+  margin-top: 1em;
+
+}
+
+//the selected paragraph
+.selected-p{
+  margin-left: 2em;
+
+}
+
+/*
+  *
+  *CSS Code for the Korpus-List
+  *
+  *
+*/
+
+//card for the title
+.card-title{
+  background-color: lavender;
+  color: royalblue;
+  font-weight: 600;
+  border: none;
+  width: 92%;
+  min-width: 30%;
+  position: relative;
+  margin: 0;
+}
+
+//card for the add field and for the add button
+.card-add {
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: auto;
+  min-width: 30%;
+  position: relative;
+  margin: 0;
+}
 
 //horizontal line
 /* Rounded border */
@@ -192,6 +254,7 @@ li {
   width: 100%;
   display: flex;
   margin-bottom: 1em;
+
 }
 
 
@@ -225,12 +288,12 @@ ul {
 //div-container with y-scroll
 div.scroll {
   border-style: groove;
-
+  border-radius: 0.5em;
   margin: 0px, 0px;
-  margin-top: 1em;
+  //margin-top: 1em;
   padding: 4px;
   //background-color: #08c708;
-  width: 100%;
+  width: 97%;
   height: 150px;
   overflow-x: hidden;
   overflow-y: auto;
