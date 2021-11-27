@@ -199,14 +199,14 @@ a:hover {
 }
 
 //horizontal line
-/* Rounded border */
+/* Rounded border
 hr.rounded {
   border-color: royalblue;
   border-radius: 5px;
   height: 100%;
   margin-left: 2em;
   margin-top: 0;
-}
+}*/
 
 //table
 //input
@@ -230,15 +230,16 @@ input {
 
 //div output for Question
 .output-div1 {
-  width: 170px;
-  flex-direction: row;
+  width: 50%;
+
+
 
 }
 
 //div output for Answer
 .output-div2 {
-  width: 170px;
-  flex-direction: row;
+  width: 50%;
+
   margin-left: 1.5em;
   margin-right: 0;
 }

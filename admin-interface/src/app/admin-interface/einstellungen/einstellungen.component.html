@@ -9,7 +9,7 @@
     [matMenuTriggerFor]="menu"
     aria-label="questMe icon-button with a menu"
   >
-  <!-- Hamburger menu mit Verlinkung-->
+    <!-- Hamburger menu mit Verlinkung-->
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -56,8 +56,134 @@
     <span>Einstellungen</span>
   </div>
 
+  <!-- card for the group and the Korpusdaten -->
+  <div class="card card-group">
+    <span>Gruppe</span>
+    <span class="title-korpusdaten">Korpusdaten</span>
+  </div>
 
+   <!-- Professor -->
+  <div class="card card-group-professor">
+    <span class="professor">Professoren</span>
+
+    <mat-form-field class="example-chip-list" appearance="fill">
+      <mat-label>Korpusdaten</mat-label>
+      <mat-chip-list #chipList aria-label="Korpusdaten">
+        <mat-chip
+          *ngFor="let user of users"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(user)"
+        >
+          {{ user }}
+          <button matChipRemove *ngIf="removable">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="Neue Korpusdaten"
+          #userInput
+          [formControl]="userCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)"
+        />
+      </mat-chip-list>
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="selected($event)"
+      >
+        <mat-option
+          *ngFor="let user of filteredUser | async"
+          [value]="user"
+        >
+          {{ user }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+<!-- Student -->
+  <div class="card card-group-professor">
+    <span class="student">Studenten</span>
+
+    <mat-form-field class="example-chip-list" appearance="fill">
+      <mat-label>Korpusdaten</mat-label>
+      <mat-chip-list #chipList aria-label="Korpusdaten">
+        <mat-chip
+          *ngFor="let user of users"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(user)"
+        >
+          {{ user }}
+          <button matChipRemove *ngIf="removable">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="Neue Korpusdaten"
+          #userInput
+          [formControl]="userCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)"
+        />
+      </mat-chip-list>
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="selected($event)"
+      >
+        <mat-option
+          *ngFor="let user of filteredUser | async"
+          [value]="user"
+        >
+          {{ user }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+  <!-- Nicht registrierte Benutzer -->
+  <div class="card card-group-professor">
+    <span class="nicht-registriert">Nicht registriert</span>
+
+    <mat-form-field class="example-chip-list" appearance="fill">
+      <mat-label>Korpusdaten</mat-label>
+      <mat-chip-list #chipList aria-label="Korpusdaten">
+        <mat-chip
+          *ngFor="let user of users"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(user)"
+        >
+          {{ user }}
+          <button matChipRemove *ngIf="removable">
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="Neue Korpusdaten"
+          #userInput
+          [formControl]="userCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)"
+        />
+      </mat-chip-list>
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="selected($event)"
+      >
+        <mat-option
+          *ngFor="let user of filteredUser | async"
+          [value]="user"
+        >
+          {{ user }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
 </div>
-
-
-

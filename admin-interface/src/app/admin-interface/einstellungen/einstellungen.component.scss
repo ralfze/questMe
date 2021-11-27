@@ -144,6 +144,108 @@ a:hover {
   margin-left: 0.5em;
 }
 
+/*
+  *
+  *CSS Code for the Korpusdaten Form-field
+  *
+  *
+  */
+
+
+
+  .card-group{
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: 92%;
+  min-width: 30%;
+  position: relative;
+  margin-top: 1em;
+  }
+
+  .title-korpusdaten{
+    margin-left: 50vw;
+  }
+
+  //used professor css code for all divs
+
+  //span
+  .professor{
+    color: white;
+    margin-right: 3em;
+  }
+
+  .student{
+    color: white;
+    margin-right: 3.8em;
+  }
+  .nicht-registriert{
+    color: white;
+    margin-right: 4em;
+  }
+
+  .card-group-professor{
+    background-color: royalblue;
+
+    font-weight: 600;
+    border: none;
+    width: 92%;
+    height: auto;
+    min-width: 30%;
+    position: relative;
+    margin-top: 1em;
+  }
+
+  .example-chip-list{
+
+    border-radius: 0.5em;
+
+  }
+
+
+
+  .korpusdaten-professor{
+  width: 150%;
+  height: 50vw;
+
+  margin-top: 30vw;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .mat-form-field{
+    background-color: lavender;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .mat-form-field-flex{
+
+  display: flex;
+  flex-direction: column;
+
+  }
+
+  .mat-chip-list{
+  list-style-position: inside;
+  word-wrap: break-word;
+  word-break: keep-all;
+  flex-direction: column;
+    }
+
+  .mat-chip-list-wrapper{
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-form-field-label-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
 
