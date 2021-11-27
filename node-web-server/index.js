@@ -30,6 +30,9 @@ const { dockStart } = require("@nlpjs/basic");
   //console.log(dock.containers["default"]);
   // Load the Corpus
 
+  // NLP Part
+  const nlp = dock.get("nlp");
+
   //Database mongoDB
   const MongoClient = require("mongodb").MongoClient;
   const fs = require("fs");
@@ -46,14 +49,19 @@ const { dockStart } = require("@nlpjs/basic");
     getDocuments(db, function (docs) {
       console.log("Closing connection.");
       client.close();
-      // Write to file
-      try {
-        //fs.writeFileSync("out_file.json", JSON.stringify(docs[0]));
-        console.log("Done writing to file.");
-        //console.log(fs.readFileSync("out_file.json", "utf8"));
-      } catch (err) {
-        console.log("Error writing to file", err);
-      }
+      (async () => {
+        try {
+          // Gets an Array and the first entity is the corpus
+          // Adds the Corpus to the ChatBot
+          await nlp.addCorpus(docs[0]);
+          //fs.writeFileSync("out_file.json", JSON.stringify(docs[0]));
+
+          // Start the Chatbot
+          await nlp.train();
+        } catch (e) {
+          console.log(e);
+        }
+      })();
     });
   });
 
@@ -66,33 +74,16 @@ const { dockStart } = require("@nlpjs/basic");
         callback(result);
       });
   };
-  // let the Chatbot answer
 
-  //END Database mongoDB
-  /*
-  // NLP Part
-  const nlp = dock.get("nlp");
-  // Load the Corpus
-
-  // Add the created corpus
-  console.log("Load Corpus");
-  //const data = fs.readFileSync("out_file.json", "utf8");
-  //console.log(data);
-  console.log("Add Corpus");
-  try {
-    await nlp.addCorpus("out_file.json");
-    // let the Chatbot answer
-    await nlp.train();
-  } catch (e) {
-    console.log(e);
-  }
-*/
   // SOCKET.IO ///////////////////////////////////////
   const { SocketioConnector } = require("./socketioConnector/index");
+
   // gets the 'default' container (has all containers nlp,core,...)
   container = dock.getContainer();
   container.use(SocketioConnector, "socketio", SocketioConnector.isSingleton);
+
   // start the module
   container.start();
+
   // END SOCKET IO ///////////////////////////////////////
 })();
