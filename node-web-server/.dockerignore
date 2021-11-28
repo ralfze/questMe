@@ -1,0 +1,6 @@
+*.md
+*corpus.json
+*corpus-de.json
+*corpus-ner.json
+*heros.json
+*Dockerfile

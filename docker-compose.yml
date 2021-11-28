@@ -1,0 +1,49 @@
+# Docker Compose for Project questMe
+version: '3.9'
+
+services:
+  node-server:
+    container_name: nodewebapp
+    build: ./node-web-server
+    environment:
+      - MONGODB_CONNSTRING=mongodb://mongodb
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+      - angular-frontend
+    networks:
+      - app
+
+  mongodb:
+    container_name: mongodb
+    build: ./mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=corpus
+    volumes:
+      - .db-data:/data/db # docker stores in folder questMe
+      #- db-data:/data/db # shared Volume for docker container
+      - ./mongodb/init.js:/docker-entrypoint-initdb.d/init.js
+    restart: always
+    ports:
+      - 27017:27017
+    networks:
+      app:
+        aliases:
+          - database
+
+  angular-frontend:
+    container_name: angular-frontend
+    build: ./angular-chat
+    ports:
+      - 4200:4200
+    networks:
+      - frontend
+
+networks:
+  app:
+    driver: bridge
+  frontend: null
+  
+#volumes:
+# db-data:

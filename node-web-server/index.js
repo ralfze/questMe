@@ -32,14 +32,21 @@ const { dockStart } = require("@nlpjs/basic");
 
   // NLP Part
   const nlp = dock.get("nlp");
-
+  
   //Database mongoDB
   const MongoClient = require("mongodb").MongoClient;
-  const fs = require("fs");
+  //const fs = require("fs");
   const dbName = "corpus";
-  const client = new MongoClient("mongodb://localhost:2717", {
+  
+  // Alias mongodb for Address in Docker Container
+  // Host "mongodb://localhost:27017" Docker "mongodb://mongodb:27017
+  const client = new MongoClient("mongodb://mongodb:27017", {
     useUnifiedTopology: true,
+    useNewUrlParser: true,
+    connectTimeoutMS: 30000,
+    keepAlive: 1,
   });
+  // For debugging
 
   client.connect(function (err) {
     //assert.equal(null, err);
@@ -47,19 +54,24 @@ const { dockStart } = require("@nlpjs/basic");
     const db = client.db(dbName);
 
     getDocuments(db, function (docs) {
-      console.log("Closing connection.");
-      client.close();
+      //const result = fs.writeFileSync("out.json", JSON.stringify(docs[0]));
       (async () => {
         try {
           // Gets an Array and the first entity is the corpus
           // Adds the Corpus to the ChatBot
+          console.log("Add Corpus");
+          //console.log(docs);
           await nlp.addCorpus(docs[0]);
-          //fs.writeFileSync("out_file.json", JSON.stringify(docs[0]));
 
           // Start the Chatbot
           await nlp.train();
+
         } catch (e) {
           console.log(e);
+        } finally {
+          // Close DB connection
+          console.log("Closing connection.");
+          await client.close();
         }
       })();
     });
@@ -74,6 +86,12 @@ const { dockStart } = require("@nlpjs/basic");
         callback(result);
       });
   };
+  
+  // mongoDB
+ // const database = dock.get('database');
+ // await database.connect();
+  //const result = database.find();
+  //console.log(result);
 
   // SOCKET.IO ///////////////////////////////////////
   const { SocketioConnector } = require("./socketioConnector/index");
