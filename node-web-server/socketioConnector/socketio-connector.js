@@ -21,11 +21,11 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-const { containerBootstrap } = require("@nlpjs/core");
+const { containerBootstrap } = require('@nlpjs/core');
 
-const { createServer } = require("http");
-const { Server } = require("socket.io");
-const { Connector } = require("@nlpjs/connector");
+const { createServer } = require('http');
+const { Server } = require('socket.io');
+const { Connector } = require('@nlpjs/connector');
 
 class SocketioConnector extends Connector {
   constructor(settings, container) {

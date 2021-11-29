@@ -1,4 +1,13 @@
-const { dockStart } = require("@nlpjs/basic");
+const { dockStart } = require('@nlpjs/basic');
+
+// Connection String for mongoDB
+//const connString = process.env.MONGODB_CONNSTRING;
+
+// Alias mongodb for Address in Docker Container
+// Host "mongodb://localhost:27017" Docker "mongodb://mongodb:27017
+const connString = "mongodb://localhost:27017";
+
+const restPort = 3001;
 
 (async () => {
   const dock = await dockStart();
@@ -31,16 +40,16 @@ const { dockStart } = require("@nlpjs/basic");
   // Load the Corpus
 
   // NLP Part
-  const nlp = dock.get("nlp");
-  
+  const nlp = dock.get('nlp');
+
   //Database mongoDB
-  const MongoClient = require("mongodb").MongoClient;
+  const MongoClient = require('mongodb').MongoClient;
+
   //const fs = require("fs");
   const dbName = "corpus";
-  
-  // Alias mongodb for Address in Docker Container
-  // Host "mongodb://localhost:27017" Docker "mongodb://mongodb:27017
-  const client = new MongoClient("mongodb://mongodb:27017", {
+
+  // Client for mongoDb
+  const client = new MongoClient(connString, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     connectTimeoutMS: 30000,
@@ -65,7 +74,6 @@ const { dockStart } = require("@nlpjs/basic");
 
           // Start the Chatbot
           await nlp.train();
-
         } catch (e) {
           console.log(e);
         } finally {
@@ -86,15 +94,21 @@ const { dockStart } = require("@nlpjs/basic");
         callback(result);
       });
   };
-  
+
   // mongoDB
- // const database = dock.get('database');
- // await database.connect();
+  // const database = dock.get('database');
+  // await database.connect();
   //const result = database.find();
   //console.log(result);
+  // Rest Api ///////////////////////////////////////
+  const {RestApi} = require('./restApi/index');
+  let rest = new RestApi();
+  rest.start();
+
+  // END Rest Api ///////////////////////////////////////
 
   // SOCKET.IO ///////////////////////////////////////
-  const { SocketioConnector } = require("./socketioConnector/index");
+  const { SocketioConnector } = require('./socketioConnector/index');
 
   // gets the 'default' container (has all containers nlp,core,...)
   container = dock.getContainer();
