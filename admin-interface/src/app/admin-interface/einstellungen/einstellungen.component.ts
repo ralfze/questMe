@@ -1,11 +1,11 @@
-import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {FormControl} from '@angular/forms';
-import {MatAutocompleteSelectedEvent} from '@angular/material/autocomplete';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { FormControl } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-einstellungen',
@@ -13,6 +13,8 @@ import {map, startWith} from 'rxjs/operators';
   styleUrls: ['./einstellungen.component.scss']
 })
 export class EinstellungenComponent implements OnInit {
+  webtitle = 'Admin Einstellungen';
+
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
@@ -24,7 +26,7 @@ export class EinstellungenComponent implements OnInit {
   @ViewChild('userInput')
   userInput!: ElementRef<HTMLInputElement>;
 
-  constructor() {
+  constructor(private title: Title) {
     this.filteredUser = this.userCtrl.valueChanges.pipe(
       startWith(null),
       map((user: string | null) => (user ? this._filter(user) : this.allusers.slice())),
@@ -69,6 +71,7 @@ export class EinstellungenComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.title.setTitle(this.webtitle);
   }
 
 }

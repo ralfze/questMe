@@ -2,6 +2,16 @@
 version: '3.9'
 
 services:
+  # Angular Frontend
+  angular-frontend:
+    container_name: angular-frontend
+    build: ./admin-interface
+    ports:
+      - 4200:4200
+    networks:
+      - frontend
+
+  # Chat Server nodejs
   node-server:
     container_name: nodewebapp
     build: ./node-web-server
@@ -15,6 +25,7 @@ services:
     networks:
       - app
 
+  # Database in mongoDB
   mongodb:
     container_name: mongodb
     build: ./mongodb
@@ -31,14 +42,6 @@ services:
       app:
         aliases:
           - database
-
-  angular-frontend:
-    container_name: angular-frontend
-    build: ./angular-chat
-    ports:
-      - 4200:4200
-    networks:
-      - frontend
 
 networks:
   app:

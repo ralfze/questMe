@@ -1,4 +1,4 @@
 *.md
 *.gitignore
 *Dockerfile
-.angular\cache\angular-webpack
+.angular/cache/angular-webpack

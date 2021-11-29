@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-interface',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-interface.component.scss']
 })
 export class AdminInterfaceComponent implements OnInit {
-
-  constructor() { }
+  webtitle = 'Admin Website';
+  constructor(private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle(this.webtitle);
   }
 
 }
-export class AdminInterface{}
+export class AdminInterface { }

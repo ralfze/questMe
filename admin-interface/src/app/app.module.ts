@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { KorpusComponent } from './admin-interface/korpus/korpus.component';
 import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
-import { ChatfensterComponent } from './chatfenster/chatfenster.component';
+import { ChatComponent as ChatComponent } from './chat/chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,7 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { SocketService } from './chatfenster/socket.service';
+import { SocketService } from './chat/socket.service';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { SocketService } from './chatfenster/socket.service';
     AdminInterfaceComponent,
     KorpusComponent,
     EinstellungenComponent,
-    ChatfensterComponent
+    ChatComponent
   ],
   imports: [
     BrowserModule,
