@@ -100,9 +100,10 @@ const restPort = 3001;
   // await database.connect();
   //const result = database.find();
   //console.log(result);
+
   // Rest Api ///////////////////////////////////////
   const {RestApi} = require('./restApi/index');
-  let rest = new RestApi();
+  let rest = new RestApi(connString);
   rest.start();
 
   // END Rest Api ///////////////////////////////////////

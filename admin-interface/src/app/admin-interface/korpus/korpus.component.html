@@ -74,7 +74,9 @@
 
   <!--Korpus List -->
 
-  <div class="card card-title"><h1>{{ titleC }}</h1></div>
+  <div class="card card-title">
+    <h1>{{ titleC }}</h1>
+  </div>
 
   <!-- Add field with table -->
   <div class="card card-add">
@@ -83,15 +85,20 @@
         <!-- Question -->
         <input class="input" type="text" placeholder="Schreibe Frage" #task />
 
-        <button class="add" (click)="addTask(task.value)">
+        <button class="add" (click)="addUtterance(task.value)">
           <mat-icon>add_circle_outline</mat-icon>
         </button>
       </td>
       <td>
         <!-- Answer -->
-        <input class="input" type="text" placeholder="Schreibe Antwort" #task2 />
+        <input
+          class="input"
+          type="text"
+          placeholder="Schreibe Antwort"
+          #task2
+        />
 
-        <button class="add" (click)="addTask2(task2.value)">
+        <button class="add" (click)="addAnswer(task2.value)">
           <mat-icon>add_circle_outline</mat-icon>
         </button>
       </td>
@@ -100,10 +107,10 @@
   <!-- List with y-scroll -->
   <div class="scroll">
     <div class="output-div1">
-      <ul *ngFor="let item of list">
+      <ul *ngFor="let item of utterances">
         <li class="output-list">
           {{ item.name }}
-          <button class="remove" (click)="removeTask(item.id)">
+          <button class="remove" (click)="removeUtterance(item.id)">
             <mat-icon>delete_outline</mat-icon>
           </button>
         </li>
@@ -114,10 +121,10 @@
     <hr class="rounded" />-->
 
     <div class="output-div2">
-      <ul *ngFor="let item2 of list2">
+      <ul *ngFor="let item of answers">
         <li class="output-list">
-          {{ item2.name }}
-          <button class="remove" (click)="removeTask2(item2.id)">
+          {{ item.name }}
+          <button class="remove" (click)="removeAnswer(item.id)">
             <mat-icon>delete_outline</mat-icon>
           </button>
         </li>
@@ -125,3 +132,4 @@
     </div>
   </div>
 </div>
+<div id="card list"></div>

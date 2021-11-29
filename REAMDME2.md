@@ -7,6 +7,7 @@ __Needed docker images__
 docker pull mongo:5.0.4-focal
 docker pull node:16.13.0-bullseye
 docker pull node:16.13.0-alpine3.14
+docker pull openjdk:11
 
 # Docker Compose Build
 

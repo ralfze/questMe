@@ -1,13 +1,25 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const multer = require('multer');
+const express = require("express");
+const bodyParser = require("body-parser");
+const multer = require("multer");
 const upload = multer();
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
 
 class RestApi {
   // default rest port 3001
   port = 3001;
-  constructor() {}
+  mongoURL = "mongodb://localhost:27017";
+  angularURL = "http://localhost:4200";
+
+  // CORS settings
+  corsOptions = {
+    origin: this.angularURL,
+    methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
+  };
+
+  constructor(mongoURL) {
+    this.mongoURL = mongoURL;
+  }
   start() {
     const app = express();
 
@@ -17,10 +29,17 @@ class RestApi {
     app.use(upload.array());
 
     //Require the Router we defined in movies.js
-    //const movies = require('movies');
+    const Router = require("./restroutes");
 
-    //Use the Router on the sub route /movies
-    //app.use('/movies', movies);
+    // Router define mongo/angular Address
+    Router.mongoURL = this.mongoURL;
+    Router.angularURL = this.angularURL;
+
+    // Cors for Angular App
+    app.use(cors(this.corsOptions));
+
+    //Use the Router on the sub route /restapi
+    app.use("/restapi", Router);
 
     // Start the Rest Server
     app.listen(this.port, () => {
