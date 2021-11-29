@@ -9,7 +9,7 @@
     [matMenuTriggerFor]="menu"
     aria-label="questMe icon-button with a menu"
   >
-  <!-- Hamburger menu mit Verlinkung-->
+    <!-- Hamburger menu mit Verlinkung-->
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
@@ -34,8 +34,8 @@
         <span>Einstellungen</span>
       </button>
     </a>
-    <a [routerLink]="['/admin-interface']">
-      <button mat-menu-item>
+    <a>
+      <button mat-menu-item (click)="logout()">
         <mat-icon>power_settings_new</mat-icon>
         <span>LogOut</span>
       </button>
@@ -72,24 +72,20 @@
         ><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03"
       /></span>
       <span flicking-panel class="button mr-2 is-white"
-        ><img
-          src="assets/images/Bot Picture(3).png"
-          alt="Bot picture 04"
-        /></span
-      >
+        ><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04"
+      /></span>
       <span flicking-panel class="button mr-2 is-white"
         ><img src="assets/images/image 10.png" alt="Bot picture default"
       /></span>
       <span flicking-panel class="button mr-2 is-white"
         ><img src="assets/images/image 16.png" alt="Bot picture fun"
       /></span>
-
     </ngx-flicking>
   </div>
 
   <!-- Input Field for Bot name -->
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Bot Name</mat-label>
-    <input matInput placeholder="default name" value="questMe"/>
+    <input matInput placeholder="default name" value="questMe" />
   </mat-form-field>
 </div>

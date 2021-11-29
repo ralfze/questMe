@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -22,6 +22,8 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SocketService } from './chat/socket.service';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializeKeycloak } from './utility/app.init';
 
 
 @NgModule({
@@ -47,9 +49,16 @@ import { SocketService } from './chat/socket.service';
     MatSelectModule,
     MatChipsModule,
     ReactiveFormsModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    KeycloakAngularModule
   ],
-  providers: [SocketService],
+  providers: [SocketService,{
+    provide: APP_INITIALIZER,
+    useFactory: initializeKeycloak,
+    multi: true,
+    deps: [KeycloakService],
+  },
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

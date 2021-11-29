@@ -34,8 +34,8 @@
         <span>Einstellungen</span>
       </button>
     </a>
-    <a [routerLink]="['/admin-interface']">
-      <button mat-menu-item>
+    <a>
+      <button mat-menu-item (click)="logout()">
         <mat-icon>power_settings_new</mat-icon>
         <span>LogOut</span>
       </button>

@@ -1,7 +1,7 @@
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
+import { KeycloakService } from 'keycloak-angular';
 
 
 
@@ -47,10 +47,13 @@ export class KorpusComponent implements OnInit {
 
 
 
-  constructor(private title: Title) { }
+  constructor(private title: Title, private keycloakService: KeycloakService) { }
 
   ngOnInit(): void {
     this.title.setTitle(this.webtitle);
+  }
+  logout() {
+    this.keycloakService.logout('http://localhost:4200');
   }
 
 }

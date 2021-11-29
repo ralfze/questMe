@@ -7,15 +7,16 @@ import { AdminInterfaceComponent } from './admin-interface/admin-interface.compo
 import { KorpusComponent } from './admin-interface/korpus/korpus.component';
 import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
 import { ChatComponent } from './chat/chat.component';
+import { AuthGuard } from './utility/app.guard';
 
 const routes: Routes = [
   { path: 'chat', component: ChatComponent },
-  { path: 'admin-interface/allgemein', component: AllgemeinComponent },
-  { path: 'admin-interface/infopage', component: InfopageComponent },
+  { path: 'admin-interface/allgemein', component: AllgemeinComponent ,canActivate:[AuthGuard]},
+  { path: 'admin-interface/infopage', component: InfopageComponent ,canActivate:[AuthGuard]},
   { path: 'admin-interface', component: AdminInterfaceComponent },
   { path: '', redirectTo: '/chat', pathMatch: 'full' },
-  { path: 'admin-interface/korpus', component: KorpusComponent },
-  { path: 'admin-interface/einstellungen', component: EinstellungenComponent },
+  { path: 'admin-interface/korpus', component: KorpusComponent ,canActivate:[AuthGuard]},
+  { path: 'admin-interface/einstellungen', component: EinstellungenComponent ,canActivate:[AuthGuard]},
 ];
 
 @NgModule({

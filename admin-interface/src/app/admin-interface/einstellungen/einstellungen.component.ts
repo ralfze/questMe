@@ -6,6 +6,8 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
+import { KeycloakService } from 'keycloak-angular';
+
 
 @Component({
   selector: 'app-einstellungen',
@@ -26,7 +28,7 @@ export class EinstellungenComponent implements OnInit {
   @ViewChild('userInput')
   userInput!: ElementRef<HTMLInputElement>;
 
-  constructor(private title: Title) {
+  constructor(private title: Title, private keycloakService: KeycloakService) {
     this.filteredUser = this.userCtrl.valueChanges.pipe(
       startWith(null),
       map((user: string | null) => (user ? this._filter(user) : this.allusers.slice())),
@@ -73,5 +75,7 @@ export class EinstellungenComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle(this.webtitle);
   }
-
+  logout() {
+    this.keycloakService.logout('http://localhost:4200');
+  }
 }
