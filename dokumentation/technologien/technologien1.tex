@@ -9,95 +9,111 @@ Damit wir eine Applikation erstellen können, die für lange Zeit Sicherheitsupd
 bekommt. Zusätzlich haben wir als Ziel, dass die Software als ingesamtes Paket sehr lange
 stabil läuft und dadurch Ausfälle minimiert werden.
 
-\subsection{Technologie Versionen}
-Hier sollen die einzelnen Technologien im Einzelnen beschrieben werden.
-Sowie ihre geplante Funktion in unserem Projekt.
-In der unten angegebenen Liste soll ein Überblick über die im Projekt verwendeten Technologien bereitstellt gestellt werden.
+\subsection{Technologie Vergleich}
+In diesem Bereich wollen wir unsere Design Entscheidung für eine Technologie durch einen Vergleich darstellen.
+Dafür haben wir für die Themen ''Vergleich zwischen Angular und Vue.js'' und ''Vergleich zwischen MongoDB und PostgreSQL'' eine Tabelle erstellt.
 
-\begin{table}[H]
-    \begin{center}
-        \begin{tabular}{|c|c|}
+\newpage
+\subsubsection{Vergleich zwischen Angular und Vue.js}
+
+Als wir uns für ein Framework zur Entwicklung des Frontends entscheiden mussten, kamen Angular und Vue.js in unsere engere Auswahl.
+Damit wir uns einen besseren Überblick über die Eigenschaften dieser Kandidaten verschaffen und ihre Vor- und Nachteile besser abwägen können, 
+haben wir uns diese Tabelle erstellt.
+
+\begin{center}
+    \begin{table}[H]
+        \begin{tabular}{|p{0.25\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
             \hline
-            \includegraphics[width=0.1\textwidth]{bilder/technologien/NodeJS.png}    &
-            \multirow[c]{1}[1]{*}[20pt]{Node.js 16.13.0 LTS}                           \\
+            \textbf{}                                     & \textbf{Angular}                                                            & \textbf{Vue.js}                                               \\
             \hline
-            \includegraphics[width=0.1\textwidth]{bilder/technologien/Angular.png}   &
-            \multirow[c]{1}[1]{*}[20pt]{Angular 13.0.1}                                \\
+            \textbf{Framework,\newline Library, Platform} & \cellcolor{yellow!20}Entwicklungsplattform\newline (Development platform)   & \cellcolor{yellow!20}Progressive Framework                    \\
             \hline
-            \includegraphics[width=0.1\textwidth]{bilder/technologien/Socket.io.png} &
-            \multirow[c]{1}[1]{*}[20pt]{Socket.io 4.3.2}                               \\
+            \textbf{Gründer}                              & \cellcolor{yellow!20}Google                                                 & \cellcolor{yellow!20}ehemaliger Google\newline Mitarbeiter    \\
             \hline
-            \includegraphics[width=0.1\textwidth]{bilder/technologien/mongoDB.png}   &
-            \multirow[c]{1}[1]{*}[20pt]{MongoDB Community Edition 5.0.3}               \\
+            \textbf{Technology Typ}                       & \cellcolor{green!20}MVC Framework                                           & \cellcolor{yellow!20}MVVM Framework                           \\
             \hline
-            \includegraphics[width=0.1\textwidth]{bilder/technologien/KeyCloak.png}  &
-            \multirow[c]{1}[1]{*}[20pt]{KeyCloak 15.0.2}                               \\
+            \textbf{Programmier-\newline sprache}         & \cellcolor{yellow!20}TypeScript                                             & \cellcolor{green!20}JavaScript                                \\
             \hline
-            \includegraphics[width=0.1\textwidth]{bilder/technologien/NLP.png}       &
-            \multirow[c]{1}[1]{*}[20pt]{NLP.js 4.22.2}                                 \\
+            \textbf{Performance}                          & \cellcolor{yellow!20}niedrig                                                & \cellcolor{green!20}hoch                                      \\
+            \hline
+            \textbf{Größe}                                & \cellcolor{red!20}500 kB                                                    & \cellcolor{green!20}80 kB                                     \\
+            \hline
+            \textbf{Lernkurve}                            & \cellcolor{red!20}Eine steile Lernkurve                                     & \cellcolor{green!20}Eine geringe Lernkurve                    \\
+            \hline
+            \textbf{Dokumentation}                        & \cellcolor{green!20}vorhanden                                               & \cellcolor{green!20}vorhanden                                 \\
+            \hline
+            \textbf{Datenbindung}                         & \cellcolor{green!20}Bi-directional                                          & \cellcolor{green!20}Bi-directional                            \\
+            \hline
+            \textbf{Rendering}                            & \cellcolor{green!20}beim Client                                             & \cellcolor{yellow!20}beim Server                              \\
+            \hline
+            \textbf{Code reuse}                           & \cellcolor{green!20}möglich                                                 & \cellcolor{green!20}Ja, CSS und HTML                          \\
+            \hline
+            \textbf{Skalierbarkeit}                       & \cellcolor{green!20}sehr hoch                                               & \cellcolor{yellow!20}hoch                                     \\
+            \hline
+            \textbf{Testbarkeit}                          & \cellcolor{green!20}mit einem Tool                                          & \cellcolor{red!20}mehrere Tools benötigt                      \\
+            \hline
+            \textbf{Vollständige Web\newline App}         & \cellcolor{green!20}Kann als standalone Basis verwendet werden              & \cellcolor{red!20}benötigt Third Party Tools                  \\
+            \hline
+            \textbf{Lizenz}                               & \cellcolor{green!20}MIT License                                             & \cellcolor{green!20}MIT License                               \\
             \hline
         \end{tabular}
-        \caption{Technologie Liste}
-        \label{tab:Technologie Liste}
-    \end{center}
-\end{table}
+        \caption{Vergleich zwischen Angular und Vue.js}
+        \label{Vergleich zwischen Angular und Vue.js}
+    \end{table}
+\end{center}
 
+\noindent Unsere Entscheidung fiel schlussendlich auf Angular. 
+Da es bereits länger auf dem Markt ist und auch einen höheren Marktanteil hat, ist es generell schon interessant es sich mal anzuschauen und damit zu arbeiten.
+Hinzu kommt die sehr gute Testbarkeit, für die man lediglich ein einziges Tool benötigt. 
+Die sehr hohe Skalierbarkeit und mögliche Wiederverwendbarkeit des Codes verspricht viele Möglichkeiten, auch für die Zukunft. 
+Alle Teammitglieder haben bereits Erfahrung mit JavaScript als Programmiersprache, aber keine mit TypeScript. 
+Der Umgang mit TypeScript muss also erst erlernt werden. 
+Ein großer Nachteil, der beim Blick auf die Tabelle sofort ins Auge sticht, ist aber die Performance.
+Allerdings haben wir sie nur auf niedrig eingestuft, da lediglich am Anfang viel mitgeladen werden muss.
+Bei größeren Projekten bietet Angular mehr Stabilität und Performance als seine Konkurrenz in diesem Vergleich.
 
-\subsubsection{Node.js 16.13.0 LTS}
-Als Basis für Angular, den Chatbot und Keycloak nutzen wir eine LTS Version von Node.js.
-Auf dem Node.js Server verwenden wir zusätzlich die Express Erweiterung,
-um eine Kommunikation zu den Servern herstellen zu können.
-Für uns war sehr wichtig, dass wir eine sehr stabile Basis für die Anwendung,
-die wir entwickeln haben.
-Deswegen haben wir uns ebenfalls informiert, ob alle geplanten oder in Frage kommenden Technologien mit der LTS Version kompatibel sind.
-Nach unserem derzeitigen Stand empfehlen die Entwickler der Bibliotheken und Framworks eine LTS Version von Node.js zu verwenden.
-Bildquelle:\cite{nodejsicon}
+\subsubsection{Vergleich zwischen MongoDB und PostgreSQL}
 
+Ähnliche Gedanken wie für unser Frontend mussten wir uns auch für unser Backend stellen. 
+Genauer, welche Datenbank wollen wir verwenden? 
+Da wir in der Datenbank den Korpus unseres Chatbots in Form von JSON-Dateien speichern wollen, 
+haben wir uns zwei der populärsten Lösungen rausgesucht und diese in einer Tabelle gegenübergestellt.
 
-\subsubsection{Angular 13.0.1}
-Wir verwenden Angular für die Frontend-Entwicklung.
-Angular ist die Basis, um das Chat- und das Admin-Interface zu erstellen.
-Um unsere UIs noch effektiver zu gestalten werden wir vereinzelt auf Angular Material zurückgreifen.
-Dort gibt es zu häufig genutzten UI Komponenten "Code Snippets", die ausführlich getestet wurden.
-Bildquelle:\cite{angularicon}
+\begin{center}
+    \begin{table}[H]
+        \begin{tabular}{|p{0.25\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
+            \hline
+            \textbf{}                                 & \textbf{MongoDB}                                & \textbf{PostgreSQL}                                               \\
+            \hline
+            \textbf{Primäres\newline Datenbankmodell} & \cellcolor{green!20}Dokumentenorientiert        & \cellcolor{yellow!20}Relationales DBMS                            \\
+            \hline
+            \textbf{Entwickler}                       & \cellcolor{yellow!20}MongoDB. Inc               & \cellcolor{yellow!20}PostgreSQL Global\newline Development Group  \\
+            \hline
+            \textbf{Datenschema}                      & \cellcolor{green!20}Schemafrei (NoSQL)          & \cellcolor{red!20}Ja                                              \\
+            \hline
+            \textbf{Programmier-\newline sprachen}    & \cellcolor{yellow!20}JavaScript + 28 weitere    & \cellcolor{yellow!20}JavaScript + 9 weitere                       \\
+            \hline
+            \textbf{Query Language}                   & \cellcolor{yellow!20}MQL                        & \cellcolor{green!20}SQL                                           \\
+            \hline
+            \textbf{Maximale\newline Dateigröße}      & \cellcolor{red!20}16 MB                         & \cellcolor{green!20}1 GB                                          \\
+            \hline
+            \textbf{Lernkurve}                        & \cellcolor{green!20}Eine geringe Lernkurve      & \cellcolor{green!20}Eine geringe Lernkurve                        \\
+            \hline
+            \textbf{Dokumentation}                    & \cellcolor{green!20}vorhanden                   & \cellcolor{green!20}vorhanden                                     \\
+            \hline
+            \textbf{Skalierbarkeit}                   & \cellcolor{green!20}sehr hoch                   & \cellcolor{yellow!20}hoch                                         \\
+            \hline
+            \textbf{Lizenz}                           & \cellcolor{green!20}Open Source                 & \cellcolor{green!20}Open Source                                   \\
+            \hline
+        \end{tabular}
+        \caption{Vergleich zwischen MongoDB und PostgreSQL}
+        \label{tab:Vergleich zwischen MongoDB und PostgreSQL}
+    \end{table}
+\end{center}
 
-\subsubsection{Socket.io 4.3.2}
-In unserem Projekt nutzen wir Socket.io, um eine bidirektionale Kommunikaton zwischen dem Bot und
-der Benutzeroberfläche herzustellen.
-Es ermöglicht uns, dass ein User mit dem Chatbot ohne merkbare Verzögerung chatten kann.
-Bildquelle:\cite{socketioicon}
-
-\subsubsection{MongoDB Community Edition 5.0.3}
-Wir haben uns für die Datenbank mongoDB entschieden, da es ein sehr einfaches Datenbank Modell bereitstellt.
-MongoDB ist eine NoSql Datenbank wodurch auch der Verwaltungsaufwand der Datenbank minimiert wird.
-In der Datenbank wird der Korpus des Chatbots gespeichert.
-Bildquelle:\cite{mongodbicon}
-
-\subsubsection{KeyCloak 15.0.2}
-In unserem Projekt verwenden wir KeyCloak, damit sich der Admin sicher in das Admin-Webinterface einloggen kann.
-Zusätzlich werden wir das Shibboleth Single-Sign-On Verfahren von der Hochschule integrieren.
-Damit Hochschulangehörige die Möglichkeit haben mit ihrem Hochschul Account sich einloggen zu können.
-Dadurch können wir zusätzlich begrenzen welche Personengruppen auf welche Daten Zugriff haben.
-Bildquelle:\cite{keycloakicon}
-
-\subsubsection{RegEx}
-Wir haben in unserem Projekt anfangs aus Sicherheitsgründen RegEx eingeplant.
-RegEx dient in unserem Projekt als Fallback.
-Um ein Scheitern des Projektes zu verhindern, falls NLP.js sich nicht in unser Projekt integrieren lassen sollte.
-Damit der Chatbot dennoch Begriffe und Sätze verstehen kann.
-Nach unserem derzeitigen Stand brauchen wir nicht auf eine RegEx Implementation zurückzugreifen,
-da NLP.js sich sehr gut in unser Projekt integrieren lässt. 
-
-\noindent \newline Als Beispiel für den Satz "Wie geht es dir?".
-Müsste ein User oder Admin folgenden RegEx Befehl integrieren:\\
-\newline \verb/(Wie|wie)\s*geht\s*es\s*dir\s*\?/ \\
-\newline Damit man nach ''Wie/wie geht es dir ?'' mit und ohne Leerzeichen prüfen kann.\\
-Bildquelle:\cite{regexicon}
-
-\subsubsection{NLP.js 4.22.2}
-Damit wir NLP.js nutzen können benötigen wir eine LTS Version von Node.js.
-Diese Begrenzung haben wir zusätzlich in die Technologie Entscheidung einbezogen.
-Indem NLP.js ab der Version 4 und höher modular ist. Wird uns ermöglicht leichter eigene Module/Plugins
-für das Framework zu schreiben.
-Dadurch können wir einen ChatBot mit verbesserter Spracherkennung gestalten.
-Bildquelle:\cite{nlpicon}
+\noindent Wir haben uns schlussendlich dafür entschieden, MongoDB zu nutzen. 
+Da es bereits ein schemafreies und Dokumentenorientiertes Datenbankmodell ist, kommt uns das sehr gelegen.
+Beide Datenbankensysteme haben eine geringe Lernkurve und eine ähnlich gute Skalierbarkeit.
+SQL ist zwar allen Teammitgliedern bereits bekannt, aber dank der umfangreichen Dokumentation von MongoDB sollte es leichtfallen, MQL zu erlernen.
+Ein Nachteil, der sofort auffällt, ist die Maximale Dateigröße von gerade einmal 16 MB.
+Da wir aber nicht davon ausgehen, dass unsere Dateien diese Größe erreichen werden, stellt das für uns kein Hindernis dar.
