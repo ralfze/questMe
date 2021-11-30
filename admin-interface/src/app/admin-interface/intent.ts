@@ -1,5 +1,5 @@
 export class Intent {
-  intent: string[] = []
+  intent: string = ""
   utterances: string[] = []
   answers: string[] = []
 }

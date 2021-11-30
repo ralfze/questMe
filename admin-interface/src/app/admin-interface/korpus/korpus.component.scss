@@ -41,7 +41,8 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  //height: 60px;
+  height: 8%;
   display: flex;
   align-items: center;
   background-color: royalblue;
@@ -134,7 +135,6 @@ a:hover {
   margin-left: 0.5em;
 }
 
-
 /*
   *
   *CSS Code for the Korpusdaten Form-field
@@ -142,14 +142,14 @@ a:hover {
   *
 */
 
-.korpus-daten{
+.korpus-daten {
   background-color: lavender;
   border-radius: 0.5em;
   font-weight: 500;
 }
 
 //the div card
-.card-korpusdaten{
+.card-korpusdaten {
   background-color: royalblue;
   color: white;
   font-weight: 600;
@@ -158,13 +158,11 @@ a:hover {
   min-width: 30%;
   position: relative;
   margin-top: 1em;
-
 }
 
 //the selected paragraph
-.selected-p{
+.selected-p {
   margin-left: 2em;
-
 }
 
 /*
@@ -175,7 +173,7 @@ a:hover {
 */
 
 //card for the title
-.card-title{
+.card-title {
   background-color: lavender;
   color: royalblue;
   font-weight: 600;
@@ -231,9 +229,6 @@ input {
 //div output for Question
 .output-div1 {
   width: 50%;
-
-
-
 }
 
 //div output for Answer
@@ -255,9 +250,7 @@ li {
   width: 100%;
   display: flex;
   margin-bottom: 1em;
-
 }
-
 
 ul {
   margin: 0;
@@ -302,6 +295,85 @@ div.scroll {
   scroll-behavior: smooth;
   display: flex;
 }
+/*
+// Intent List
+.intentList {
+  background-color: coral;
+  width: 100%;
+
+  // contains the intent/utterances/answers
+  .intent-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    //background-color: red;
+
+    // contains the intent text
+    .intent-intent {
+      width: 100%;
+      //background-color: red;
+    }
+
+    //contains utterances and answers
+    .intent-container {
+      width: 100%;
+      display: flex;
+      background-color: green;
+
+      .intent-utterances-list {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        background-color: yellow;
+
+        mat-list-item {
+          width: 100%;
+          background-color: pink;
+        }
+        mat-list-item:hover {
+          background-color: gray;
+        }
+        .intent-input-utterances {
+          width: 100%;
+          .utterances-field {
+            width: 100%;
+          }
+          .butAddUtterances {
+            width: 100%;
+          }
+        }
+      }
+      .intent-answers-list {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        background-color: yellow;
+
+        mat-list-item {
+          width: 100%;
+          background-color: green;
+        }
+        mat-list-item:hover {
+          background-color: gray;
+        }
+        .intent-input-answers {
+          width: 100%;
+          .answers-field {
+            width: 100%;
+          }
+          .butAddAnswers{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}*/
+//TREE Example
+.mat-form-field {
+  margin-right: 0px;
+}
+//Tree Example
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {

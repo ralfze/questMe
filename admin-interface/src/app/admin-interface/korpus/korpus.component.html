@@ -73,16 +73,19 @@
   </div>
 
   <!--Korpus List -->
-
+  <!--
   <div class="card card-title">
     <h1>{{ titleC }}</h1>
   </div>
-
+-->
   <!-- Add field with table -->
+  <!--
   <div class="card card-add">
     <table>
       <td>
-        <!-- Question -->
+        -->
+  <!-- Question -->
+  <!--
         <input class="input" type="text" placeholder="Schreibe Frage" #task />
 
         <button class="add" (click)="addUtterance(task.value)">
@@ -90,7 +93,9 @@
         </button>
       </td>
       <td>
-        <!-- Answer -->
+      -->
+  <!-- Answer -->
+  <!--
         <input
           class="input"
           type="text"
@@ -104,7 +109,9 @@
       </td>
     </table>
   </div>
+   -->
   <!-- List with y-scroll -->
+  <!--
   <div class="scroll">
     <div class="output-div1">
       <ul *ngFor="let item of utterances">
@@ -116,10 +123,10 @@
         </li>
       </ul>
     </div>
-
-    <!--added a divider for the lists
+ -->
+  <!--added a divider for the lists
     <hr class="rounded" />-->
-
+  <!--
     <div class="output-div2">
       <ul *ngFor="let item of answers">
         <li class="output-list">
@@ -130,6 +137,46 @@
         </li>
       </ul>
     </div>
-  </div>
+  </div> -->
 </div>
-<div id="card list"></div>
+<!-- Card List for Intents-->
+<!--
+<mat-action-list>
+  <button mat-list-item (click)="addUtterance('Hello')"> Save </button>
+  <button mat-list-item (click)="addAnswer('Answer')"> Undo </button>
+</mat-action-list>
+-->
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+    <button mat-icon-button disabled></button>
+    <mat-checkbox class="checklist-leaf-node"
+                  [checked]="checklistSelection.isSelected(node)"
+                  (change)="todoLeafItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasNoContent" matTreeNodePadding>
+    <button mat-icon-button disabled></button>
+    <mat-form-field appearance="fill">
+      <mat-label>New item...</mat-label>
+      <input matInput #itemValue placeholder="Ex. Lettuce">
+    </mat-form-field>
+    <button mat-button (click)="saveNode(node, itemValue.value)">Save</button>
+  </mat-tree-node>
+
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+    <button mat-icon-button matTreeNodeToggle
+            [attr.aria-label]="'Toggle ' + node.item">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <mat-checkbox [checked]="descendantsAllSelected(node)"
+                  [indeterminate]="descendantsPartiallySelected(node)"
+                  (change)="todoItemSelectionToggle(node)">{{node.item}}</mat-checkbox>
+    <button mat-icon-button (click)="addNewItem(node)"><mat-icon>add</mat-icon></button>
+  </mat-tree-node>
+</mat-tree>
+
+
+
+

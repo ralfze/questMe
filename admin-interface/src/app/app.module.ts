@@ -26,7 +26,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SocketService } from './chat/socket.service';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializeKeycloak } from './utility/app.init';
-
+import { MatListModule } from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+// Tree Example
+import {MatTreeModule} from '@angular/material/tree';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,7 @@ import { initializeKeycloak } from './utility/app.init';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatButtonModule,
     MatMenuModule,
     MatIconModule,
     AppRoutingModule,
@@ -49,7 +54,9 @@ import { initializeKeycloak } from './utility/app.init';
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatTreeModule,MatCheckboxModule,
     MatChipsModule,
+    MatListModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     KeycloakAngularModule,
