@@ -13,37 +13,37 @@ haben wir uns diese Tabelle erstellt.
     \begin{table}[H]
         \begin{tabular}{|p{0.25\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
             \hline
-            \textbf{}                                     & \textbf{Angular}                                     & \textbf{Vue.js}                       \\
+            \textbf{}                                     & \textbf{Angular}                                                            & \textbf{Vue.js}                                               \\
             \hline
-            \textbf{Framework,\newline Library, Platform} & Entwicklungsplattform\newline (Development platform) & Progressive Framework                 \\
+            \textbf{Framework,\newline Library, Platform} & \cellcolor{yellow!20}Entwicklungsplattform\newline (Development platform)   & \cellcolor{yellow!20}Progressive Framework                    \\
             \hline
-            \textbf{Gründer}                              & Google                                               & ehemaliger Google\newline Mitarbeiter \\
+            \textbf{Gründer}                              & \cellcolor{yellow!20}Google                                                 & \cellcolor{yellow!20}ehemaliger Google\newline Mitarbeiter    \\
             \hline
-            \textbf{Technology Typ}                       & MVC Framework                                        & MVVM Framework                        \\
+            \textbf{Technology Typ}                       & \cellcolor{green!20}MVC Framework                                           & \cellcolor{yellow!20}MVVM Framework                           \\
             \hline
-            \textbf{Programmier-\newline sprache}         & TypeScript                                           & JavaScript                            \\
+            \textbf{Programmier-\newline sprache}         & \cellcolor{yellow!20}TypeScript                                             & \cellcolor{green!20}JavaScript                                \\
             \hline
-            \textbf{Performance}                          & niedrig                                              & hoch                                  \\
+            \textbf{Performance}                          & \cellcolor{yellow!20}niedrig                                                & \cellcolor{green!20}hoch                                      \\
             \hline
-            \textbf{Größe}                                & 500 kB                                               & 80 kB                                 \\
+            \textbf{Größe}                                & \cellcolor{red!20}500 kB                                                    & \cellcolor{green!20}80 kB                                     \\
             \hline
-            \textbf{Lernkurve}                            & Eine steile Lernkurve                                & Eine geringe Lernkurve                \\
+            \textbf{Lernkurve}                            & \cellcolor{red!20}Eine steile Lernkurve                                     & \cellcolor{green!20}Eine geringe Lernkurve                    \\
             \hline
-            \textbf{Dokumentation}                        & vorhanden                                            & vorhanden                             \\
+            \textbf{Dokumentation}                        & \cellcolor{green!20}vorhanden                                               & \cellcolor{green!20}vorhanden                                 \\
             \hline
-            \textbf{Datenbindung}                         & Bi-directional                                       & Bi-directional                        \\
+            \textbf{Datenbindung}                         & \cellcolor{green!20}Bi-directional                                          & \cellcolor{green!20}Bi-directional                            \\
             \hline
-            \textbf{Rendering}                            & beim Client                                          & beim Server                           \\
+            \textbf{Rendering}                            & \cellcolor{green!20}beim Client                                             & \cellcolor{yellow!20}beim Server                              \\
             \hline
-            \textbf{Code reuse}                           & möglich                                              & Ja, CSS und HTML                      \\
+            \textbf{Code reuse}                           & \cellcolor{green!20}möglich                                                 & \cellcolor{green!20}Ja, CSS und HTML                          \\
             \hline
-            \textbf{Skalierbarkeit}                       & sehr hoch                                            & hoch                                  \\
+            \textbf{Skalierbarkeit}                       & \cellcolor{green!20}sehr hoch                                               & \cellcolor{yellow!20}hoch                                     \\
             \hline
-            \textbf{Testbarkeit}                          & mit einem Tool                                       & mehrere Tools benötigt                \\
+            \textbf{Testbarkeit}                          & \cellcolor{green!20}mit einem Tool                                          & \cellcolor{red!20}mehrere Tools benötigt                      \\
             \hline
-            \textbf{Vollständige Web\newline App}         & Kann als standalone Basis verwendet werden           & benötigt Third Party Tools            \\
+            \textbf{Vollständige Web\newline App}         & \cellcolor{green!20}Kann als standalone Basis verwendet werden              & \cellcolor{red!20}benötigt Third Party Tools                  \\
             \hline
-            \textbf{Lizenz}                               & MIT License                                          & MIT License                           \\
+            \textbf{Lizenz}                               & \cellcolor{green!20}MIT License                                             & \cellcolor{green!20}MIT License                               \\
             \hline
         \end{tabular}
         \caption{Vergleich zwischen Angular und Vue.js}
@@ -54,8 +54,11 @@ haben wir uns diese Tabelle erstellt.
 \noindent Unsere Entscheidung fiel schlussendlich auf Angular. 
 Da es bereits länger auf dem Markt ist und auch einen höheren Marktanteil hat, ist es generell schon interessant es sich mal anzuschauen und damit zu arbeiten.
 Hinzu kommt die sehr gute Testbarkeit, für die man lediglich ein einziges Tool benötigt. 
+Die sehr hohe Skalierbarkeit und mögliche Wiederverwendbarkeit des Codes verspricht viele Möglichkeiten, auch für die Zukunft. 
+Alle Teammitglieder haben bereits Erfahrung mit JavaScript als Programmiersprache, aber keine mit TypeScript. 
+Der Umgang mit TypeScript muss also erst erlernt werden. 
 Ein großer Nachteil, der beim Blick auf die Tabelle sofort ins Auge sticht, ist aber die Performance.
-Allerdings haben wir sie nur auf niedrig eingestuft, da am Anfang viel mitgeladen werden muss.
+Allerdings haben wir sie nur auf niedrig eingestuft, da lediglich am Anfang viel mitgeladen werden muss.
 Bei größeren Projekten bietet Angular mehr Stabilität und Performance als seine Konkurrenz in diesem Vergleich.
 
 \subsubsection{Vergleich zwischen MongoDB und PostgreSQL}
@@ -69,27 +72,27 @@ haben wir uns zwei der populärsten Lösungen rausgesucht und diese in einer Tab
     \begin{table}[H]
         \begin{tabular}{|p{0.25\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
             \hline
-            \textbf{}                                 & \textbf{MongoDB}        & \textbf{PostgreSQL}                         \\
+            \textbf{}                                 & \textbf{MongoDB}                                & \textbf{PostgreSQL}                                               \\
             \hline
-            \textbf{Primäres\newline Datenbankmodell} & Dokumentenorientiert    & Relationales DBMS                           \\
+            \textbf{Primäres\newline Datenbankmodell} & \cellcolor{green!20}Dokumentenorientiert        & \cellcolor{yellow!20}Relationales DBMS                            \\
             \hline
-            \textbf{Entwickler}                       & MongoDB. Inc            & PostgreSQL Global\newline Development Group \\
+            \textbf{Entwickler}                       & \cellcolor{yellow!20}MongoDB. Inc               & \cellcolor{yellow!20}PostgreSQL Global\newline Development Group  \\
             \hline
-            \textbf{Datenschema}                      & Schemafrei (NoSQL)      & Ja                                          \\
+            \textbf{Datenschema}                      & \cellcolor{green!20}Schemafrei (NoSQL)          & \cellcolor{red!20}Ja                                              \\
             \hline
-            \textbf{Programmier-\newline sprachen}    & JavaScript + 28 weitere & JavaScript + 9 weitere                      \\
+            \textbf{Programmier-\newline sprachen}    & \cellcolor{yellow!20}JavaScript + 28 weitere    & \cellcolor{yellow!20}JavaScript + 9 weitere                       \\
             \hline
-            \textbf{Query Language}                   & MQL                     & SQL                                         \\
+            \textbf{Query Language}                   & \cellcolor{yellow!20}MQL                        & \cellcolor{green!20}SQL                                           \\
             \hline
-            \textbf{Maximale\newline Dateigröße}      & 16 MB                   & 1 GB                                        \\
+            \textbf{Maximale\newline Dateigröße}      & \cellcolor{red!20}16 MB                         & \cellcolor{green!20}1 GB                                          \\
             \hline
-            \textbf{Lernkurve}                        & Eine geringe Lernkurve  & Eine geringe Lernkurve                      \\
+            \textbf{Lernkurve}                        & \cellcolor{green!20}Eine geringe Lernkurve      & \cellcolor{green!20}Eine geringe Lernkurve                        \\
             \hline
-            \textbf{Dokumentation}                    & vorhanden               & vorhanden                                   \\
+            \textbf{Dokumentation}                    & \cellcolor{green!20}vorhanden                   & \cellcolor{green!20}vorhanden                                     \\
             \hline
-            \textbf{Skalierbarkeit}                   & sehr hoch               & hoch                                        \\
+            \textbf{Skalierbarkeit}                   & \cellcolor{green!20}sehr hoch                   & \cellcolor{yellow!20}hoch                                         \\
             \hline
-            \textbf{Lizenz}                           & Open Source             & Open Source                                 \\
+            \textbf{Lizenz}                           & \cellcolor{green!20}Open Source                 & \cellcolor{green!20}Open Source                                   \\
             \hline
         \end{tabular}
         \caption{Vergleich zwischen MongoDB und PostgreSQL}
@@ -99,5 +102,7 @@ haben wir uns zwei der populärsten Lösungen rausgesucht und diese in einer Tab
 
 \noindent Wir haben uns schlussendlich dafür entschieden, MongoDB zu nutzen. 
 Da es bereits ein schemafreies und Dokumentenorientiertes Datenbankmodell ist, kommt uns das sehr gelegen.
+Beide Datenbankensysteme haben eine geringe Lernkurve und eine ähnlich gute Skalierbarkeit.
+SQL ist zwar allen Teammitgliedern bereits bekannt, aber dank der umfangreichen Dokumentation von MongoDB sollte es leichtfallen, MQL zu erlernen.
 Ein Nachteil, der sofort auffällt, ist die Maximale Dateigröße von gerade einmal 16 MB.
 Da wir aber nicht davon ausgehen, dass unsere Dateien diese Größe erreichen werden, stellt das für uns kein Hindernis dar.
