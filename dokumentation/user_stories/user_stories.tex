@@ -1,102 +1,72 @@
-\section{User Story}
-Hier werden wir unsere User Stories zu den einzelnen Zielgruppen auflisten.
-Wir haben die Zielgruppen nicht registrierte Nutzer, Professor und Student.
+\section{User Stories}
+In diesem Kapitel haben wir unsere User Stories gesammelt.
 
-\subsection{Struktur der User Story}
-\textbf{User Story:}
-\newline
+\subsection{Struktur der User Stories}
+Als \textbf{<Akteur>} möchte ich \textbf{<Funktion>}, um \textbf{<Nutzen>} zu erreichen.
+\subsection{User Stories Version 1}
+Hier listen wir unsere ersten Ideen auf, die wir erfüllen möchten.
+\\
 
-\noindent Als \textbf{<Akteur>} möchte ich \textbf{<Funktion>}, um \textbf{<Nutzen>} zu erreichen.
-\newline
+\textbf{Chatfenster}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{10000}
+    \item Als Nutzer möchte ich eine Nachricht abschicken können, um mit dem Chatbot zu interagieren.
+    \item Als Nutzer möchte ich eine Frage stellen können, um eine Antwort zu erhalten.
+    \item Als Nutzer möchte ich eine Antwort dargestellt bekommen, um die Antwort lesen zu können.
+    \item Als Nutzer möchte ich meine Nachrichten von denen des Bots unterscheiden können, um zu erkennen, welche Nachricht die Antwort ist.
+    \item Als Nutzer möchte ich darauf hingewiesen werden, wo ich zu Schreiben habe, um eine Nachricht verfassen zu können.
+\end{enumerate}
 
-\noindent \textbf{Akzeptanzkriteria:}
-\newline
 
-\noindent Szenario: 
-
-\noindent kurze Beschreibung des Szenarios
-\newline
-
-\noindent Wenn ich \dots
-
-\noindent und \dots
-
-\noindent Dann \dots
-
-\subsection{Student}
-
-\textbf{User Story:}
-\newline
-
-\noindent Als Student möchte ich meine Informationen von meinem Stundenplan abrufen können,
-um meine Vorlesungen einsehen zu können.
-\newline
-
-\noindent \textbf{Akzeptanzkriteria:}
-\newline
-
-\noindent Szenario: 
-
-\noindent Der angemeldete Student fragt nach, wann die Vorlesung Virtuelle Realität stattfindet.
-\newline
-
-\noindent Wenn ich nach der Uhrzeit von der Vorlesung Virtuelle Realität nachfrage
-
-\noindent und mich im Chatfenster befinde.
-
-\noindent Dann bekomme ich meine Vorlesungsinformationen zu Virtuelle Realität.
-
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \item[\textbf{Hinweis:}] Ein Teil der Professoren übernimmt administrative Tätigkeiten des Chatbots. Dadurch ist mit dem erwähnten Administator immer ein adminstrativ tätiger Professor gemeint.
+\end{enumerate}
 \newpage
-\subsection{unregistrierter Nutzer}
+\textbf{Admin Interface: Allgemein}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{20000}
+    \item Als Admin möchte ich ein Menü haben, um zwischen den Seiten des Admin-Interfaces wechseln zu können.
+    \item Als Admin möchte ich verschiede optische Konfigurationen zur Auswahl haben, um mein ChatBot zu individualisieren.
+    \item Als Admin möchte ich erkennen können, welche Option ich ausgewählt habe, um zu wissen, was aktuell ausgewählt ist.
+    \item Als Admin möchte ich den Namen des ChatBots ändern, um mein ChatBot zu individualisieren.
+    \item Als Admin möchte ich ein Eingabefeld erkennen können, um zu wissen, wo ich reinschreiben muss.
+    \item Als Admin möchte ich die ausgewählte Seite des Admin-Interfaces in einer anderen Farbe sehen, um zu Erkennen auf welcher Seite ich bin.
+\end{enumerate}
 
-\textbf{User Story:}
-\newline
+\textbf{Admin Interface: Korpus}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{30000}
+    \item Als Administrator möchte ich eine Liste mit allen Fragen und Antworten, um einen Überblick über den Korpus zu haben.
+    \item Als Administrator möchte ich einen neuen Eintrag hinzufügen, um neue Fragen und Antworten hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Fragen, um neue Fragen hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Hinzufügen von Antworten, um neue Antworten hinzuzufügen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Entfernen von Fragen, um Fragen entfernen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit zum Entfernen von Antworten, um Anworten entfernen zu können.
+    \item Als Administrator möchte ich eine Möglichkeit einen Eintrag „Fragen und Antworten“ bearbeiten zu können, um den Eintrag zu ändern.
+\end{enumerate}
+\newpage
+\textbf{Node.js Allgemein}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{40000}
+    \item Als Nutzer möchte ich eine bidirektionale Kommunikation zwischen dem Client und Server, um direkt mit dem Bot kommunizieren zu können.
+    \item Als Nutzer möchte ich, dass der ChatBot meinen Kontext versteht, um mit dem Bot nach Kontext zu chatten.
+    \item Als Administrator möchte ich die Möglichkeit den Korpus des ChatBots persistent zu speichern, um auf den Korpus zuzugreifen zu können.
+    \item Als Nutzer möchte ich, dass der ChatBot über eine Webadresse erreichbar ist, um mit dem ChatBot online zu kommunizieren.
+\end{enumerate}
 
-\noindent Als unregistrierter Nutzer,
-möchte ich Zugang zur Chatbot Chat Seite haben,
-damit ich einen Smalltalk mit dem Chatbot führen kann
-\newline
-
-\noindent \textbf{Akzeptanzkriteria:}
-\newline
-
-\noindent Szenario: 
-
-\noindent Als unregistrierter Nutzer,
-möchte ich Zugang zur Chatbot Chat Seite haben,
-damit ich einen Smalltalk mit dem Chatbot führen kann
-\newline
-
-\noindent Wenn ich ein unregistrierter Nutzer bin und mich auf der Chatbot Chatseite befinde
-
-\noindent und in das Chatfenster Fragen schreibe und diese abschicke.
-
-\noindent Dann antwortet der Chatbot auf meine Fragen mit allgemeinen Antworten.
-
-\subsection{Professor (Admin)}
-
-\textbf{User Story:}
-\newline
-
-\noindent Als Professor möchte ich den Korpus des Chatbots 
-um eine Frage und Antwort Möglichkeit erweitern, 
-um den Nutzern ein größeres Repertoire zu bieten.
-\newline
-
-\noindent \textbf{Akzeptanzkriteria:}
-\newline
-
-\noindent Szenario: 
-
-\noindent Der angemeldete Professor möchte eine neue Frage-Antwort Möglichkeit hinzufügen.
-\newline
-
-\noindent Wenn ich mich auf der Korpus-Seite des Admin-Interfaces befinde
-
-\noindent und auf den Button zum hinzufügen einer Frage-Antwort Möglichkeit drücke.
-
-\noindent Dann kann ich eine neue Frage und eine dazugehörige Antwort eintippen.
-
+\textbf{KeyCloak}
+\begin{enumerate}[leftmargin=*,labelindent=40pt,label=u\arabic*.]
+    \setcounter{enumi}{50000}
+    \item Als Admin möchte ich mich in KeyCloak einloggen können, um es zu verwalten.
+    \item Als Admin möchte ich mich in das Admin-Interface einloggen können, um die Einstellungen des Chatbots zu verwalten.
+    \item Als Hochschulangehöriger möchte ich mich mit dem Shibboleth SSO der Hochschule einloggen, um relevante Daten mitzuteilen.
+    \item Als Admin möchte ich schnellen Zugriff auf das KeyCloak-Webinterface über das Admin-Interface, um Zeit zu sparen.
+    \item Als Admin möchte ich neue Nutzergruppen erstellen, um zielgerichteter Fragen beantworten zu können.
+    \item Als Admin möchte ich einer Nutzergruppe einen neuen Fragensatz zuweisen, um die möglichen Fragen für diese Gruppe zu erweitern.
+    \item Als Admin möchte ich einen, zu einer Nutzergruppe zugewiesenen, Fragensatz entfernen, um möglichen Fragen für diese Gruppe einzuschränken.
+    \item Als Admin möchte ich Nutzer verwalten, um bei Bedarf Änderungen vorzunehmen.
+    \item Als Admin möchte ich die Login-Seite anpassen, um sie nach meinen Vorstellungen zu ändern.
+\end{enumerate}
 
 
 
