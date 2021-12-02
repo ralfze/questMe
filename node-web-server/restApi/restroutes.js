@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 
 router.mongoURL = "mongodb://localhost:27017";
+//router.mongoURL = "mongodb://mongodb:27017";
 
 // MongoDb Client Setup
 const MongoClient = require("mongodb").MongoClient;
@@ -53,7 +54,7 @@ router.post("/corpus", function (req, res) {
     db.collection(cName).updateOne(
       {},
       {
-        $push: {
+        $set: {
           data: {
             intent: "None",
             utterances: [
@@ -73,6 +74,31 @@ router.post("/corpus", function (req, res) {
         res.json(result);
       }
     );
+      // push an intent
+      db.collection(cName).updateOne(
+      {},
+      {
+        $set: {
+          data: {
+            intent: "None",
+            utterances: [
+              "ich brauche rat",
+              "ich brauche einen vorschlag",
+              "kannst du mir etwas raten?",
+              "was sollte ich tun",
+            ],
+            answers: ["Sorry, Ich verstehe das nicht"],
+          },
+        },
+      },
+      function (err, result) {
+        if (err) throw err;
+        client.close();
+        // Return corpus in json format
+        res.json(result);
+      }
+    );
+
     */
     // delete all intent: "None"
     /*

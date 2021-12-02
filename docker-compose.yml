@@ -19,6 +19,7 @@ services:
       - MONGODB_CONNSTRING=mongodb://mongodb
     ports:
       - 3000:3000
+      - 3001:3001
     depends_on:
       - mongodb
       - angular-frontend
@@ -51,6 +52,8 @@ services:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
     restart: always
+    depends_on:
+      - angular-frontend
     ports:
       - 8080:8080
     networks:
