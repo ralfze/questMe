@@ -1,10 +1,10 @@
 \newpage
 \subsection{Datenbank}
 In folgendem soll Aufschluss über die Struktur der Datenbank des ChatBots gegeben werden.
-Die Datenbank wird in einem NoSql Datenbank mongoDb gehalten.
+Die Datenbank wird in einer NoSql mongoDb Datenbank gehalten.
 
 \subsubsection{Datenhaltung}
-Die Daten, die in der mongDb Datenbank gespeichert sind sollen über ein Webinterface verändert werden können.
+Die Daten, die in der mongDb Datenbank gespeichert sind, sollen über ein Webinterface verändert werden können.
 Wenn der Chatbot gestartet wird lädt der Chatbot den Korpus aus der mongoDb.
 Sollten die Daten der Datenbank verändert worden sein, dann muss der Chatbot den Korpus erneut laden.
 Damit die Veränderungen der Datenbank auch beim Chatbot geändert werden.
@@ -23,10 +23,10 @@ Zusätzlich wird erklärt welche Daten bei den Entities enthalten sind.
 \noindent Der Korpus besteht aus name, locale und data. 
 Der ''name'' ist der Name des Korpus. 
 Das ''locale'' gibt an in welcher Sprache der Korpus verfasst wurde. 
-Das ''data'' ist gefüllt mit Intents, die benötigt werden um einschätzen zu können in welchem Kontext der ChatBot antworten soll. 
+Das ''data'' ist gefüllt mit Intents, die benötigt werden, um einschätzen zu können in welchem Kontext der ChatBot antworten soll. 
 Der Intent besteht aus Utterances (Äußerung/ Frage des Nutzers) und Antworten. 
 Die Utterances sind die möglichen Fragen des Nutzers und die Antworten sind die möglichen Antwortmöglichkeiten des Chatbots. 
-Ein Korpus hat sehr viele Intents, die den Wissenschatz des ChatBots abbilden. 
+Ein Korpus hat sehr viele Intents, die den Wissensschatz des ChatBots abbilden. 
 
 \begin{figure}[H]
     \centering
