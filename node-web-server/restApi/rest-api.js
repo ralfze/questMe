@@ -8,6 +8,7 @@ const cors = require("cors");
 class RestApi {
   // default rest port 3001
   port = 3001;
+  nlp = undefined;
   mongoURL = "mongodb://localhost:27017";
   angularURL = "http://localhost:4200";
 
@@ -17,8 +18,10 @@ class RestApi {
     methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
   };
 
-  constructor(mongoURL) {
+  constructor(mongoURL, nlp) {
     this.mongoURL = mongoURL;
+    // The Bot
+    this.nlp = nlp;
   }
   start() {
     const app = express();
@@ -34,6 +37,9 @@ class RestApi {
     // Router define mongo/angular Address
     Router.mongoURL = this.mongoURL;
     Router.angularURL = this.angularURL;
+
+    // Add Bot to Router
+    Router.nlp = this.nlp;
 
     // Cors for Angular App
     app.use(cors(this.corsOptions));

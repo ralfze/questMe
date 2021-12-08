@@ -10,7 +10,7 @@ import { AllgemeinComponent } from './admin-interface/allgemein/allgemein.compon
 import { InfopageComponent } from './admin-interface/infopage/infopage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
-import { KorpusComponent } from './admin-interface/korpus/korpus.component';
+import { CorpusComponent} from './admin-interface/corpus/corpus.component';
 import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
 import { ChatComponent as ChatComponent } from './chat/chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +31,10 @@ import {MatButtonModule} from '@angular/material/button';
 // Tree Example
 import {MatTreeModule} from '@angular/material/tree';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
+import { IntentCard } from './admin-interface/corpus/intent/intent-card.component';
+import { IntentArray } from './admin-interface/corpus/intent-array/intent-array.component';
+
 
 @NgModule({
   declarations: [
@@ -38,9 +42,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AllgemeinComponent,
     InfopageComponent,
     AdminInterfaceComponent,
-    KorpusComponent,
+    CorpusComponent,
     EinstellungenComponent,
-    ChatComponent
+    ChatComponent,
+    IntentCard,
+    IntentArray
   ],
   imports: [
     BrowserModule,
@@ -52,6 +58,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     NgxFlickingModule,
     MatInputModule,
     FormsModule,
+    MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
     MatTreeModule,MatCheckboxModule,

@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+mat-card {
+  margin-top: 3%;
+  left: 0;
+  padding: 0;
+  background-color: lavender;
+  border-radius: 4%;
+  mat-list-item {
+    display: flex;
+    flex-direction: column;
+    text-indent: 12pt;
+    button {
+
+      position: absolute;
+      right: 3%;
+      text-align: center;
+    }
+  }
+
+  // Contains Intent
+  .intent-name {
+    text-indent: 12pt;
+    width: 100%;
+    font-size: 14pt;
+    background-color: royalblue;
+  }
+  .utterance-div {
+    width: 100%;
+    .intent-utterances {
+      text-indent: 12pt;
+      font-size: 14pt;
+    }
+  }
+  .answers-div {
+    width: 100%;
+    .intent-answers {
+      text-indent: 12pt;
+      font-size: 14pt;
+    }
+  }
+}

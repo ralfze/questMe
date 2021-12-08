@@ -1,5 +1,5 @@
 <!--
-  Allgemein-Seite
+  Korpus-Seite
  -->
 
 <!-- Toolbar -->
@@ -53,39 +53,27 @@
       src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
       alt="ChatBot"
     />
-    <span>Allgemein</span>
+    <span>Korpus</span>
   </div>
 
-  <!-- Image Slider with <Flicking>-->
-  <div
-    class="flicking-viewport has background-grey-lighter p-4 mb-4"
-    style="touch-action: pan-y; user-select: none"
-  >
-    <ngx-flicking [options]="{ moveType: 'freeScroll', bound: true }">
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture.png" alt="Bot picture 01"
-      /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02"
-      /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03"
-      /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04"
-      /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/image 10.png" alt="Bot picture default"
-      /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/image 16.png" alt="Bot picture fun"
-      /></span>
-    </ngx-flicking>
-  </div>
+  <!--Korpus Domains
+      "basis" is per default selected
+      with 2-way binding-->
+  <div class="card card-korpusdaten">
+    <mat-form-field class="korpus-daten" appearance="fill">
+      <mat-label>Korpusdaten Thema</mat-label>
+      <mat-select [(value)]="selected">
+        <mat-option value="basis">Basis</mat-option>
+        <mat-option value="hochschule">Hochschule</mat-option>
+        <mat-option value="interna">Interna</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-  <!-- Input Field for Bot name -->
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Bot Name</mat-label>
-    <input matInput placeholder="default name" value="questMe" />
-  </mat-form-field>
+    <p class="selected-p">Du hast gewählt: {{ selected }}</p>
+  </div>
+  <div class="button-div">
+    <button mat-raised-button color="primary" (click)="restartBot()">Bot updaten</button>
+  </div>
 </div>
+
+<intent-array></intent-array>
