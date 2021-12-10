@@ -1,13 +1,5 @@
 const { dockStart } = require('@nlpjs/basic');
 
-// Connection String for mongoDB
-//const connString = process.env.MONGODB_CONNSTRING;
-
-// Alias mongodb for Address in Docker Container
-// Host "mongodb://localhost:27017" Docker "mongodb://mongodb:27017
-const connString = "mongodb://mongodb:27017";
-
-const restPort = 3001;
 
 // Connection String for mongoDB
 //const connString = process.env.MONGODB_CONNSTRING;

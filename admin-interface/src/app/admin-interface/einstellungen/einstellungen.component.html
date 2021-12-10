@@ -63,127 +63,98 @@
   </div>
 
    <!-- Professor -->
-  <div class="card card-group-professor">
+  <div class="card card-group-users">
     <span class="professor">Professoren</span>
 
     <mat-form-field class="example-chip-list" appearance="fill">
       <mat-label>Korpusdaten</mat-label>
-      <mat-chip-list #chipList aria-label="Korpusdaten">
+      <mat-chip-list #chipListProf aria-label="Korpusdaten">
         <mat-chip
-          *ngFor="let user of users"
-          [selectable]="selectable"
+          *ngFor="let prof of corpusProf"
+          [selectable]="selectableProf"
           [removable]="removable"
-          (removed)="remove(user)"
+          (removed)="removeProf(prof)"
         >
-          {{ user }}
+          {{ prof }}
           <button matChipRemove *ngIf="removable">
             <mat-icon>cancel</mat-icon>
           </button>
         </mat-chip>
         <input
           placeholder="Neue Korpusdaten"
-          #userInput
-          [formControl]="userCtrl"
-          [matAutocomplete]="auto"
-          [matChipInputFor]="chipList"
+          #profInput
+          [formControl]="profCtrl"
+          [matChipInputFor]="chipListProf"
           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          (matChipInputTokenEnd)="add($event)"
+          (matChipInputTokenEnd)="addProf($event)"
         />
       </mat-chip-list>
-      <mat-autocomplete
-        #auto="matAutocomplete"
-        (optionSelected)="selected($event)"
-      >
-        <mat-option
-          *ngFor="let user of filteredUser | async"
-          [value]="user"
-        >
-          {{ user }}
-        </mat-option>
-      </mat-autocomplete>
+
     </mat-form-field>
   </div>
+
+
 <!-- Student -->
-  <div class="card card-group-professor">
+  <div class="card card-group-users">
     <span class="student">Studenten</span>
 
     <mat-form-field class="example-chip-list" appearance="fill">
       <mat-label>Korpusdaten</mat-label>
-      <mat-chip-list #chipList aria-label="Korpusdaten">
+      <mat-chip-list #chipListStud aria-label="Korpusdaten">
         <mat-chip
-          *ngFor="let user of users"
-          [selectable]="selectable"
+          *ngFor="let stud of corpusStud"
+          [selectable]="selectableStud"
           [removable]="removable"
-          (removed)="remove(user)"
+          (removed)="removeStud(stud)"
         >
-          {{ user }}
+          {{ stud }}
           <button matChipRemove *ngIf="removable">
             <mat-icon>cancel</mat-icon>
           </button>
         </mat-chip>
         <input
           placeholder="Neue Korpusdaten"
-          #userInput
-          [formControl]="userCtrl"
-          [matAutocomplete]="auto"
-          [matChipInputFor]="chipList"
+          #studInput
+          [formControl]="studCtrl"
+          [matChipInputFor]="chipListStud"
           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          (matChipInputTokenEnd)="add($event)"
+          (matChipInputTokenEnd)="addStud($event)"
         />
       </mat-chip-list>
-      <mat-autocomplete
-        #auto="matAutocomplete"
-        (optionSelected)="selected($event)"
-      >
-        <mat-option
-          *ngFor="let user of filteredUser | async"
-          [value]="user"
-        >
-          {{ user }}
-        </mat-option>
-      </mat-autocomplete>
+
     </mat-form-field>
   </div>
 
-  <!-- Nicht registrierte Benutzer -->
-  <div class="card card-group-professor">
+ <!--  Nicht registrierte Benutzer -->
+  <div class="card card-group-users">
     <span class="nicht-registriert">Nicht registriert</span>
 
     <mat-form-field class="example-chip-list" appearance="fill">
       <mat-label>Korpusdaten</mat-label>
-      <mat-chip-list #chipList aria-label="Korpusdaten">
+      <mat-chip-list #chipListUnregistered aria-label="Korpusdaten">
         <mat-chip
-          *ngFor="let user of users"
-          [selectable]="selectable"
+          *ngFor="let unregistered of corpusUnregistered"
+          [selectable]="selectableUnregistered"
           [removable]="removable"
-          (removed)="remove(user)"
+          (removed)="removeUnregistered(unregistered)"
         >
-          {{ user }}
+          {{ unregistered }}
           <button matChipRemove *ngIf="removable">
             <mat-icon>cancel</mat-icon>
           </button>
         </mat-chip>
         <input
           placeholder="Neue Korpusdaten"
-          #userInput
-          [formControl]="userCtrl"
-          [matAutocomplete]="auto"
-          [matChipInputFor]="chipList"
+          #unregisteredInput
+          [formControl]="unregisteredCtrl"
+
+          [matChipInputFor]="chipListUnregistered"
           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          (matChipInputTokenEnd)="add($event)"
+          (matChipInputTokenEnd)=" addUnregistered($event)"
         />
       </mat-chip-list>
-      <mat-autocomplete
-        #auto="matAutocomplete"
-        (optionSelected)="selected($event)"
-      >
-        <mat-option
-          *ngFor="let user of filteredUser | async"
-          [value]="user"
-        >
-          {{ user }}
-        </mat-option>
-      </mat-autocomplete>
+
     </mat-form-field>
   </div>
+
 </div>

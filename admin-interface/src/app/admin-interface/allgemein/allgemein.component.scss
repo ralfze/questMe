@@ -184,10 +184,23 @@ a:hover {
   justify-content: center;
   text-align: center;
 }
-.button img:hover{
+
+/*.button img:hover{
   border-color: royalblue;
   border-style: double;
+}*/
+
+.toggle-class{
+  border-color: royalblue;
+  border-style: double;
+  background-color: pink;
 }
+
+/*.button img:active{
+  border-color: royalblue;
+  border-style: double;
+}*/
+
 
 .mr-2, .mx-2 {
   margin-right: .10rem !important;

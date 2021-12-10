@@ -62,23 +62,23 @@
     style="touch-action: pan-y; user-select: none"
   >
     <ngx-flicking [options]="{ moveType: 'freeScroll', bound: true }">
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture.png" alt="Bot picture 01"
+      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
+        ><img src="assets/images/Bot Picture.png" alt="Bot picture 01" [ngClass]="{'toggle-class':iconArray[0].condition}"
       /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02"
+      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
+        ><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02" [ngClass]="{'toggle-class':iconArray[1].condition}"
       /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03"
+      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
+        ><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03" [ngClass]="{'toggle-class':iconArray[2].condition}"
       /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04"
+      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
+        ><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04" [ngClass]="{'toggle-class':iconArray[3].condition}"
       /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/image 10.png" alt="Bot picture default"
+      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
+        ><img src="assets/images/image 10.png" alt="Bot picture default" [ngClass]="{'toggle-class':iconArray[4].condition}"
       /></span>
-      <span flicking-panel class="button mr-2 is-white"
-        ><img src="assets/images/image 16.png" alt="Bot picture fun"
+      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
+        ><img src="assets/images/image 16.png" alt="Bot picture fun" [ngClass]="{'toggle-class':iconArray[5].condition}"
       /></span>
     </ngx-flicking>
   </div>
@@ -86,6 +86,6 @@
   <!-- Input Field for Bot name -->
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Bot Name</mat-label>
-    <input matInput placeholder="default name" value="questMe" />
+    <input matInput placeholder="default name" [ngModel]='allgemein.botName' />
   </mat-form-field>
 </div>

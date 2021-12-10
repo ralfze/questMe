@@ -8,11 +8,10 @@ mat-card {
   background-color: lavender;
   border-radius: 4%;
   mat-list-item {
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
     text-indent: 12pt;
-    button {
-
+    .remove {
       position: absolute;
       right: 3%;
       text-align: center;

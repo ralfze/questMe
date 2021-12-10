@@ -17,47 +17,108 @@ import { KeycloakService } from 'keycloak-angular';
 export class EinstellungenComponent implements OnInit {
   webtitle = 'Admin Einstellungen';
 
-  selectable = true;
+  selectableProf = true;
+  selectableStud = true;
+  selectableUnregistered = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  userCtrl = new FormControl();
-  filteredUser: Observable<string[]>;
-  users: string[] = ['Basis'];
-  allusers: string[] = ['Hochschule', 'Basis', 'Interna'];
+  studCtrl = new FormControl();
+  profCtrl=new FormControl();
+  unregisteredCtrl=new FormControl();
+  corpusStud: string[] = ['Basis','Hochschule'];
+  corpusProf: string[] = ['Bsis', 'Hochschule', 'Interna'];
+  corpusUnregistered: string[] = ['Basis'];
 
-  @ViewChild('userInput')
-  userInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('unregisteredInput')
+  unregisteredInput!: ElementRef<HTMLInputElement>;
+
+  @ViewChild('studInput')
+  studInput!: ElementRef<HTMLInputElement>;
+
+  @ViewChild('profInput')
+  profInput!: ElementRef<HTMLInputElement>;
 
   constructor(private title: Title, private keycloakService: KeycloakService) {
-    this.filteredUser = this.userCtrl.valueChanges.pipe(
-      startWith(null),
-      map((user: string | null) => (user ? this._filter(user) : this.allusers.slice())),
-    );
+
   }
 
-  add(event: MatChipInputEvent): void {
+
+//add chips
+  addProf(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
-    // Add our user
+    // Add our Korpusdata
     if (value) {
-      this.users.push(value);
+
+      this.corpusProf.push(value);
+
     }
 
     // Clear the input value
     event.chipInput!.clear();
 
-    this.userCtrl.setValue(null);
+
+    this.profCtrl.setValue(null);
+
   }
 
-  remove(user: string): void {
-    const index = this.users.indexOf(user);
+  addStud(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+
+    // Add our Korpusdata
+    if (value) {
+      this.corpusStud.push(value);
+
+    }
+
+    // Clear the input value
+    event.chipInput!.clear();
+
+    this.studCtrl.setValue(null);
+
+  }
+
+  addUnregistered(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+
+    // Add our Korpusdata
+    if (value) {
+
+      this.corpusUnregistered.push(value);
+    }
+
+    // Clear the input value
+    event.chipInput!.clear();
+
+    this.unregisteredCtrl.setValue(null);
+  }
+
+  //remove chips
+  removeProf(prof: string): void {
+    const index = this.corpusProf.indexOf(prof);
 
     if (index >= 0) {
-      this.users.splice(index, 1);
+      this.corpusStud.splice(index, 1);
     }
   }
 
-  selected(event: MatAutocompleteSelectedEvent): void {
+  removeStud(stud: string): void {
+    const index = this.corpusStud.indexOf(stud);
+
+    if (index >= 0) {
+      this.corpusStud.splice(index, 1);
+    }
+  }
+
+  removeUnregistered(unregistered: string):void{
+    const index = this.corpusUnregistered.indexOf(unregistered);
+
+    if (index >= 0) {
+      this.corpusUnregistered.splice(index, 1);
+    }
+  }
+
+ /* selected(event: MatAutocompleteSelectedEvent): void {
     this.users.push(event.option.viewValue);
     this.userInput.nativeElement.value = '';
     this.userCtrl.setValue(null);
@@ -66,9 +127,11 @@ export class EinstellungenComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.allusers.filter(user => user.toLowerCase().includes(filterValue));
+    return this.allusers.filter(prof => prof.toLowerCase().includes(filterValue)),
+    this.allusers.filter(stud => stud.toLowerCase().includes(filterValue))
+    ;
   }
-
+*/
 
 
 
