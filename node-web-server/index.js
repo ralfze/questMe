@@ -1,4 +1,13 @@
-const { dockStart } = require("@nlpjs/basic");
+const { dockStart } = require('@nlpjs/basic');
+
+// Connection String for mongoDB
+//const connString = process.env.MONGODB_CONNSTRING;
+
+// Alias mongodb for Address in Docker Container
+// Host "mongodb://localhost:27017" Docker "mongodb://mongodb:27017
+const connString = "mongodb://mongodb:27017";
+
+const restPort = 3001;
 
 // Connection String for mongoDB
 //const connString = process.env.MONGODB_CONNSTRING;
@@ -140,7 +149,7 @@ const restPort = 3001;
   // END Rest Api ///////////////////////////////////////
 
   // SOCKET.IO ///////////////////////////////////////
-  const { SocketioConnector } = require("./socketioConnector/index");
+  const { SocketioConnector } = require('./socketioConnector/index');
 
   // gets the 'default' container (has all containers nlp,core,...)
   container = dock.getContainer();
