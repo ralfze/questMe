@@ -20,13 +20,16 @@ export class EinstellungenComponent implements OnInit {
   selectableProf = true;
   selectableStud = true;
   selectableUnregistered = true;
-  removable = true;
+  unregisteredRemoveable = true;
+  profRemoveable=true;
+  studRemoveable=true;
+
   separatorKeysCodes: number[] = [ENTER, COMMA];
   studCtrl = new FormControl();
   profCtrl=new FormControl();
   unregisteredCtrl=new FormControl();
   corpusStud: string[] = ['Basis','Hochschule'];
-  corpusProf: string[] = ['Bsis', 'Hochschule', 'Interna'];
+  corpusProf: string[] = ['Basis', 'Hochschule', 'Interna'];
   corpusUnregistered: string[] = ['Basis'];
 
   @ViewChild('unregisteredInput')
@@ -98,7 +101,7 @@ export class EinstellungenComponent implements OnInit {
     const index = this.corpusProf.indexOf(prof);
 
     if (index >= 0) {
-      this.corpusStud.splice(index, 1);
+      this.corpusProf.splice(index, 1);
     }
   }
 

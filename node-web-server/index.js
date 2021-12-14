@@ -1,6 +1,5 @@
 const { dockStart } = require('@nlpjs/basic');
 
-
 // Connection String for mongoDB
 //const connString = process.env.MONGODB_CONNSTRING;
 
@@ -43,6 +42,7 @@ const restPort = 3001;
 
   // NLP Part
   const nlp = dock.get("nlp");
+  
   console.log(connString);
   //Database mongoDB
   const MongoClient = require("mongodb").MongoClient;

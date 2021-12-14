@@ -72,11 +72,11 @@
         <mat-chip
           *ngFor="let prof of corpusProf"
           [selectable]="selectableProf"
-          [removable]="removable"
+          [removable]="profRemoveable"
           (removed)="removeProf(prof)"
         >
           {{ prof }}
-          <button matChipRemove *ngIf="removable">
+          <button matChipRemove *ngIf="profRemoveable">
             <mat-icon>cancel</mat-icon>
           </button>
         </mat-chip>
@@ -104,11 +104,11 @@
         <mat-chip
           *ngFor="let stud of corpusStud"
           [selectable]="selectableStud"
-          [removable]="removable"
+          [removable]="studRemoveable"
           (removed)="removeStud(stud)"
         >
           {{ stud }}
-          <button matChipRemove *ngIf="removable">
+          <button matChipRemove *ngIf="studRemoveable">
             <mat-icon>cancel</mat-icon>
           </button>
         </mat-chip>
@@ -135,11 +135,11 @@
         <mat-chip
           *ngFor="let unregistered of corpusUnregistered"
           [selectable]="selectableUnregistered"
-          [removable]="removable"
+          [removable]="unregisteredRemoveable"
           (removed)="removeUnregistered(unregistered)"
         >
           {{ unregistered }}
-          <button matChipRemove *ngIf="removable">
+          <button matChipRemove *ngIf="unregisteredRemoveable">
             <mat-icon>cancel</mat-icon>
           </button>
         </mat-chip>
@@ -147,7 +147,6 @@
           placeholder="Neue Korpusdaten"
           #unregisteredInput
           [formControl]="unregisteredCtrl"
-
           [matChipInputFor]="chipListUnregistered"
           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
           (matChipInputTokenEnd)=" addUnregistered($event)"

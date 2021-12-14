@@ -4,6 +4,8 @@
 const express = require("express");
 const router = express.Router();
 
+const keycloak = require('./keycloak-config').initKeycloak();
+
 //router.mongoURL = "mongodb://localhost:27017";
 router.mongoURL = "mongodb://mongodb:27017";
 
@@ -18,7 +20,7 @@ const cName = "dataC";
 //// GET ///////////////////////////////////////////////////////////////////////////
 
 // (OLD) GET one (for compatibility with current angular setup)
-router.get("/corpus", function (req, res) {
+router.get("/corpus", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
 
@@ -40,7 +42,7 @@ router.get("/corpus", function (req, res) {
 });
 
 // GET all Database Entries
-router.get("/corpus/all", function (req, res) {
+router.get("/corpus/all", keycloak.protect("admin"), function (req, res) {
   // Mongo CLient
   const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
 
@@ -63,7 +65,7 @@ router.get("/corpus/all", function (req, res) {
 });
 
 // GET by ID
-router.get("/corpus/id/:id", function (req, res) {
+router.get("/corpus/id/:id", keycloak.protect("admin"), function (req, res) {
   // Get ID
   const { id } = req.params;
 
@@ -96,7 +98,7 @@ router.get("/corpus/id/:id", function (req, res) {
 });
 
 // GET by Name
-router.get("/corpus/name/:name", function (req, res) {
+router.get("/corpus/name/:name", keycloak.protect("admin"), function (req, res) {
   // Get name
   const { name } = req.params;
 
@@ -120,7 +122,7 @@ router.get("/corpus/name/:name", function (req, res) {
 });
 
 // GET by Collection
-router.get("/corpus/collection/:collection", function (req, res) {
+router.get("/corpus/collection/:collection", keycloak.protect("admin"), function (req, res) {
   // Get name
   const { collection } = req.params;
 
@@ -146,7 +148,7 @@ router.get("/corpus/collection/:collection", function (req, res) {
 //// POST ///////////////////////////////////////////////////////////////////////////
 
 // Add a new Corpus
-router.post("/corpus", function (req, res) {
+router.post("/corpus", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
 
@@ -166,7 +168,7 @@ router.post("/corpus", function (req, res) {
 });
 
 // Add a new Intent
-router.post("/corpus/intent", function (req, res) {
+router.post("/corpus/intent", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
 
@@ -205,7 +207,7 @@ router.post("/corpus/intent", function (req, res) {
 //// PUT ///////////////////////////////////////////////////////////////////////////
 
 // Replace a Corpus by ID
-router.put("/corpus/id/:id", function (req, res) {
+router.put("/corpus/id/:id", keycloak.protect("admin"), function (req, res) {
   // Get ID
   const { id } = req.params;
 
@@ -239,7 +241,7 @@ router.put("/corpus/id/:id", function (req, res) {
 });
 
 // Replace a Corpus by Name
-router.put("/corpus/name/:name", function (req, res) {
+router.put("/corpus/name/:name", keycloak.protect("admin"), function (req, res) {
   // Get Name
   const { name } = req.params;
 
@@ -267,7 +269,7 @@ router.put("/corpus/name/:name", function (req, res) {
 });
 
 // Replace a Corpus by Collection
-router.put("/corpus/collection/:collection", function (req, res) {
+router.put("/corpus/collection/:collection", keycloak.protect("admin"), function (req, res) {
   // Get Collection
   const { collection } = req.params;
 
@@ -291,7 +293,7 @@ router.put("/corpus/collection/:collection", function (req, res) {
 });
 
 // Updates the given Intent
-router.put("/corpus/intent", function (req, res) {
+router.put("/corpus/intent", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
 
@@ -331,7 +333,7 @@ router.put("/corpus/intent", function (req, res) {
 //// DELETE ///////////////////////////////////////////////////////////////////////////
 
 // Delete a Corpus
-router.delete("/corpus/id/:id", function (req, res) {
+router.delete("/corpus/id/:id", keycloak.protect("admin"), function (req, res) {
   // Get ID
   const { id } = req.params;
 
@@ -364,7 +366,7 @@ router.delete("/corpus/id/:id", function (req, res) {
 });
 
 // Add a new Intent
-router.delete("/corpus/intent", function (req, res) {
+router.delete("/corpus/intent", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
 
@@ -399,7 +401,7 @@ router.delete("/corpus/intent", function (req, res) {
 
 // Restart Bot /////////////////////////////////////////
 
-router.post("/bot/restart", function (req, res) {
+router.post("/bot/restart", keycloak.protect("admin"), function (req, res) {
   if (req.body.key !== 12345) {
     res.status(401).json("Not accessible");
   } else {
