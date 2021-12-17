@@ -10,7 +10,7 @@ import { AllgemeinComponent } from './admin-interface/allgemein/allgemein.compon
 import { InfopageComponent } from './admin-interface/infopage/infopage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
-import { CorpusComponent} from './admin-interface/corpus/corpus.component';
+import { CorpusComponent } from './admin-interface/corpus/corpus.component';
 import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
 import { ChatComponent as ChatComponent } from './chat/chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,14 +27,17 @@ import { SocketService } from './chat/socket.service';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { initializeKeycloak } from './utility/app.init';
 import { MatListModule } from '@angular/material/list';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 // Tree Example
-import {MatTreeModule} from '@angular/material/tree';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatCardModule} from '@angular/material/card';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 import { IntentCard } from './admin-interface/corpus/intent/intent-card.component';
 import { IntentArray } from './admin-interface/corpus/intent-array/intent-array.component';
-
+import { IntentDialogComponent } from './admin-interface/corpus/intent-array/intent-dialog/intent-dialog.component';
+// Intent Card Dialog
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatTooltipModule } from '@angular/material/tooltip'
 
 @NgModule({
   declarations: [
@@ -46,12 +49,14 @@ import { IntentArray } from './admin-interface/corpus/intent-array/intent-array.
     EinstellungenComponent,
     ChatComponent,
     IntentCard,
-    IntentArray
+    IntentArray,
+    IntentDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatDialogModule,
     MatMenuModule,
     MatIconModule,
     AppRoutingModule,
@@ -61,9 +66,10 @@ import { IntentArray } from './admin-interface/corpus/intent-array/intent-array.
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTreeModule,MatCheckboxModule,
+    MatTreeModule, MatCheckboxModule,
     MatChipsModule,
     MatListModule,
+    MatTooltipModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
     KeycloakAngularModule,

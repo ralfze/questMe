@@ -1,23 +1,40 @@
-import { Component, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef, ComponentFactoryResolver, ComponentRef, AfterContentInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren, ViewContainerRef, ComponentFactoryResolver, ComponentRef, AfterContentInit, Directive, EmbeddedViewRef, ViewRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable, Subscription, throwIfEmpty } from 'rxjs';
 import { ApiService } from '../../api.service';
 import { Corpus } from '../intent/corpus';
 import { Intent } from '../intent/intent';
 import { IntentCard } from '../intent/intent-card.component';
+import { IntentDialogComponent } from './intent-dialog/intent-dialog.component';
 
 @Component({
   selector: 'intent-array',
   templateUrl: './intent-array.component.html',
   styleUrls: ['./intent-array.component.scss']
 })
+//@Directive({selector: 'intent-array'})
 export class IntentArray implements OnInit, AfterContentInit {
-  // Array with Intent Cards
-  intCardArray: ComponentRef<IntentCard>[] | undefined;
+  // Variables
+  // valuesChanged shows if an update in the database is needed
+  valuesChanged = false;
 
+  // Holds the Intent of the dialog
+  // Stores is it temporary
+  dialogIntent: Intent = {
+    intent: '',
+    utterances: [''],
+    answers: ['']
+  };
 
-  @ViewChild('container', { read: ViewContainerRef })
+  // Array with Intent Cards ComponentRef
+  //intCardArray: ComponentRef<IntentCard>[] = [];
+  // Subscrition Array to erase subscription on delete
+  intCardSubscription: Subscription[] = [];
+
+  //@ViewChild('intent-list', { read: ViewContainerRef })
   //@ViewChild(IntentCard) intentCard: IntentCard | undefined;
-  // intents stores utterance and answers
+
+  //corpus stores in intents: utterances and answers
   corpus: Corpus = {
     name: '',
     locale: '',
@@ -30,14 +47,21 @@ export class IntentArray implements OnInit, AfterContentInit {
    */
   createCard(intent: Intent) {
     let componentRef = this.container.createComponent(IntentCard);
+    // set the componentRef to the component itself
+    componentRef.instance.compRef = componentRef;
+    // Set Intent Array Reference
+    componentRef.instance.intentArrayRef = this;
+    // Set the intent of the array
     componentRef.instance.setData(intent);
     // subscribe to data Model of Card
-    componentRef.instance.intCardObserver.subscribe(data => {
+    // also add the subscription to the value subscription
+    componentRef.instance.subscription = componentRef.instance.intCardObserver.subscribe(data => {
       let index = this.corpus.data.indexOf(intent);
       // Update new data Model
       this.corpus.data[index] = data;
     });
   }
+
   /**
    * Creates a list of Cards
    * @param corpus needs a Corpus Object to create a card
@@ -46,7 +70,6 @@ export class IntentArray implements OnInit, AfterContentInit {
     corpus.data.forEach(element => {
       this.createCard(element);
       // subscribe to data
-
     });
   }
   /**
@@ -78,7 +101,7 @@ export class IntentArray implements OnInit, AfterContentInit {
   // END REST API
 
 
-  constructor(private apiService: ApiService, private componentFactoryResolver: ComponentFactoryResolver, private container: ViewContainerRef) {
+  constructor(private apiService: ApiService, private container: ViewContainerRef, private dialog: MatDialog) {
   }
   ngAfterContentInit(): void {
     // Create an Observer to update changes of the corpus
@@ -102,5 +125,49 @@ export class IntentArray implements OnInit, AfterContentInit {
     testO.subscribe(data => console.log(data));
     */
   }
+  /**
+   * Removing an intent
+   */
+  removeIntent(intent: Intent) {
+    // remove intent from  the data model
+    let index = this.corpus.data.indexOf(intent);
+    this.corpus.data.splice(index, 1);
+  }
+  /**
+   * Method to create a dialog to insert new Intents
+   */
+  // Adds the DialogIntent to the Corpus
+  addDialogIntent(intent: Intent) {
+    // push the data into the corpus
+    this.corpus.data.push(intent);
+    //this.corpus.data.splice(0,0,intent);
+    // Create a card of the intent
+    this.createCard(intent);
+  }
+  cleanDialogData() {
+    this.dialogIntent = {
+      intent: '',
+      utterances: [''],
+      answers: ['']
+    };
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(IntentDialogComponent, {
+      width: '250px',
+      data: this.dialogIntent,
+    });
 
+    dialogRef.afterClosed().subscribe((result: Intent) => {
+      console.log('The dialog was closed');
+      if (result !== undefined) {
+        this.dialogIntent = result;
+        console.log(this.dialogIntent);
+        // Add card to the list
+        this.addDialogIntent(this.dialogIntent);
+        // Clean the temporary dialogIntent
+        this.cleanDialogData();
+        console.log(this.corpus.data);
+      }
+    });
+  }
 }

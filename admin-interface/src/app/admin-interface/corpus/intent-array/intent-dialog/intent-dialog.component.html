@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Create Intent</h1>
+<div mat-dialog-content>
+  <p>Intent</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter an intent name</mat-label>
+    <input matInput [(ngModel)]="data.intent" placeholder="animal.cat.name">
+  </mat-form-field>
+  <p>Utterance</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter an utterance</mat-label>
+    <input matInput [(ngModel)]="data.utterances[0]" placeholder="What is your Cat's name?">
+    </mat-form-field>
+  <p>Answer</p>
+  <mat-form-field appearance="fill">
+        <mat-label>Enter an answer</mat-label>
+    <input matInput [(ngModel)]="data.answers[0]" placeholder="My Cat's name is Tom">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" (click)="onNoClick()">Abort</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="data" [disabled]=checkTextFields()>Add Intent</button>
+</div>

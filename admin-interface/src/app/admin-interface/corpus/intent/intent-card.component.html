@@ -1,132 +1,177 @@
-<mat-card class="intent-card">
-  <!-- Display Intent name-->
-  <div class="intent-name">
-    <div *ngIf="!inputIntIsDisabled">
-      {{ intent.intent }}
-      <button
-        matSuffix
-        noEdit
-        mat-icon-button
-        aria-label="edit-intent-name"
-        (click)="actInputInt()"
-      >
-        <mat-icon>mode_edit</mat-icon>
-      </button>
-    </div>
-    <!-- Edit Input-->
-    <mat-form-field
-      class="intent-form-field"
-      appearance="fill"
-      *ngIf="inputIntIsDisabled"
-    >
-      <mat-label>Edit Intent</mat-label>
-      <input matInput type="text" [(ngModel)]="inputInt" />
-      <button
-        matSuffix
-        mat-raised-button
-        mat-raised-button
-        aria-label="edit-intent"
-        (click)="editIntent(inputInt)"
-      >
-        Edit
-      </button>
-    </mat-form-field>
-    <!-- Abort Icon Button Intent-->
-    <button
-      mat-icon-button
-      aria-label="abortIntInput"
-      (click)="abortIntInput()"
-      *ngIf="inputIntIsDisabled"
-    >
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
-  <!-- Utterance Section -->
-  <div class="utterance-div">
-    <div class="intent-utterances">
-      utterances<button
-        mat-icon-button
-        aria-label="add-utterance-icon"
-        (click)="actInputUtt()"
-        [disabled]="butUttIsDisabled"
-      >
-        <mat-icon>add</mat-icon>
-      </button>
-    </div>
-
-    <!-- List of all utterances -->
-    <mat-list>
-      <mat-list-item *ngFor="let item of intent.utterances; index as i"
-        >{{ intent.utterances[i]
-        }}<button class="remove" (click)="removeUtt(item)">
-          <mat-icon>delete_outline</mat-icon>
-        </button></mat-list-item
-      >
-      <!-- Input Form of a new Utterance-->
-      <mat-list-item *ngIf="butUttIsDisabled">
-        <mat-form-field class="utterance-form-field" appearance="fill">
-          <mat-label>New Utterance</mat-label>
-          <input matInput type="text" [(ngModel)]="inputUtt" />
-          <button
-            *ngIf="inputUtt"
-            matSuffix
-            mat-raised-button
-            aria-label="add-utterrance"
-            (click)="deactInputUtt(inputUtt)"
-          >
-            Add
-          </button>
-        </mat-form-field>
-        <!-- Abort Button for Input-->
-        <button mat-icon-button aria-label="Clear" (click)="abortUttInput()">
-          <mat-icon>close</mat-icon>
+<div class="card-container">
+  <mat-card class="intent-card">
+    <!-- Display Intent name-->
+    <div class="intent-div">
+      <div class="intent-name-div" *ngIf="!inputIntIsDisabled">
+        {{ intent.intent }}
+        <button
+          matSuffix
+          noEdit
+          mat-icon-button
+          aria-label="edit-intent-name"
+          (click)="actInputInt()"
+        >
+          <mat-icon>mode_edit</mat-icon>
         </button>
-      </mat-list-item>
-    </mat-list>
-  </div>
-
-  <!-- Answers Section -->
-  <div class="answers-div">
-    <div class="intent-answers">
-      answers<button
-        mat-icon-button
-        aria-label="add-answers-icon"
-        (click)="actInputAns()"
-        [disabled]="butAnsIsDisabled"
+      </div>
+      <!-- Edit Input-->
+      <mat-form-field
+        class="intent-form-field"
+        appearance="fill"
+        *ngIf="inputIntIsDisabled"
       >
-        <mat-icon>add</mat-icon>
+        <mat-label>Edit Intent</mat-label>
+        <input matInput type="text" [(ngModel)]="inputInt" />
+        <button
+          matSuffix
+          mat-raised-button
+          mat-raised-button
+          aria-label="edit-intent"
+          (click)="editIntent(inputInt)"
+        >
+          Edit
+        </button>
+      </mat-form-field>
+      <!-- Abort Icon Button Intent-->
+      <button
+        class="intent-edit-abort"
+        mat-icon-button
+        aria-label="abortIntInput"
+        (click)="abortIntInput()"
+        *ngIf="inputIntIsDisabled"
+      >
+        <mat-icon>close</mat-icon>
       </button>
     </div>
-
-    <!-- List of all answers -->
-    <mat-list>
-      <mat-list-item *ngFor="let item of intent.answers; index as i"
-        >{{ intent.answers[i]
-        }}<button class="remove" (click)="removeAns(item)">
-          <mat-icon>delete_outline</mat-icon>
-        </button></mat-list-item
-      >
-
-      <!-- Input Form of a new Utterance-->
-      <mat-list-item *ngIf="butAnsIsDisabled">
-        <mat-form-field class="answers-form-field" appearance="fill">
-          <mat-label>New Answers</mat-label>
-          <input matInput type="text" [(ngModel)]="inputAns" />
-          <button
-            *ngIf="inputAns"
-            matSuffix
-            mat-raised-button
-            aria-label="add-answer"
-            (click)="deactInputAns(inputAns)"
-          >
-            Add
-          </button>
-        </mat-form-field>
-        <!-- Abort Button for Input-->
-        <button mat-icon-button aria-label="Clear" (click)="abortAnsInput()">
-          <mat-icon>close</mat-icon>
+    <!-- Utterance Section -->
+    <div class="utterance-div">
+      <div class="intent-utterances">
+        utterances<button
+          mat-icon-button
+          matTooltip="Add Utterance"
+          matTooltipPosition="left"
+          matTooltipClass="utterance-add-tooltip"
+          aria-label="add-utterance-icon"
+          (click)="actInputUtt()"
+          [disabled]="butUttIsDisabled"
+        >
+          <mat-icon>add</mat-icon>
         </button>
-      </mat-list-item>
-    </mat-list>
-  </div>
-</mat-card>
+      </div>
+
+      <!-- List of all utterances -->
+      <mat-list>
+        <mat-list-item
+          class="utterance-item"
+          *ngFor="let item of intent.utterances; index as i"
+          ><div class="utterance-content">{{ intent.utterances[i] }}</div>
+          <button
+            matTooltip="Remove Utterance"
+            matTooltipPosition="left"
+            matTooltipClass="utterance-remove-tooltip"
+            class="utterance-remove-button"
+            (click)="removeUtt(item)"
+          >
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </mat-list-item>
+
+        <!-- Input Form of a new Utterance-->
+        <mat-list-item class="utterance-item" *ngIf="butUttIsDisabled">
+          <mat-form-field class="utterance-form-field" appearance="fill">
+            <mat-label>New Utterance</mat-label>
+            <input matInput type="text" [(ngModel)]="inputUtt" />
+            <button
+              *ngIf="inputUtt"
+              matSuffix
+              mat-raised-button
+              aria-label="add-utterrance"
+              (click)="deactInputUtt(inputUtt)"
+            >
+              Add
+            </button>
+          </mat-form-field>
+          <!-- Abort Button for Input-->
+          <button
+            mat-icon-button
+            aria-label="Clear"
+            (click)="abortUttInput()"
+            class="utterance-add-abort"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+    <!-- Answers Section -->
+    <div class="answers-div">
+      <div class="intent-answers">
+        answers<button
+          mat-icon-button
+          matTooltip="Add Answer"
+          matTooltipPosition="left"
+          matTooltipClass="answer-add-tooltip"
+          aria-label="add-answers-icon"
+          (click)="actInputAns()"
+          [disabled]="butAnsIsDisabled"
+        >
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+
+      <!-- List of all answers -->
+      <mat-list>
+        <mat-list-item
+          class="answers-item"
+          *ngFor="let item of intent.answers; index as i"
+          ><div class="answers-content">{{ intent.answers[i] }}</div>
+          <button
+            matTooltip="Remove Answer"
+            matTooltipPosition="left"
+            matTooltipClass="answer-remove-tooltip"
+            class="answers-remove-button"
+            (click)="removeAns(item)"
+          >
+            <mat-icon>delete_outline</mat-icon>
+          </button></mat-list-item
+        >
+
+        <!-- Input Form of a new Answer-->
+        <mat-list-item class="answers-item" *ngIf="butAnsIsDisabled">
+          <mat-form-field class="answers-form-field" appearance="fill">
+            <mat-label>New Answers</mat-label>
+            <input matInput type="text" [(ngModel)]="inputAns" />
+            <button
+              *ngIf="inputAns"
+              matSuffix
+              mat-raised-button
+              aria-label="add-answer"
+              (click)="deactInputAns(inputAns)"
+            >
+              Add
+            </button>
+          </mat-form-field>
+          <!-- Abort Button for Input-->
+          <button
+            mat-icon-button
+            aria-label="Clear"
+            (click)="abortAnsInput()"
+            class="answers-add-abort"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card>
+  <button
+    matTooltip="Remove Intent"
+    matTooltipPosition="left"
+    matTooltipClass="intent-remove-tooltip"
+    class="intent-remove"
+    (click)="removeCard()"
+  >
+    <mat-icon>delete_outline</mat-icon>
+  </button>
+</div>

@@ -5,9 +5,9 @@ const upload = multer();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-var session = require('express-session');
+var session = require("express-session");
 var memoryStore = new session.MemoryStore();
-const keycloak = require('./keycloak-config').initKeycloak();
+const keycloak = require("./keycloak-config").initKeycloak();
 
 class RestApi {
   // default rest port 3001
@@ -34,12 +34,14 @@ class RestApi {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(upload.array());
-    app.use(session({
-      secret: 'any_key',
-      resave: false,
-      saveUninitialized: true,
-      store: memoryStore
-    }));
+    app.use(
+      session({
+        secret: "any_key",
+        resave: false,
+        saveUninitialized: true,
+        store: memoryStore,
+      })
+    );
     app.use(keycloak.middleware());
 
     //Require the Router we defined in movies.js

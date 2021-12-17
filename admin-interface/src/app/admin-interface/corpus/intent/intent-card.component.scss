@@ -1,42 +1,148 @@
+// margin left of the text
+$textleft: 4%;
+$hcorrection: 10pt;
+$rbutwidth: 12%;
+
 * {
   box-sizing: border-box;
+  font-size: 14pt;
 }
-mat-card {
-  margin-top: 3%;
+
+.card-container {
+  display: flex;
   left: 0;
   padding: 0;
-  background-color: lavender;
-  border-radius: 4%;
-  mat-list-item {
-    //display: flex;
-    //flex-direction: column;
-    text-indent: 12pt;
-    .remove {
-      position: absolute;
-      right: 3%;
-      text-align: center;
-    }
-  }
+  margin-top: 3%;
+  .intent-card {
+    width: 86%;
+    left: 0;
+    padding: 0;
+    background-color: lavender;
+    border-radius: 0.5em;
+    overflow: hidden;
 
-  // Contains Intent
-  .intent-name {
-    text-indent: 12pt;
-    width: 100%;
-    font-size: 14pt;
-    background-color: royalblue;
-  }
-  .utterance-div {
-    width: 100%;
-    .intent-utterances {
-      text-indent: 12pt;
-      font-size: 14pt;
+    // Contains Intent
+    .intent-div {
+      //text-indent: 12pt;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: royalblue;
+      // contains the name and the edit button
+      .intent-name-div {
+        margin-left: $textleft;
+      }
+      // toggled form field to change intent.name
+      .intent-form-field {
+        padding: 0;
+        margin: 2%;
+        top: $hcorrection;
+      }
+      .intent-edit-abort {
+        width: 10%;
+        align-self: center;
+      }
+    }
+
+    // Containes utterances
+    .utterance-div {
+      width: 100%;
+      .intent-utterances {
+        width: calc(100% - $textleft);
+        margin-left: $textleft;
+      }
+      // Utterance item
+      .utterance-item {
+        margin-left: $textleft;
+        margin-bottom: 2%;
+        width: calc(100% - $textleft * 2);
+        height: 100%;
+        padding: 0;
+
+        // Content of the utterance
+        .utterance-content {
+          width: calc(100% - $rbutwidth - $textleft * 2);
+          height: 100%;
+          margin: 4%;
+          margin-left: 0%;
+        }
+
+        // Remove Button for utterances
+        .utterance-remove-button {
+          position: absolute;
+          right: 0;
+          width: $rbutwidth;
+          height: width;
+        }
+
+        // Utterances Input Form Field
+        .utterance-form-field {
+          margin-left: 0;
+          width: calc(100% - $textleft);
+          top: $hcorrection;
+        }
+
+        // Utterances Input Abort
+        .utterance-add-abort {
+          padding: 0;
+          width: $rbutwidth;
+          align-self: center;
+        }
+      }
+    }
+    // Containes answers
+    .answers-div {
+      width: 100%;
+      .intent-answers {
+        width: calc(100% - $textleft);
+        margin-left: $textleft;
+      }
+      // Answer item
+      .answers-item {
+        margin-left: $textleft;
+        margin-bottom: 2%;
+        width: calc(100% - $textleft * 2);
+        height: 100%;
+        padding: 0;
+
+        // Content of the answers
+        .answers-content {
+          width: calc(100% - $rbutwidth - $textleft * 2);
+          height: 100%;
+          margin: 4%;
+          margin-left: 0%;
+        }
+
+        // Remove Button for answers
+        .answers-remove-button {
+          position: absolute;
+          right: 0;
+          width: $rbutwidth;
+          height: width;
+        }
+
+        // Answers Input Form Field
+        .answers-form-field {
+          margin-left: 0;
+          width: calc(100% - $textleft);
+          top: $hcorrection;
+        }
+
+        // Answers Input Abort
+        .answers-add-abort {
+          padding: 0;
+          width: $rbutwidth;
+          align-self: center;
+        }
+      }
     }
   }
-  .answers-div {
-    width: 100%;
-    .intent-answers {
-      text-indent: 12pt;
-      font-size: 14pt;
-    }
+  // Remove Button for Intents
+  .intent-remove {
+    padding: 0;
+    width: $rbutwidth;
+    height: width;
+    margin-left: 2%;
+    align-self: flex-start;
   }
 }

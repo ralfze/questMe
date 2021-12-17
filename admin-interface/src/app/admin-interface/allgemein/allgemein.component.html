@@ -50,8 +50,9 @@
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
     <img
-      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
-      alt="ChatBot"
+      class="icon-img-chosen"
+      src="{{ allgemeinData.selectedIcon.src }}"
+      alt="{{ allgemeinData.selectedIcon.name }}"
     />
     <span>Allgemein</span>
   </div>
@@ -61,24 +62,63 @@
     class="flicking-viewport has background-grey-lighter p-4 mb-4"
     style="touch-action: pan-y; user-select: none"
   >
-    <ngx-flicking [options]="{ moveType: 'freeScroll', bound: true }">
-      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
-        ><img src="assets/images/Bot Picture.png" alt="Bot picture 01" [ngClass]="{'toggle-class':iconArray[0].condition}"
+    <ngx-flicking
+      [options]="{ moveType: 'freeScroll', bound: false, align: 'prev' }"
+    >
+      <span
+        flicking-panel
+        class="button mr-2 is-white"
+        (click)="chooseIcon($event)"
+        ><img
+          src="{{ iconArray[0].src }}"
+          alt="{{ iconArray[0].name }}"
+          [ngClass]="{ 'toggle-class': iconArray[0].condition }"
       /></span>
-      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
-        ><img src="assets/images/Bot Picture(1).png" alt="Bot picture 02" [ngClass]="{'toggle-class':iconArray[1].condition}"
+      <span
+        flicking-panel
+        class="button mr-2 is-white"
+        (click)="chooseIcon($event)"
+        ><img
+          src="{{ iconArray[1].src }}"
+          alt="{{ iconArray[1].name }}"
+          [ngClass]="{ 'toggle-class': iconArray[1].condition }"
       /></span>
-      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
-        ><img src="assets/images/Bot Picture(2).png" alt="Bot picture 03" [ngClass]="{'toggle-class':iconArray[2].condition}"
+      <span
+        flicking-panel
+        class="button mr-2 is-white"
+        (click)="chooseIcon($event)"
+        ><img
+          src="{{ iconArray[2].src }}"
+          alt="{{ iconArray[2].name }}"
+          [ngClass]="{ 'toggle-class': iconArray[2].condition }"
       /></span>
-      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
-        ><img src="assets/images/Bot Picture(3).png" alt="Bot picture 04" [ngClass]="{'toggle-class':iconArray[3].condition}"
+      <span
+        flicking-panel
+        class="button mr-2 is-white"
+        (click)="chooseIcon($event)"
+        ><img
+          src="{{ iconArray[3].src }}"
+          alt="{{ iconArray[3].name }}"
+          [ngClass]="{ 'toggle-class': iconArray[3].condition }"
       /></span>
-      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
-        ><img src="assets/images/image 10.png" alt="Bot picture default" [ngClass]="{'toggle-class':iconArray[4].condition}"
+      <span
+        flicking-panel
+        class="button mr-2 is-white"
+        (click)="chooseIcon($event)"
+        ><img
+          class="icon-img"
+          src="{{ iconArray[4].src }}"
+          alt="{{ iconArray[4].name }}"
+          [ngClass]="{ 'toggle-class': iconArray[4].condition }"
       /></span>
-      <span flicking-panel class="button mr-2 is-white" (click)="chooseIcon($event)"
-        ><img src="assets/images/image 16.png" alt="Bot picture fun" [ngClass]="{'toggle-class':iconArray[5].condition}"
+      <span
+        flicking-panel
+        class="button mr-2 is-white"
+        (click)="chooseIcon($event)"
+        ><img
+          src="{{ iconArray[5].src }}"
+          alt="{{ iconArray[5].name }}"
+          [ngClass]="{ 'toggle-class': iconArray[5].condition }"
       /></span>
     </ngx-flicking>
   </div>
@@ -86,6 +126,11 @@
   <!-- Input Field for Bot name -->
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Bot Name</mat-label>
-    <input matInput placeholder="default name" [ngModel]='allgemein.botName' />
+    <input
+      matInput
+      placeholder="default name"
+      [(ngModel)]="allgemeinData.botName"
+      (change)="onChange()"
+    />
   </mat-form-field>
 </div>

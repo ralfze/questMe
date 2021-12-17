@@ -50,8 +50,8 @@
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
     <img
-      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
-      alt="ChatBot"
+      src="{{selectedIcon.src}}"
+      alt="{{selectedIcon.name}}"
     />
     <span>Korpus</span>
   </div>
@@ -72,8 +72,10 @@
     <p class="selected-p">Du hast gewählt: {{ selected }}</p>
   </div>
   <div class="button-div">
-    <button mat-raised-button color="primary" (click)="restartBot()">Bot updaten</button>
+    <button mat-raised-button color="primary" (click)="restartBot()">
+      Bot updaten
+    </button>
   </div>
 </div>
-
+<!-- Intent Array List-->
 <intent-array></intent-array>

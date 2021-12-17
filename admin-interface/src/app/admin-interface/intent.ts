@@ -1,5 +1,5 @@
 export class Intent {
-  intent: string = ""
-  utterances: string[] = []
-  answers: string[] = []
+  intent: string = "TestIntent"
+  utterances: string[] = ['utt1']
+  answers: string[] = ['ans1']
 }

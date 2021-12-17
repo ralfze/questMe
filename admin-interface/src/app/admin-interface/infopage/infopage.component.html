@@ -19,17 +19,19 @@
       </button>
     </a>
     <a [routerLink]="['/admin-interface/corpus']"
-    ><button mat-menu-item>
-      <mat-icon>library_books</mat-icon>
-      <span>Korpus</span>
-    </button>
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Korpus</span>
+      </button>
     </a>
-    <a [routerLink]="['/admin-interface/einstellungen']" routerLinkActive="active"
+    <a
+      [routerLink]="['/admin-interface/einstellungen']"
+      routerLinkActive="active"
     >
-    <button mat-menu-item>
-      <mat-icon>settings</mat-icon>
-      <span>Einstellungen</span>
-    </button>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>Einstellungen</span>
+      </button>
     </a>
     <a>
       <button mat-menu-item (click)="logout()">
@@ -46,10 +48,7 @@
 <div class="content" role="main">
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
-    <img
-      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
-      alt="ChatBot"
-    />
+    <img src="{{ selectedIcon.src }}" alt="{{ selectedIcon.name }}" />
     <span>Willkommen zu admin-interface !</span>
   </div>
 
@@ -60,9 +59,8 @@
     Im Menu kann man die Punkte Allgemein, Korpus, Einstellungen und LogOut
     auswählen.
   </p>
-
 </div>
- <!-- Beispiel von Routing
+<!-- Beispiel von Routing
   <h1>Angular Router App</h1>
    This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule)
   <nav>

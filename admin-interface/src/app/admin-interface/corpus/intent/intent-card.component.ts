@@ -1,6 +1,7 @@
 
-import { Component, OnInit} from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, ComponentRef, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
+import { IntentArray } from '../intent-array/intent-array.component';
 import { Intent } from './intent';
 
 
@@ -9,12 +10,26 @@ import { Intent } from './intent';
   templateUrl: './intent-card.component.html',
   styleUrls: ['./intent-card.component.scss'],
 })
-export class IntentCard implements OnInit {
+export class IntentCard implements OnInit, OnDestroy {
   // variables
+  // Subscription of this IntentCard
+  subscription!: Subscription;
+  // Reference to Intent Array
+  intentArrayRef!: IntentArray;
+  // Reference to ComponentRef of this Intent Card
+  compRef!: ComponentRef<IntentCard>;
+  valuesChanged = false;
+  observerInterval = 500;
 
   // Observer for changes in the data Model
   intCardObserver = new Observable<Intent>(observer => {
-    setInterval(() => observer.next(this.intent), 1000);
+    setInterval(() => {
+      // Only change the data in the Intent Array Component when data has been changed
+      if (this.valuesChanged) {
+        observer.next(this.intent), this.observerInterval
+        this.setValuesChanged(false);
+      }
+    });
   })
 
 
@@ -91,9 +106,13 @@ export class IntentCard implements OnInit {
   // add item Utt/Ans
   addUtt(s: string) {
     this.intent.utterances.push(s);
+    // shows the need of an update fetch from the observer
+    this.setValuesChanged(true);
   }
   addAns(s: string) {
     this.intent.answers.push(s);
+    // shows the need of an update fetch from the observer
+    this.setValuesChanged(true);
   }
 
   // Remove item Utt/Ans
@@ -107,7 +126,8 @@ export class IntentCard implements OnInit {
       // remove when exists
       this.intent.utterances.splice(index, 1);
     }
-
+    // shows the need of an update fetch from the observer
+    this.setValuesChanged(true);
   }
   removeAns(s: string) {
     // -1 none found
@@ -119,6 +139,8 @@ export class IntentCard implements OnInit {
       // remove when exists
       this.intent.answers.splice(index, 1);
     }
+    // shows the need of an update fetch from the observer
+    this.setValuesChanged(true);
   }
 
   // Intent Value Methods
@@ -142,6 +164,8 @@ export class IntentCard implements OnInit {
     if (s !== '') {
       // set new Intent name
       this.intent.intent = s;
+      // shows the need of an update fetch from the observer
+      this.setValuesChanged(true);
     }
     this.deactInputInt();
   }
@@ -150,12 +174,29 @@ export class IntentCard implements OnInit {
     this.intent = intent;
     //console.log("intent set");
   }
+  // Method to set the need of an update
+  // Informs the Observer of changed Values
+  setValuesChanged(bool: boolean) {
+    this.valuesChanged = bool;
+  }
 
   // IntentCard Constructor
   constructor() {
   }
-
+  ngOnDestroy(): void {
+    // destroy the subscription on destroy
+    this.subscription.unsubscribe();
+    //console.log("Unsubscribed");
+  }
   ngOnInit(): void {
-
+    //
+  }
+  removeCard() {
+    // Remove Card from Intent Array
+    //this.intentArrayRef.removeIntent(this.intent);
+    this.intentArrayRef.removeIntent(this.intent);
+    console.log("Remove Card");
+    // Destroy this component
+    this.compRef.destroy();
   }
 }

@@ -8,7 +8,7 @@ import { KeycloakService } from 'keycloak-angular';
 import { ApiService } from '../api.service';
 
 // Intent Card visual
-import { IntentArray} from './intent-array/intent-array.component';
+import { IntentArray } from './intent-array/intent-array.component';
 
 
 /**
@@ -24,7 +24,7 @@ import { IntentArray} from './intent-array/intent-array.component';
 
 export class CorpusComponent implements OnInit {
   // Get the Template from Intent-Array
-  @ViewChild(IntentArray) intentAray:IntentArray | undefined;
+  @ViewChild(IntentArray) intentAray: IntentArray | undefined;
 
   webtitle = 'Admin Korpus';
 
@@ -32,10 +32,15 @@ export class CorpusComponent implements OnInit {
 
   selected = 'basis';
 
-// Corpus in Bot laden
-restartBot(){
-  this.apiService.restartBot();
-}
+  // Info about the selected icon in allgemein
+  selectedIcon = {
+    name: '', src: ''
+  };
+
+  // Corpus in Bot laden
+  restartBot() {
+    this.apiService.restartBot();
+  }
 
   constructor(private title: Title, private keycloakService: KeycloakService, private renderer: Renderer2, private apiService: ApiService) {
   }
@@ -43,6 +48,8 @@ restartBot(){
   ngOnInit(): void {
     // Sets title of the webpage
     this.title.setTitle(this.webtitle);
+    // Get the selected icon from allgemeinData
+    this.refreshAllgemein();
   }
 
 
@@ -51,4 +58,15 @@ restartBot(){
     this.keycloakService.logout('http://localhost:4200');
   }
 
+  /// REST API
+  /**
+   * Gets the AllgemeinData
+   */
+  refreshAllgemein() {
+    // Retrieve AllgemeinData
+    this.apiService.getAllgemein().subscribe(data => {
+      // Retrieve the AllgmeinData
+      this.selectedIcon = data.selectedIcon;
+    })
+  }
 }

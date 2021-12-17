@@ -5,6 +5,7 @@ import { Corpus } from './corpus/intent/corpus';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Intent } from './corpus/intent/intent';
+import { AllgemeinSettings } from './allgemein/allgemein';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -23,6 +24,11 @@ export class ApiService {
     console.log('Corpus ' + this.baseURL + 'restapi/corpus')
     return this.http.get<Corpus>(this.baseURL + 'restapi/corpus')
   }
+  getAllgemein(): Observable<AllgemeinSettings> {
+    console.log('Allgemein ' + this.baseURL + 'restapi/allgemein')
+    return this.http.get<AllgemeinSettings>(this.baseURL + 'restapi/allgemein')
+  }
+
   // UPDATE
   updateCorpus(sendData: Corpus) {
     const body = {
@@ -34,6 +40,15 @@ export class ApiService {
     //console.log(body);
     this.http.put<any>(this.baseURL + 'restapi/corpus/name/Corpus', body).subscribe();
   }
+
+  updateAllgemein(sendData: AllgemeinSettings) {
+    const body = {
+      sendData
+    };
+    //console.log(body);
+    this.http.put<any>(this.baseURL + 'restapi/allgemein', body).subscribe();
+  }
+
   // DELETE
   deleteIntent(sendData: Intent) {
     //this.http.delete<any>(this.baseURL + 'restapi/corpus/intent', sendData).subscribe();

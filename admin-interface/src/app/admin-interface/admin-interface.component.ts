@@ -8,10 +8,12 @@ import { Title } from '@angular/platform-browser';
 })
 export class AdminInterfaceComponent implements OnInit {
   webtitle = 'Admin Website';
+
   constructor(private title: Title) { }
 
   ngOnInit(): void {
     this.title.setTitle(this.webtitle);
+
   }
 
 }

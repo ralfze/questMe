@@ -4,7 +4,7 @@
 const express = require("express");
 const router = express.Router();
 
-const keycloak = require('./keycloak-config').initKeycloak();
+const keycloak = require("./keycloak-config").initKeycloak();
 
 //router.mongoURL = "mongodb://localhost:27017";
 router.mongoURL = "mongodb://mongodb:27017";
@@ -14,6 +14,7 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectId;
 const dbName = "corpus";
 const cName = "dataC";
+const allName = "allgemein";
 
 // bot
 
@@ -36,6 +37,7 @@ router.get("/corpus", keycloak.protect("admin"), function (req, res) {
       if (err) throw err;
       client.close();
       // Return corpus in json format
+      console.log(result);
       res.json(result);
     });
   });
@@ -98,52 +100,64 @@ router.get("/corpus/id/:id", keycloak.protect("admin"), function (req, res) {
 });
 
 // GET by Name
-router.get("/corpus/name/:name", keycloak.protect("admin"), function (req, res) {
-  // Get name
-  const { name } = req.params;
+router.get(
+  "/corpus/name/:name",
+  keycloak.protect("admin"),
+  function (req, res) {
+    // Get name
+    const { name } = req.params;
 
-  // Mongo CLient
-  const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
-
-  // Connect to MongoDB
-  client.connect(function (err) {
-    if (err) throw err;
-    // Choose db "corpus"
-    const db = client.db(dbName);
-
-    // Query Collection "dataC"
-    db.collection(cName).findOne({ name: name }, function (err, result) {
-      if (err) throw err;
-      client.close();
-      // Return Entry as JSON
-      res.status(200).send(result);
+    // Mongo CLient
+    const client = new MongoClient(router.mongoURL, {
+      useUnifiedTopology: true,
     });
-  });
-});
+
+    // Connect to MongoDB
+    client.connect(function (err) {
+      if (err) throw err;
+      // Choose db "corpus"
+      const db = client.db(dbName);
+
+      // Query Collection "dataC"
+      db.collection(cName).findOne({ name: name }, function (err, result) {
+        if (err) throw err;
+        client.close();
+        // Return Entry as JSON
+        res.status(200).send(result);
+      });
+    });
+  }
+);
 
 // GET by Collection
-router.get("/corpus/collection/:collection", keycloak.protect("admin"), function (req, res) {
-  // Get name
-  const { collection } = req.params;
+router.get(
+  "/corpus/collection/:collection",
+  keycloak.protect("admin"),
+  function (req, res) {
+    // Get name
+    const { collection } = req.params;
 
-  // Mongo CLient
-  const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
-
-  // Connect to MongoDB
-  client.connect(function (err) {
-    if (err) throw err;
-    // Choose db "corpus"
-    const db = client.db(dbName);
-
-    // Query Collection
-    db.collection(collection).findOne({}, function (err, result) {
-      if (err) throw err;
-      client.close();
-      // Return Entry as JSON
-      res.status(200).send(result);
+    // Mongo CLient
+    const client = new MongoClient(router.mongoURL, {
+      useUnifiedTopology: true,
     });
-  });
-});
+
+    // Connect to MongoDB
+    client.connect(function (err) {
+      if (err) throw err;
+      // Choose db "corpus"
+      const db = client.db(dbName);
+
+      // Query Collection
+      db.collection(collection).findOne({}, function (err, result) {
+        if (err) throw err;
+        client.close();
+        // Return Entry as JSON
+        res.status(200).send(result);
+      });
+    });
+  }
+);
 
 //// POST ///////////////////////////////////////////////////////////////////////////
 
@@ -241,56 +255,68 @@ router.put("/corpus/id/:id", keycloak.protect("admin"), function (req, res) {
 });
 
 // Replace a Corpus by Name
-router.put("/corpus/name/:name", keycloak.protect("admin"), function (req, res) {
-  // Get Name
-  const { name } = req.params;
+router.put(
+  "/corpus/name/:name",
+  keycloak.protect("admin"),
+  function (req, res) {
+    // Get Name
+    const { name } = req.params;
 
-  // Mongo CLient
-  const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
+    // Mongo CLient
+    const client = new MongoClient(router.mongoURL, {
+      useUnifiedTopology: true,
+    });
 
-  // Connect to MongoDB
-  client.connect(function (err) {
-    if (err) throw err;
-    // Choose db "corpus"
-    const db = client.db(dbName);
+    // Connect to MongoDB
+    client.connect(function (err) {
+      if (err) throw err;
+      // Choose db "corpus"
+      const db = client.db(dbName);
 
-    // Query Collection "dataC"
-    db.collection(cName).replaceOne(
-      { name: name },
-      req.body,
-      function (err, result) {
+      // Query Collection "dataC"
+      db.collection(cName).replaceOne(
+        { name: name },
+        req.body,
+        function (err, result) {
+          if (err) throw err;
+          client.close();
+          // Return Result as JSON
+          res.status(200).send(result);
+        }
+      );
+    });
+  }
+);
+
+// Replace a Corpus by Collection
+router.put(
+  "/corpus/collection/:collection",
+  keycloak.protect("admin"),
+  function (req, res) {
+    // Get Collection
+    const { collection } = req.params;
+
+    // Mongo CLient
+    const client = new MongoClient(router.mongoURL, {
+      useUnifiedTopology: true,
+    });
+
+    // Connect to MongoDB
+    client.connect(function (err) {
+      if (err) throw err;
+      // Choose db "corpus"
+      const db = client.db(dbName);
+
+      // Query Collection
+      db.collection(collection).updateOne({}, req.body, function (err, result) {
         if (err) throw err;
         client.close();
         // Return Result as JSON
         res.status(200).send(result);
-      }
-    );
-  });
-});
-
-// Replace a Corpus by Collection
-router.put("/corpus/collection/:collection", keycloak.protect("admin"), function (req, res) {
-  // Get Collection
-  const { collection } = req.params;
-
-  // Mongo CLient
-  const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
-
-  // Connect to MongoDB
-  client.connect(function (err) {
-    if (err) throw err;
-    // Choose db "corpus"
-    const db = client.db(dbName);
-
-    // Query Collection
-    db.collection(collection).replaceOne({}, req.body, function (err, result) {
-      if (err) throw err;
-      client.close();
-      // Return Result as JSON
-      res.status(200).send(result);
+      });
     });
-  });
-});
+  }
+);
 
 // Updates the given Intent
 router.put("/corpus/intent", keycloak.protect("admin"), function (req, res) {
@@ -429,7 +455,7 @@ router.post("/bot/restart", keycloak.protect("admin"), function (req, res) {
         router.nlp.nluManager.domainManagers["de"].intentDict = {};
         router.nlp.nluManager.domainManagers["de"].sentences = [];
         router.nlp.nlgManager.responses.de = {};
-       // console.log(router.nlp.nluManager.intentDomains);
+        // console.log(router.nlp.nluManager.intentDomains);
         // Add Corpus
         await router.nlp.addCorpus(result);
         //console.log(result);
@@ -646,4 +672,62 @@ router.delete("/:id", function (req, res) {
   }*/ /*
 });
 */
+//// Allgemein Routes ////////////////////////////////////////////////////////////////////////////////
+
+// Retrieve the AllgemeinData
+router.get("/allgemein", keycloak.protect("admin"), function (req, res) {
+  // Mongo Client
+  const client = new MongoClient(router.mongoURL, {
+    useUnifiedTopology: true,
+  });
+
+  // connect to mongodb
+  client.connect(function (err) {
+    if (err) throw err;
+    //res.json({ Message: "Connection close" });
+    // choose db 'corpus"
+    const db = client.db(dbName);
+
+    // query collection 'dataC'
+    db.collection(allName).findOne({}, function (err, result) {
+      if (err) throw err;
+
+      // Return corpus in json format
+      //console.log(result);
+      res.json(result);
+      client.close();
+    });
+  });
+});
+
+// PUT
+router.put("/allgemein", keycloak.protect("admin"), function (req, res) {
+  // Mongo Client
+  const client = new MongoClient(router.mongoURL, {
+    useUnifiedTopology: true,
+  });
+
+  // Sent new AllgemeinData
+  let tmp = req.body.sendData;
+  console.log(tmp);
+  // Connect to MongoDB
+
+  client.connect(function (err) {
+    if (err) throw err;
+    // Choose db "corpus"
+    const db = client.db(dbName);
+    //console.log(tmp);
+
+    // Add new corpus to Collection "dataC"
+    db.collection(allName).updateOne(
+      {},
+      { $set: { botName: tmp.botName, selectedIcon: tmp.selectedIcon } },
+      function (err, result) {
+        if (err) throw err;
+        res.status(201).json(result);
+        client.close();
+      }
+    );
+  });
+});
 module.exports = router;
