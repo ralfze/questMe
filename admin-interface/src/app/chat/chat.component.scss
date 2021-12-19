@@ -4,6 +4,36 @@ $chat-color: royalblue;
   box-sizing: border-box;
 }
 
+.wallpaper {
+  //wallpapers for the chat
+
+  /*
+  * gradient sprinkle
+  */
+  //background-image: url('/assets/images/wallpaper/cherryblossom_sprinkle.jpg');
+  //background-image: url('/assets/images/wallpaper/blue_sprinkle.jpg');
+  //background-image: url("/assets/images/wallpaper/green_sprinkle.jpg");
+
+  /*
+  * gradient butterfly
+  */
+  //background-image: url("/assets/images/wallpaper/butterfly.jpg");
+
+  /*
+  * robot
+  */
+  //background-image: url("/assets/images/wallpaper/robot_white.jpg");
+  //background-image: url("/assets/images/wallpaper/robot_black.jpg");
+
+  /*
+  * strawberry
+  */
+  //background-image: url("/assets/images/wallpaper/strawberry_white.jpg");
+  background-image: url("/assets/images/wallpaper/strawberry_black.jpg");
+
+  background-size: cover;
+}
+
 .container {
   display: block;
   position: absolute;
@@ -17,7 +47,7 @@ $chat-color: royalblue;
   width: 100%;
 }
 .card {
-  background: $background;
+  //background: $background;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -189,10 +219,10 @@ $chat-color: royalblue;
 
 @media only screen and (orientation: landscape) {
   .card {
-    height:80%;
+    height: 80%;
   }
   .chat-footer {
-    height:20%;
+    height: 20%;
     #chat-textarea {
       margin: 1%;
     }
@@ -203,10 +233,10 @@ $chat-color: royalblue;
 }
 @media only screen and (min-height: 600px) and (orientation: landscape) {
   .card {
-    height:90%;
+    height: 90%;
   }
   .chat-footer {
-    height:10%;
+    height: 10%;
     #chat-textarea {
       margin: 0.5%;
     }
