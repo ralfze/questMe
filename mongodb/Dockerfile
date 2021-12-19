@@ -2,7 +2,11 @@
 FROM mongo:5.0.4-focal
 
 # Copies the init.js into the docker (holds corpus-de.json)
-COPY init.js /docker-entrypoint-initdb.d/
+COPY _init.js /docker-entrypoint-initdb.d/
+
+# Copies Corpus that need to be included\
+COPY init-allgemein.js /docker-entrypoint-initdb.d/
+COPY init-corpus.js /docker-entrypoint-initdb.d/
 
 # Creates a init db with name corpus
 # Will change the databas on initializing to "<arg>"
