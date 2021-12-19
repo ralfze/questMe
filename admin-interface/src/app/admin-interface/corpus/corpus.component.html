@@ -62,14 +62,12 @@
   <div class="card card-korpusdaten">
     <mat-form-field class="korpus-daten" appearance="fill">
       <mat-label>Korpusdaten Thema</mat-label>
-      <mat-select [(value)]="selected">
-        <mat-option value="basis">Basis</mat-option>
-        <mat-option value="hochschule">Hochschule</mat-option>
-        <mat-option value="interna">Interna</mat-option>
+      <mat-select [(value)]="selected" (valueChange)="changeSelected(true)">
+        <mat-option value="Basis">Basis</mat-option>
+        <mat-option value="Hochschule">Hochschule</mat-option>
+        <mat-option value="Interna">Interna</mat-option>
       </mat-select>
     </mat-form-field>
-
-    <p class="selected-p">Du hast gewählt: {{ selected }}</p>
   </div>
   <div class="button-div">
     <button mat-raised-button color="primary" (click)="restartBot()">

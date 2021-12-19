@@ -1,5 +1,5 @@
-export class AddCorpus {
-  intent: string = ""
-  utterances: string[] = []
-  answers: string[] = []
+export class EinstData {
+  professor: string[] = ['']
+  student: string[] = ['']
+  unregistered: string[] = ['']
 }

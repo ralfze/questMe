@@ -15,6 +15,7 @@ const ObjectId = require("mongodb").ObjectId;
 const dbName = "corpus";
 const cName = "dataC";
 const allName = "allgemein";
+const einstName = "einstellungen";
 
 // bot
 
@@ -308,7 +309,7 @@ router.put(
       const db = client.db(dbName);
 
       // Query Collection
-      db.collection(collection).updateOne({}, req.body, function (err, result) {
+      db.collection(collection).replaceOne({ name: req.body.name }, req.body, function (err, result) {
         if (err) throw err;
         client.close();
         // Return Result as JSON
@@ -471,211 +472,11 @@ router.post("/bot/restart", keycloak.protect("admin"), function (req, res) {
   }
 });
 
-// Gets an Array and the first entity is the corpus
-// Adds the Corpus to the ChatBot
-//    console.log("Add Corpus");
 
-// Remove the Corpus from the Bot
-//router.nlp.nluManager.domainManagers["de"].stemDict = {};
-//router.nlp.nluManager.domainManagers["de"].intentDict = {};
-//router.nlp.nluManager.domainManagers["de"].sentences = {};
-
-// Add Corpus
-//await router.nlp.addCorpus(result);
-
-// Start Bot
-//await router.nlp.train();
-
-// Close DB connection
-// ALT ///////////////////////////////////////////////////////////////////////////////
-/*
-router.put("/corpus", function (req, res) {
-  // Mongo Client
-  const client = new MongoClient(router.mongoURL, {useUnifiedTopology: true});
-
-  // Connect to MongoDB
-  client.connect(function (err) {
-    if (err) throw err;
-    // res.json({ Message: "Connection close" });
-    // Choose db 'corpus"
-    const db = client.db(dbName);
-
-    db.collection(cName).findOne({}, async function (err, result) {
-      if (err) throw err;
-      
-      const filter = { _id: `${result._id}` };
-      const id = result._id;
-      const testJSON = {"a": 1};
-
-      console.log("////////// testJSON //////////");
-      console.log(testJSON);
-      console.log(" ");
-      console.log("////////// req JSON //////////");
-      console.log(req.body);
-
-      const replaceResult = await db.collection(cName).replaceOne({}, req.body);
-
-      client.close();
-
-      res.status(200).send({ message: 'Test bestanden!' });
-    });
-
-    // Tests
-    //res.status(200).send({ message: 'Test bestanden!' });
-    //res.status(200).send({ message: "" });
-  });
-});
-*/
-/*
-// Appends a new intent
-router.post("/corpus", function (req, res) {
-  // Mongo Client
-  const client = new MongoClient(router.mongoURL, { useUnifiedTopology: true });
-
-  // connect to mongodb
-  client.connect(function (err) {
-    if (err) throw err;
-    //res.json({ Message: "Connection close" });
-    // choose db 'corpus"
-    const db = client.db(dbName);
-
-    // query collection 'dataC'
-    // update intent 'None'
-    /*
-    db.collection(cName).updateOne(
-      {},
-      {
-        $set: {
-          data: {
-            intent: "None",
-            utterances: [
-              "ich brauche rat",
-              "ich brauche einen vorschlag",
-              "kannst du mir etwas raten?",
-              "was sollte ich tun",
-            ],
-            answers: ["Sorry, Ich verstehe das nicht"],
-          },
-        },
-      },
-      function (err, result) {
-        if (err) throw err;
-        client.close();
-        // Return corpus in json format
-        res.json(result);
-      }
-    );
-      // push an intent
-      db.collection(cName).updateOne(
-      {},
-      {
-        $set: {
-          data: {
-            intent: "None",
-            utterances: [
-              "ich brauche rat",
-              "ich brauche einen vorschlag",
-              "kannst du mir etwas raten?",
-              "was sollte ich tun",
-            ],
-            answers: ["Sorry, Ich verstehe das nicht"],
-          },
-        },
-      },
-      function (err, result) {
-        if (err) throw err;
-        client.close();
-        // Return corpus in json format
-        res.json(result);
-      }
-    );
-
-    */
-// delete all intent: "None"
-/*
-db.collection(cName).updateOne(
-  {},
-  { $pull: { data: { intent: "None" } } },
-  function (err, result) {
-    if (err) throw err;
-    client.close();
-    // Return corpus in json format
-    res.json(result);
-  }
-);*/ /*
-client.close();
-});
-});
-*/
-
-/*
-router.put("/:id", function (req, res) {
-  /*
-  //Check if all fields are provided and are valid:
-  if (
-    !req.body.name ||
-    !req.body.year.toString().match(/^[0-9]{4}$/g) ||
-    !req.body.rating.toString().match(/^[0-9]\.[0-9]$/g) ||
-    !req.params.id.toString().match(/^[0-9]{3,}$/g)
-  ) {
-    res.status(400);
-    res.json({ message: "Bad Request" });
-  } else {
-    //Gets us the index of movie with given id.
-    var updateIndex = movies
-      .map(function (movie) {
-        return movie.id;
-      })
-      .indexOf(parseInt(req.params.id));
-
-    if (updateIndex === -1) {
-      //Movie not found, create new
-      movies.push({
-        id: req.params.id,
-        name: req.body.name,
-        year: req.body.year,
-        rating: req.body.rating,
-      });
-      res.json({
-        message: "New movie created.",
-        location: "/movies/" + req.params.id,
-      });
-    } else {
-      //Update existing movie
-      movies[updateIndex] = {
-        id: req.params.id,
-        name: req.body.name,
-        year: req.body.year,
-        rating: req.body.rating,
-      };
-      res.json({
-        message: "Movie id " + req.params.id + " updated.",
-        location: "/movies/" + req.params.id,
-      });
-    }
-  }*/ /*
-});
-*/
-/*
-router.delete("/:id", function (req, res) {
-  /*
-  let map = movies.map(function (movie) {
-    return movie.id;
-  });
-  const removeIndex = map.indexOf(Number(req.params.id)); //Gets us the index of movie with given id.
-
-  if (removeIndex === -1) {
-    res.json({ message: "Not found" });
-  } else {
-    movies.splice(removeIndex, 1);
-    res.send({ message: "Movie id " + req.params.id + " removed." });
-  }*/ /*
-});
-*/
 //// Allgemein Routes ////////////////////////////////////////////////////////////////////////////////
 
 // Retrieve the AllgemeinData
-router.get("/allgemein", keycloak.protect("admin"), function (req, res) {
+router.get("/allgemein", function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, {
     useUnifiedTopology: true,
@@ -722,6 +523,71 @@ router.put("/allgemein", keycloak.protect("admin"), function (req, res) {
     db.collection(allName).updateOne(
       {},
       { $set: { botName: tmp.botName, selectedIcon: tmp.selectedIcon } },
+      function (err, result) {
+        if (err) throw err;
+        res.status(201).json(result);
+        client.close();
+      }
+    );
+  });
+});
+
+//// Einstellungen Routes ////////////////////////////////////////////////////////////////////////////////
+
+// Retrieve the EinstData
+router.get("/einstellungen", keycloak.protect("admin"), function (req, res) {
+  // Mongo Client
+  const client = new MongoClient(router.mongoURL, {
+    useUnifiedTopology: true,
+  });
+
+  // connect to mongodb
+  client.connect(function (err) {
+    if (err) throw err;
+    //res.json({ Message: "Connection close" });
+    // choose db 'corpus"
+    const db = client.db(dbName);
+
+    // query collection 'dataC'
+    db.collection(einstName).findOne({}, function (err, result) {
+      if (err) throw err;
+
+      // Return corpus in json format
+      //console.log(result);
+      res.json(result);
+      client.close();
+    });
+  });
+});
+
+// PUT
+router.put("/einstellungen", keycloak.protect("admin"), function (req, res) {
+  // Mongo Client
+  const client = new MongoClient(router.mongoURL, {
+    useUnifiedTopology: true,
+  });
+
+  // Sent new EinstData
+  let tmp = req.body.sendData;
+  console.log(tmp);
+  // Connect to MongoDB
+
+  client.connect(function (err) {
+    if (err) throw err;
+    // Choose db "corpus"
+    const db = client.db(dbName);
+    //console.log(tmp);
+
+    // Add new corpus to Collection "dataC"
+    db.collection(einstName).updateOne(
+      {},
+      {
+        $set: {
+          professor: tmp.professor,
+          student: tmp.student,
+          unbekannt: tmp.unbekannt,
+        },
+      },
       function (err, result) {
         if (err) throw err;
         res.status(201).json(result);

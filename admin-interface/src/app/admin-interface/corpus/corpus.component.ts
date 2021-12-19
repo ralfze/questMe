@@ -1,10 +1,11 @@
 
 import { E } from '@angular/cdk/keycodes';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
-import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterContentInit, Component, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { KeycloakService } from 'keycloak-angular';
+import { Observable } from 'rxjs';
 import { ApiService } from '../api.service';
 
 // Intent Card visual
@@ -22,7 +23,7 @@ import { IntentArray } from './intent-array/intent-array.component';
   styleUrls: ['./corpus.component.scss'],
 })
 
-export class CorpusComponent implements OnInit {
+export class CorpusComponent implements OnInit, AfterContentInit {
   // Get the Template from Intent-Array
   @ViewChild(IntentArray) intentAray: IntentArray | undefined;
 
@@ -30,7 +31,14 @@ export class CorpusComponent implements OnInit {
 
   titleC = 'Korpus-Liste';
 
-  selected = 'basis';
+  // Selected Item of the Dropdown Menu
+  // should show only Corpus for selected
+  selected = 'Basis';
+  selectedChanged = false;
+
+  changeSelected(bool: boolean) {
+    this.selectedChanged = bool;
+  }
 
   // Info about the selected icon in allgemein
   selectedIcon = {
@@ -43,6 +51,20 @@ export class CorpusComponent implements OnInit {
   }
 
   constructor(private title: Title, private keycloakService: KeycloakService, private renderer: Renderer2, private apiService: ApiService) {
+  }
+  ngAfterContentInit(): void {
+    // Create an Observer to update changes of the selected Corpus
+    const observer = new Observable<string>(observer => {
+      setInterval(() => {
+        observer.next(this.selected);      // Update the selected
+
+      }, 1000);
+    });
+    observer.subscribe((data) => {  // Change selected Corpus of the Intent Array
+      if (this.selectedChanged)
+        this.intentAray?.setCorpus(data);
+        this.selectedChanged = false;
+    });
   }
 
   ngOnInit(): void {
@@ -58,7 +80,10 @@ export class CorpusComponent implements OnInit {
     this.keycloakService.logout('http://localhost:4200');
   }
 
-  /// REST API
+  // Observer Pattern for selected Corpus
+
+
+  // REST API
   /**
    * Gets the AllgemeinData
    */

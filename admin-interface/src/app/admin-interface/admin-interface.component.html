@@ -4,26 +4,24 @@
 
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-
-    <span>questMe Single Sign On</span>
-
+  <span>questMe Single Sign On</span>
 </div>
 
 <div class="content" role="main">
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
     <img
-      src="https://image.shutterstock.com/image-vector/cat-robot-cartoon-vector-icon-600w-1801648348.jpg"
-      alt="ChatBot"
+      src="{{ allgemeinData.selectedIcon.src }}"
+      alt="{{ allgemeinData.selectedIcon.name }}"
     />
-    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"><button>Login</button></a>
+    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"
+      ><button>Login</button></a
+    >
   </div>
 
+  <p>Please Sign in with Single Sign</p>
 
-
-<p>Please Sign in with Single Sign</p>
-
- <!-- Beispiel von Routing
+  <!-- Beispiel von Routing
   <h1>Angular Router App</h1>
    This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule)
   <nav>
@@ -35,4 +33,4 @@
   The routed views render in the <router-outlet>
   <router-outlet></router-outlet>
   -->
-
+</div>
