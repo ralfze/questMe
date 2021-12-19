@@ -41,6 +41,22 @@ export class IntentArray implements OnInit, AfterContentInit {
     data: []
   };
 
+  // Selection of the Corpus
+  // Defines which Corpus should be displayed
+  selectedCorpus = 'Basis';
+  selectedChanged = false;
+
+  // sets the chosen corpus
+  setCorpus(corpusName: string) {
+    // change to given corpusName
+    this.selectedCorpus = corpusName;
+    // set changes happend
+    this.selectedChanged = true;
+    console.log('Selected Corpus: ' + this.selectedCorpus);
+  }
+
+
+
   /**
    * Creates one single Card
    * @param intent needs an Intent Object to create a card
@@ -59,6 +75,8 @@ export class IntentArray implements OnInit, AfterContentInit {
       let index = this.corpus.data.indexOf(intent);
       // Update new data Model
       this.corpus.data[index] = data;
+      // set values has been changed
+      this.valuesChanged = true;
     });
   }
 
@@ -87,7 +105,7 @@ export class IntentArray implements OnInit, AfterContentInit {
    */
   refreshCorpus() {
     // Retrieve Corpus
-    this.apiService.getCorpus().subscribe(data => {
+    this.apiService.getCorpus(this.selectedCorpus).subscribe(data => {
       //console.log(data)
       this.corpus = data;
       // Create the card list
@@ -105,25 +123,43 @@ export class IntentArray implements OnInit, AfterContentInit {
   }
   ngAfterContentInit(): void {
     // Create an Observer to update changes of the corpus
-
     const observer = new Observable<Intent[]>(observer => {
       setInterval(() => {
         observer.next(this.corpus.data);      // Update the Corpus
-        this.updateCorpus();
       }, 1000);
     });
-    observer.subscribe(data => /*console.log(data)*/console.log("Update"));
+    observer.subscribe(data => { if (this.valuesChanged) { this.updateCorpus(); console.log("Update"); this.valuesChanged = false; } });
+
+    // Create an Observer to change to the selected Corpus
+    const observer2 = new Observable<string>(observer => {
+      setInterval(() => {
+        observer.next(this.selectedCorpus);      // change the selected
+      }, 1000);
+    });
+
+    observer2.subscribe(() => {
+      if (this.selectedChanged) {
+        // reset selected has changed
+        this.selectedChanged = false;
+
+        // Clear the container with the intents
+        this.container.clear();
+        // unsubscribe all subscriptions from te last corpus
+        this.intCardSubscription.forEach((subscription) => { subscription.unsubscribe(); })
+        // reset intCardSubscription
+        this.intCardSubscription = [];
+
+        // change Corpus
+        this.refreshCorpus();
+        console.log(this.corpus);
+
+      }
+    });
   }
 
   ngOnInit(): void {
     // refreshCorpus
     this.refreshCorpus();
-    /*
-    const testO = new Observable<Intent[]>(observer => {
-      setInterval(() => observer.next(this.corpus.data), 1000);
-    });
-    testO.subscribe(data => console.log(data));
-    */
   }
   /**
    * Removing an intent
@@ -166,7 +202,7 @@ export class IntentArray implements OnInit, AfterContentInit {
         this.addDialogIntent(this.dialogIntent);
         // Clean the temporary dialogIntent
         this.cleanDialogData();
-        console.log(this.corpus.data);
+        //console.log(this.corpus.data);
       }
     });
   }

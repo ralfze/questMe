@@ -1,4 +1,4 @@
-const { dockStart } = require('@nlpjs/basic');
+const { dockStart } = require("@nlpjs/basic");
 
 // Connection String for mongoDB
 //const connString = process.env.MONGODB_CONNSTRING;
@@ -42,7 +42,7 @@ const restPort = 3001;
 
   // NLP Part
   const nlp = dock.get("nlp");
-  
+
   console.log(connString);
   //Database mongoDB
   const MongoClient = require("mongodb").MongoClient;
@@ -50,6 +50,7 @@ const restPort = 3001;
   //const fs = require("fs");
   const dbName = "corpus";
   const cName = "dataC";
+  const swb4Name = "swb4";
 
   const client = new MongoClient(connString, {
     useUnifiedTopology: true,
@@ -66,7 +67,21 @@ const restPort = 3001;
       if (err) throw err;
 
       // Adds the Corpus to the ChatBot
-      console.log("Add Corpus");
+      console.log("Add Corpus Basis");
+
+      // Add Corpus
+      await nlp.addCorpus(result);
+      //console.log(result);
+      // Start Bot
+      //await nlp.train();
+    });
+
+    // query collection 'swb4'
+    db.collection(swb4Name).findOne({}, async function (err, result) {
+      if (err) throw err;
+
+      // Adds the Corpus to the ChatBot
+      console.log("Add Corpus SWB4");
 
       // Add Corpus
       await nlp.addCorpus(result);
@@ -141,7 +156,7 @@ const restPort = 3001;
   // END Rest Api ///////////////////////////////////////
 
   // SOCKET.IO ///////////////////////////////////////
-  const { SocketioConnector } = require('./socketioConnector/index');
+  const { SocketioConnector } = require("./socketioConnector/index");
 
   // gets the 'default' container (has all containers nlp,core,...)
   container = dock.getContainer();

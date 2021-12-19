@@ -8,6 +8,7 @@ import { map, startWith } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
 import { ApiService } from '../api.service';
+import { EinstData } from './einstellungen';
 
 
 @Component({
@@ -17,6 +18,15 @@ import { ApiService } from '../api.service';
 })
 export class EinstellungenComponent implements OnInit {
   webtitle = 'Admin Einstellungen';
+
+  // dataModel of Einstellungen
+  einstData: EinstData = {
+    professor: [],
+    student: [],
+    unregistered: []
+  }
+
+
 
   selectableProf = true;
   selectableStud = true;
@@ -29,9 +39,9 @@ export class EinstellungenComponent implements OnInit {
   studCtrl = new FormControl();
   profCtrl = new FormControl();
   unregisteredCtrl = new FormControl();
-  corpusStud: string[] = ['Basis', 'Hochschule'];
-  corpusProf: string[] = ['Basis', 'Hochschule', 'Interna'];
-  corpusUnregistered: string[] = ['Basis'];
+  //corpusStud: string[] = ['Basis', 'Hochschule'];
+  //corpusProfessor.prof: string[] = ['Basis', 'Hochschule', 'Interna'];
+  //corpusUnregistered: string[] = ['Basis'];
 
   // Info about the selected icon in allgemein
   selectedIcon = {
@@ -59,7 +69,7 @@ export class EinstellungenComponent implements OnInit {
     // Add our Korpusdata
     if (value) {
 
-      this.corpusProf.push(value);
+      this.einstData.professor.push(value);
 
     }
 
@@ -76,7 +86,7 @@ export class EinstellungenComponent implements OnInit {
 
     // Add our Korpusdata
     if (value) {
-      this.corpusStud.push(value);
+      this.einstData.student.push(value);
 
     }
 
@@ -93,7 +103,7 @@ export class EinstellungenComponent implements OnInit {
     // Add our Korpusdata
     if (value) {
 
-      this.corpusUnregistered.push(value);
+      this.einstData.unregistered.push(value);
     }
 
     // Clear the input value
@@ -104,26 +114,26 @@ export class EinstellungenComponent implements OnInit {
 
   //remove chips
   removeProf(prof: string): void {
-    const index = this.corpusProf.indexOf(prof);
+    const index = this.einstData.professor.indexOf(prof);
 
     if (index >= 0) {
-      this.corpusProf.splice(index, 1);
+      this.einstData.professor.splice(index, 1);
     }
   }
 
   removeStud(stud: string): void {
-    const index = this.corpusStud.indexOf(stud);
+    const index = this.einstData.student.indexOf(stud);
 
     if (index >= 0) {
-      this.corpusStud.splice(index, 1);
+      this.einstData.student.splice(index, 1);
     }
   }
 
   removeUnregistered(unregistered: string): void {
-    const index = this.corpusUnregistered.indexOf(unregistered);
+    const index = this.einstData.unregistered.indexOf(unregistered);
 
     if (index >= 0) {
-      this.corpusUnregistered.splice(index, 1);
+      this.einstData.unregistered.splice(index, 1);
     }
   }
 
@@ -148,6 +158,8 @@ export class EinstellungenComponent implements OnInit {
     this.title.setTitle(this.webtitle);
     // Get the selected icon from allgemeinData
     this.refreshAllgemein();
+    // Get the einstData
+    this.refreshEinstellungen();
   }
   logout() {
     this.keycloakService.logout('http://localhost:4200');
@@ -164,5 +176,23 @@ export class EinstellungenComponent implements OnInit {
       // Retrieve the AllgmeinData
       this.selectedIcon = data.selectedIcon;
     })
+  }
+  /**
+     * Gets the EinstData
+     */
+  refreshEinstellungen() {
+    // Retrieve AllgemeinData
+    this.apiService.getEinstellungen().subscribe(data => {
+      console.log(data);
+      // Retrieve the AllgmeinData
+      this.einstData = data;
+    })
+  }
+  /**
+   * Updates the EinstData Remote Data Model
+   */
+  updateEinstellungen() {
+    // Updates the data Model
+    this.apiService.updateEinstellungen(this.einstData);
   }
 }

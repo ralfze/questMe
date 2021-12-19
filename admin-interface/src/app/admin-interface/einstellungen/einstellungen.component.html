@@ -70,7 +70,7 @@
       <mat-label>Korpusdaten</mat-label>
       <mat-chip-list #chipListProf aria-label="Korpusdaten">
         <mat-chip
-          *ngFor="let prof of corpusProf"
+          *ngFor="let prof of einstData.professor"
           [selectable]="selectableProf"
           [removable]="profRemoveable"
           (removed)="removeProf(prof)"
@@ -102,7 +102,7 @@
       <mat-label>Korpusdaten</mat-label>
       <mat-chip-list #chipListStud aria-label="Korpusdaten">
         <mat-chip
-          *ngFor="let stud of corpusStud"
+          *ngFor="let stud of einstData.student"
           [selectable]="selectableStud"
           [removable]="studRemoveable"
           (removed)="removeStud(stud)"
@@ -133,7 +133,7 @@
       <mat-label>Korpusdaten</mat-label>
       <mat-chip-list #chipListUnregistered aria-label="Korpusdaten">
         <mat-chip
-          *ngFor="let unregistered of corpusUnregistered"
+          *ngFor="let unregistered of einstData.unregistered"
           [selectable]="selectableUnregistered"
           [removable]="unregisteredRemoveable"
           (removed)="removeUnregistered(unregistered)"
