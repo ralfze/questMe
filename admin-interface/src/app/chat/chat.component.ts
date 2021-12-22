@@ -4,6 +4,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { SocketService } from './socket.service';
 import { Title } from '@angular/platform-browser';
+import { KeycloakService } from 'keycloak-angular';
 //import { send } from 'process';
 
 @Component({
@@ -13,7 +14,7 @@ import { Title } from '@angular/platform-browser';
 })
 export class ChatComponent implements OnInit {
   webtitle = 'Webchat';
-  constructor(private socketService: SocketService, private title: Title) {}
+  constructor(private socketService: SocketService, private title: Title, private keycloakService: KeycloakService) {}
   currentUser = {
     name: 'John Wick',
     id: 1,
@@ -55,7 +56,7 @@ export class ChatComponent implements OnInit {
   }
   // Function to send a Message to the Bot
   sendMessage() {
-    const data = { msg: this.chatInputMessage };
+    const data = { msg: this.chatInputMessage, roles: this.keycloakService.getUserRoles() };
     this.socketService.sendMessage(data);
     this.addMessage(data.msg, this.currentUser);
     this.chatInputMessage = '';

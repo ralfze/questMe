@@ -9,6 +9,8 @@ export function initializeKeycloak(keycloak: KeycloakService) {
           clientId: 'questMe-openid-client',
         },
         initOptions: {
+          onLoad: 'check-sso',
+          silentCheckSsoRedirectUri: window.location.origin + '/assets/silent-check-sso.html',
           checkLoginIframe: true,
           checkLoginIframeInterval: 25
         },
