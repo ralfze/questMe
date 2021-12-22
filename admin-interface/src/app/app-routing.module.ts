@@ -11,12 +11,12 @@ import { AuthGuard } from './utility/app.guard';
 
 const routes: Routes = [
   { path: 'chat', component: ChatComponent },
-  { path: 'admin-interface/allgemein', component: AllgemeinComponent ,canActivate:[AuthGuard]},
-  { path: 'admin-interface/infopage', component: InfopageComponent ,canActivate:[AuthGuard]},
+  { path: 'admin-interface/allgemein', component: AllgemeinComponent, canActivate:[AuthGuard], data: {roles: ['admin']}},
+  { path: 'admin-interface/infopage', component: InfopageComponent, canActivate:[AuthGuard], data: {roles: ['admin']}},
   { path: 'admin-interface', component: AdminInterfaceComponent},
   { path: '', redirectTo: '/chat', pathMatch: 'full' },
-  { path: 'admin-interface/corpus', component: CorpusComponent ,canActivate:[AuthGuard]},
-  { path: 'admin-interface/einstellungen', component: EinstellungenComponent ,canActivate:[AuthGuard]},
+  { path: 'admin-interface/corpus', component: CorpusComponent, canActivate:[AuthGuard], data: {roles: ['admin']}},
+  { path: 'admin-interface/einstellungen', component: EinstellungenComponent, canActivate:[AuthGuard], data: {roles: ['admin']}},
 ];
 
 @NgModule({
