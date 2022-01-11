@@ -14,7 +14,7 @@ $rbutwidth: 12%;
   padding: 0;
   margin-top: 3%;
   .intent-card {
-    width: 86%;
+    width: 100%;
     left: 0;
     padding: 0;
     background-color: lavender;
@@ -31,6 +31,7 @@ $rbutwidth: 12%;
       // contains the name and the edit button
       .intent-name-div {
         margin-left: $textleft;
+        width: calc(100% - $rbutwidth - $textleft * 2);
       }
       // toggled form field to change intent.name
       .intent-form-field {
@@ -40,6 +41,13 @@ $rbutwidth: 12%;
       }
       .intent-edit-abort {
         width: 10%;
+        align-self: center;
+      }
+      // Remove Button for Intents
+      .intent-remove {
+        padding: 0;
+        width: $rbutwidth;
+        height: width;
         align-self: center;
       }
     }
@@ -136,13 +144,5 @@ $rbutwidth: 12%;
         }
       }
     }
-  }
-  // Remove Button for Intents
-  .intent-remove {
-    padding: 0;
-    width: $rbutwidth;
-    height: width;
-    margin-left: 2%;
-    align-self: flex-start;
   }
 }

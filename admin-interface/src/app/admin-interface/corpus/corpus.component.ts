@@ -27,9 +27,9 @@ export class CorpusComponent implements OnInit, AfterContentInit {
   // Get the Template from Intent-Array
   @ViewChild(IntentArray) intentAray: IntentArray | undefined;
 
-  webtitle = 'Admin Korpus';
+  webtitle = 'Admin Corpus';
 
-  titleC = 'Korpus-Liste';
+  titleC = 'Corpus List';
 
   // Selected Item of the Dropdown Menu
   // should show only Corpus for selected

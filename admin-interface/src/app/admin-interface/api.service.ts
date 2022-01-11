@@ -92,6 +92,7 @@ export class ApiService {
     //console.log(body);
     this.http.put<any>(this.baseURL + 'restapi/allgemein', body).subscribe();
   }
+
   updateEinstellungen(sendData: EinstData) {
     const body = {
       sendData
