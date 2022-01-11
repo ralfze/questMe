@@ -77,23 +77,6 @@ class SocketioConnector extends Connector {
         credentials: true
       }
       })
-    /*
-    this.controller = new SocketioController(this.settings, this);
-    if (this.onCreateConversation) {
-      this.controller.onCreateConversation = this.onCreateConversation;
-    }
-    if (this.onHear) {
-      this.controller.onHear = this.onHear;
-    }*/
-
-    // Add Website
-    /*
-    app.get("/", (req, res) => {
-      // Change to path above ../
-      // __dirname directs to working directory of js  file
-      let path = require("path");
-      res.sendFile("index.html", { root: path.join(__dirname, "..") });
-    });*/
 
     // Event on connecting user
     io.on("connection", (socket) => {
@@ -109,7 +92,7 @@ class SocketioConnector extends Connector {
         //io.to(anotherSocketId).emit("private message", socket.id, msg);
 
         // Process users request
-        nlp.process(data.msg).then((result) => {
+        nlp.process('de', data.msg).then((result) => {
           const replyData = {
             outputMessage: result.answer,
           };
