@@ -42,6 +42,16 @@
       >
         <mat-icon>close</mat-icon>
       </button>
+      <!-- Remove Intent Button-->
+      <button *ngIf="!inputIntIsDisabled"
+        matTooltip="Remove Intent"
+        matTooltipPosition="left"
+        matTooltipClass="intent-remove-tooltip"
+        class="intent-remove"
+        (click)="removeCard()"
+      >
+        <mat-icon>delete_outline</mat-icon>
+      </button>
     </div>
     <!-- Utterance Section -->
     <div class="utterance-div">
@@ -165,13 +175,4 @@
       </mat-list>
     </div>
   </mat-card>
-  <button
-    matTooltip="Remove Intent"
-    matTooltipPosition="left"
-    matTooltipClass="intent-remove-tooltip"
-    class="intent-remove"
-    (click)="removeCard()"
-  >
-    <mat-icon>delete_outline</mat-icon>
-  </button>
 </div>

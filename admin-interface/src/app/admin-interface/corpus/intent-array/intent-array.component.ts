@@ -31,6 +31,7 @@ export class IntentArray implements OnInit, AfterContentInit {
   // Subscrition Array to erase subscription on delete
   intCardSubscription: Subscription[] = [];
 
+  @ViewChild('cardContainer', { read: ViewContainerRef }) cardContainer: any;
   //@ViewChild('intent-list', { read: ViewContainerRef })
   //@ViewChild(IntentCard) intentCard: IntentCard | undefined;
 
@@ -62,7 +63,7 @@ export class IntentArray implements OnInit, AfterContentInit {
    * @param intent needs an Intent Object to create a card
    */
   createCard(intent: Intent) {
-    let componentRef = this.container.createComponent(IntentCard);
+    let componentRef = this.cardContainer.createComponent(IntentCard);
     // set the componentRef to the component itself
     componentRef.instance.compRef = componentRef;
     // Set Intent Array Reference
@@ -71,7 +72,7 @@ export class IntentArray implements OnInit, AfterContentInit {
     componentRef.instance.setData(intent);
     // subscribe to data Model of Card
     // also add the subscription to the value subscription
-    componentRef.instance.subscription = componentRef.instance.intCardObserver.subscribe(data => {
+    componentRef.instance.subscription = componentRef.instance.intCardObserver.subscribe((data: Intent) => {
       let index = this.corpus.data.indexOf(intent);
       // Update new data Model
       this.corpus.data[index] = data;
@@ -119,7 +120,7 @@ export class IntentArray implements OnInit, AfterContentInit {
   // END REST API
 
 
-  constructor(private apiService: ApiService, private container: ViewContainerRef, private dialog: MatDialog) {
+  constructor(private apiService: ApiService, private dialog: MatDialog) {
   }
   ngAfterContentInit(): void {
     // Create an Observer to update changes of the corpus
@@ -143,7 +144,7 @@ export class IntentArray implements OnInit, AfterContentInit {
         this.selectedChanged = false;
 
         // Clear the container with the intents
-        this.container.clear();
+        this.cardContainer.clear();
         // unsubscribe all subscriptions from te last corpus
         this.intCardSubscription.forEach((subscription) => { subscription.unsubscribe(); })
         // reset intCardSubscription
@@ -179,6 +180,8 @@ export class IntentArray implements OnInit, AfterContentInit {
     //this.corpus.data.splice(0,0,intent);
     // Create a card of the intent
     this.createCard(intent);
+    // set values has been changed
+    this.valuesChanged = true;
   }
   cleanDialogData() {
     this.dialogIntent = {
