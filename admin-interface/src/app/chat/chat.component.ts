@@ -19,6 +19,9 @@ export class ChatComponent implements OnInit, OnDestroy {
   // Subscriptions of the Bot
   subArray: Subscription[] = [];
 
+  // Link Admin UI
+  link : string = '/admin-interface';
+
   webtitle = 'Webchat';
   constructor(private socketService: SocketService, private title: Title, private keycloakService: KeycloakService, private apiService: ApiService) { }
 
@@ -46,6 +49,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     user: any;
     message: string;
     created_at: number;
+    showLink: boolean;
   }[] = [];
 
   // Chat Input Message Box
@@ -64,7 +68,8 @@ export class ChatComponent implements OnInit, OnDestroy {
     let sub = this.socketService.receivedReply().subscribe((data) => {
       //console.log(data);
       // Bot Answer is added to the Chat Stack
-      this.addMessage(data.outputMessage, this.bot);
+      this.addMessage(data.outputMessage, this.bot, data.showLink);
+      // Set Admin Link
     });
     this.subArray.push(sub);
     // Get the Info from the ChatBot
@@ -81,17 +86,18 @@ export class ChatComponent implements OnInit, OnDestroy {
   sendMessage() {
     const data = { msg: this.chatInputMessage, roles: this.keycloakService.getUserRoles() };
     this.socketService.sendMessage(data);
-    this.addMessage(data.msg, this.currentUser);
+    this.addMessage(data.msg, this.currentUser, false);
     this.chatInputMessage = '';
     this.scrollToBottom();
   }
 
   // Function adds Message to the Chat Stack
-  addMessage(msg: string, user: object) {
+  addMessage(msg: string, user: object, showLink: boolean) {
     this.chatMessages.push({
       message: msg,
       user: user,
       created_at: Date.now(),
+      showLink: showLink,
     });
   }
 

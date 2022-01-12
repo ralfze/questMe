@@ -125,6 +125,11 @@ $chat-color: royalblue;
     #message-body {
       margin-left: -15px;
       margin-top: 1em;
+      // Link
+      a {
+        color: rgb(185, 23, 218);
+        margin-left: 0.5em;
+      }
     }
   }
 
