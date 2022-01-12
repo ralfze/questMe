@@ -295,85 +295,14 @@ div.scroll {
   scroll-behavior: smooth;
   display: flex;
 }
-/*
-// Intent List
-.intentList {
-  background-color: coral;
-  width: 100%;
 
-  // contains the intent/utterances/answers
-  .intent-card {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    //background-color: red;
-
-    // contains the intent text
-    .intent-intent {
-      width: 100%;
-      //background-color: red;
-    }
-
-    //contains utterances and answers
-    .intent-container {
-      width: 100%;
-      display: flex;
-      background-color: green;
-
-      .intent-utterances-list {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        background-color: yellow;
-
-        mat-list-item {
-          width: 100%;
-          background-color: pink;
-        }
-        mat-list-item:hover {
-          background-color: gray;
-        }
-        .intent-input-utterances {
-          width: 100%;
-          .utterances-field {
-            width: 100%;
-          }
-          .butAddUtterances {
-            width: 100%;
-          }
-        }
-      }
-      .intent-answers-list {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        background-color: yellow;
-
-        mat-list-item {
-          width: 100%;
-          background-color: green;
-        }
-        mat-list-item:hover {
-          background-color: gray;
-        }
-        .intent-input-answers {
-          width: 100%;
-          .answers-field {
-            width: 100%;
-          }
-          .butAddAnswers{
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}*/
-//TREE Example
 .mat-form-field {
-  margin-right: 0px;
+  //margin-right: 0px;
 }
-//Tree Example
+
+#intent-array {
+  width: 100%;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
