@@ -10,13 +10,14 @@ import { ApiService } from '../api.service';
 export class InfopageComponent implements OnInit {
 
   constructor(private apiService: ApiService, private keycloakService: KeycloakService) { }
-  // Info about the selected icon in allgemein
+  // Info about the selected icon in general
   selectedIcon = {
     name: '', src: ''
   };
+
   ngOnInit(): void {
-    // Get the selected icon from allgemeinData
-    this.refreshAllgemein();
+    // Get the selected icon from generalData
+    this.refreshGeneral();
   }
 
 
@@ -26,12 +27,12 @@ export class InfopageComponent implements OnInit {
 
   /// REST API
   /**
-   * Gets the AllgemeinData
+   * Gets the GeneralData
    */
-  refreshAllgemein() {
-    // Retrieve AllgemeinData
-    this.apiService.getAllgemein().subscribe(data => {
-      // Retrieve the AllgmeinData
+  refreshGeneral() {
+    // Retrieve GeneralData
+    this.apiService.getGeneral().subscribe(data => {
+      // Retrieve the GeneralData
       this.selectedIcon = data.selectedIcon;
     })
   }

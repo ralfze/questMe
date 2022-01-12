@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { AllgemeinSettings } from './allgemein/allgemein';
+import { GeneralSettings } from './general/general';
 import { ApiService } from './api.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ApiService } from './api.service';
   styleUrls: ['./admin-interface.component.scss']
 })
 export class AdminInterfaceComponent implements OnInit {
-  webtitle = 'Admin Website';
+  webtitle = 'Admin Website Infopage';
 
   constructor(private title: Title, private apiService: ApiService) { }
 
@@ -19,7 +19,7 @@ export class AdminInterfaceComponent implements OnInit {
 
   }
   // DataModel of Allgmein Website
-  allgemeinData: AllgemeinSettings = {
+  generalData: GeneralSettings = {
     botName: '',
     selectedIcon: { name: '', condition: false, src: '' }
   };
@@ -29,10 +29,10 @@ export class AdminInterfaceComponent implements OnInit {
    */
   refreshAllgemein() {
     // Retrieve AllgemeinData
-    this.apiService.getAllgemein().subscribe(data => {
+    this.apiService.getGeneral().subscribe(data => {
       console.log(data);
-      // Retrieve the AllgmeinData
-      this.allgemeinData = data;
+      // Retrieve the generalData
+      this.generalData = data;
     })
   }
   // END REST API

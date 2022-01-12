@@ -5,11 +5,11 @@ FROM mongo:5.0.4-focal
 COPY _init.js /docker-entrypoint-initdb.d/
 
 # Copies Corpus that need to be included\
-COPY init-allgemein.js /docker-entrypoint-initdb.d/
+COPY init-general.js /docker-entrypoint-initdb.d/
 COPY init-corpus-basis.js /docker-entrypoint-initdb.d/
 COPY init-corpus-interna.js /docker-entrypoint-initdb.d/
 COPY init-corpus-swb4.js /docker-entrypoint-initdb.d/
-COPY init-einstellungen.js /docker-entrypoint-initdb.d/
+COPY init-settings.js /docker-entrypoint-initdb.d/
 
 
 # Creates a init db with name corpus

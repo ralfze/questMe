@@ -14,8 +14,8 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectId;
 const dbName = "corpus";
 const cName = "dataC";
-const allName = "allgemein";
-const einstName = "einstellungen";
+const generalName = "general";
+const settingsName = "settings";
 
 // bot
 
@@ -473,10 +473,10 @@ router.post("/bot/restart", keycloak.protect("admin"), function (req, res) {
 });
 
 
-//// Allgemein Routes ////////////////////////////////////////////////////////////////////////////////
+//// General Routes ////////////////////////////////////////////////////////////////////////////////
 
-// Retrieve the AllgemeinData
-router.get("/allgemein", function (req, res) {
+// Retrieve the SettingsData
+router.get("/general", function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, {
     useUnifiedTopology: true,
@@ -490,7 +490,7 @@ router.get("/allgemein", function (req, res) {
     const db = client.db(dbName);
 
     // query collection 'dataC'
-    db.collection(allName).findOne({}, function (err, result) {
+    db.collection(generalName).findOne({}, function (err, result) {
       if (err) throw err;
 
       // Return corpus in json format
@@ -502,13 +502,13 @@ router.get("/allgemein", function (req, res) {
 });
 
 // PUT
-router.put("/allgemein", keycloak.protect("admin"), function (req, res) {
+router.put("/general", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, {
     useUnifiedTopology: true,
   });
 
-  // Sent new AllgemeinData
+  // Sent new GeneralnData
   let tmp = req.body.sendData;
   console.log(tmp);
   // Connect to MongoDB
@@ -520,7 +520,7 @@ router.put("/allgemein", keycloak.protect("admin"), function (req, res) {
     //console.log(tmp);
 
     // Add new corpus to Collection "dataC"
-    db.collection(allName).updateOne(
+    db.collection(generalName).updateOne(
       {},
       { $set: { botName: tmp.botName, selectedIcon: tmp.selectedIcon } },
       function (err, result) {
@@ -532,10 +532,10 @@ router.put("/allgemein", keycloak.protect("admin"), function (req, res) {
   });
 });
 
-//// Einstellungen Routes ////////////////////////////////////////////////////////////////////////////////
+//// Settings Routes ////////////////////////////////////////////////////////////////////////////////
 
-// Retrieve the EinstData
-router.get("/einstellungen", keycloak.protect("admin"), function (req, res) {
+// Retrieve the SettingsData
+router.get("/settings", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, {
     useUnifiedTopology: true,
@@ -549,7 +549,7 @@ router.get("/einstellungen", keycloak.protect("admin"), function (req, res) {
     const db = client.db(dbName);
 
     // query collection 'dataC'
-    db.collection(einstName).findOne({}, function (err, result) {
+    db.collection(settingsName).findOne({}, function (err, result) {
       if (err) throw err;
 
       // Return corpus in json format
@@ -561,13 +561,13 @@ router.get("/einstellungen", keycloak.protect("admin"), function (req, res) {
 });
 
 // PUT
-router.put("/einstellungen", keycloak.protect("admin"), function (req, res) {
+router.put("/settings", keycloak.protect("admin"), function (req, res) {
   // Mongo Client
   const client = new MongoClient(router.mongoURL, {
     useUnifiedTopology: true,
   });
 
-  // Sent new EinstData
+  // Sent new settingsData
   let tmp = req.body.sendData;
   console.log(tmp);
   // Connect to MongoDB
@@ -579,7 +579,7 @@ router.put("/einstellungen", keycloak.protect("admin"), function (req, res) {
     //console.log(tmp);
 
     // Add new corpus to Collection "dataC"
-    db.collection(einstName).updateOne(
+    db.collection(settingsName).updateOne(
       {},
       {
         $set: {

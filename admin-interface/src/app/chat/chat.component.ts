@@ -6,7 +6,7 @@ import { SocketService } from './socket.service';
 import { Title } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
 import { ApiService } from '../admin-interface/api.service';
-import { AllgemeinSettings } from '../admin-interface/allgemein/allgemein';
+import { GeneralSettings } from '../admin-interface/general/general';
 import { Subscription } from 'rxjs';
 
 
@@ -26,7 +26,7 @@ export class ChatComponent implements OnInit, OnDestroy {
   constructor(private socketService: SocketService, private title: Title, private keycloakService: KeycloakService, private apiService: ApiService) { }
 
   // DataModel of Allgmein Website
-  allgemeinData: AllgemeinSettings = {
+  generalData: GeneralSettings = {
     botName: '',
     selectedIcon: { name: '', condition: false, src: '' }
   };
@@ -73,7 +73,7 @@ export class ChatComponent implements OnInit, OnDestroy {
     });
     this.subArray.push(sub);
     // Get the Info from the ChatBot
-    this.refreshAllgemein();
+    this.refreshGeneral();
   }
 
   //Function that is applied when AppComponent is destroyed
@@ -122,16 +122,16 @@ export class ChatComponent implements OnInit, OnDestroy {
   /**
    * Gets the AllgemeinData
    */
-  refreshAllgemein() {
+  refreshGeneral() {
     // Retrieve AllgemeinData
-    let sub = this.apiService.getAllgemein().subscribe(data => {
+    let sub = this.apiService.getGeneral().subscribe(data => {
       console.log(data);
       // Retrieve the AllgmeinData
-      this.allgemeinData = data;
+      this.generalData = data;
       // Change the Name of the Bot
-      this.changeBotName(this.allgemeinData.botName);
+      this.changeBotName(this.generalData.botName);
       // Change the Icon of the Bot
-      this.changeBotIcon(this.allgemeinData.selectedIcon.src);
+      this.changeBotIcon(this.generalData.selectedIcon.src);
     })
     this.subArray.push(sub);
   }

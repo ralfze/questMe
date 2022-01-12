@@ -13,12 +13,12 @@ import { IntentArray } from './intent-array/intent-array.component';
 
 
 /**
- * @title Korpus Component
+ * @title corpus Component
  */
 
 
 @Component({
-  selector: 'app-korpus',
+  selector: 'app-corpus',
   templateUrl: './corpus.component.html',
   styleUrls: ['./corpus.component.scss'],
 })
@@ -27,7 +27,7 @@ export class CorpusComponent implements OnInit, AfterContentInit {
   // Get the Template from Intent-Array
   @ViewChild(IntentArray) intentAray: IntentArray | undefined;
 
-  webtitle = 'Admin Corpus';
+  webtitle = 'Admin Corpus Page';
 
   titleC = 'Corpus List';
 
@@ -52,6 +52,7 @@ export class CorpusComponent implements OnInit, AfterContentInit {
 
   constructor(private title: Title, private keycloakService: KeycloakService, private renderer: Renderer2, private apiService: ApiService) {
   }
+
   ngAfterContentInit(): void {
     // Create an Observer to update changes of the selected Corpus
     const observer = new Observable<string>(observer => {
@@ -71,7 +72,7 @@ export class CorpusComponent implements OnInit, AfterContentInit {
     // Sets title of the webpage
     this.title.setTitle(this.webtitle);
     // Get the selected icon from allgemeinData
-    this.refreshAllgemein();
+    this.refreshGeneral();
   }
 
 
@@ -87,9 +88,9 @@ export class CorpusComponent implements OnInit, AfterContentInit {
   /**
    * Gets the AllgemeinData
    */
-  refreshAllgemein() {
+  refreshGeneral() {
     // Retrieve AllgemeinData
-    this.apiService.getAllgemein().subscribe(data => {
+    this.apiService.getGeneral().subscribe(data => {
       // Retrieve the AllgmeinData
       this.selectedIcon = data.selectedIcon;
     })

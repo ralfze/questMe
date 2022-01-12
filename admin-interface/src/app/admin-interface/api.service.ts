@@ -5,8 +5,8 @@ import { Corpus } from './corpus/intent/corpus';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Intent } from './corpus/intent/intent';
-import { AllgemeinSettings } from './allgemein/allgemein';
-import { EinstData } from './einstellungen/einstellungen';
+import { GeneralSettings as GeneralSettings } from './general/general';
+import { SettingsData } from './settingspage/settings';
 
 
 @Injectable({ providedIn: 'root' })
@@ -45,13 +45,13 @@ export class ApiService {
     // return this.http.get<Corpus>(this.baseURL + 'restapi/corpus')
     return this.http.get<Corpus>(this.baseURL + corpusUrl)
   }
-  getAllgemein(): Observable<AllgemeinSettings> {
-    console.log('Allgemein ' + this.baseURL + 'restapi/allgemein')
-    return this.http.get<AllgemeinSettings>(this.baseURL + 'restapi/allgemein')
+  getGeneral(): Observable<GeneralSettings> {
+    console.log('General ' + this.baseURL + 'restapi/general')
+    return this.http.get<GeneralSettings>(this.baseURL + 'restapi/general')
   }
-  getEinstellungen(): Observable<EinstData> {
-    console.log('Einstellungen ' + this.baseURL + 'restapi/einstellungen')
-    return this.http.get<EinstData>(this.baseURL + 'restapi/einstellungen')
+  getSettings(): Observable<SettingsData> {
+    console.log('Settings ' + this.baseURL + 'restapi/settings')
+    return this.http.get<SettingsData>(this.baseURL + 'restapi/settings')
   }
 
   // UPDATE
@@ -85,20 +85,20 @@ export class ApiService {
     this.http.put<any>(this.baseURL + corpusUrl, body).subscribe();
   }
 
-  updateAllgemein(sendData: AllgemeinSettings) {
+  updateGeneral(sendData: GeneralSettings) {
     const body = {
       sendData
     };
     //console.log(body);
-    this.http.put<any>(this.baseURL + 'restapi/allgemein', body).subscribe();
+    this.http.put<any>(this.baseURL + 'restapi/general', body).subscribe();
   }
 
-  updateEinstellungen(sendData: EinstData) {
+  updateSettings(sendData: SettingsData) {
     const body = {
       sendData
     };
     //console.log(body);
-    this.http.put<any>(this.baseURL + 'restapi/einstellungen', body).subscribe();
+    this.http.put<any>(this.baseURL + 'restapi/settings', body).subscribe();
   }
 
   // DELETE
@@ -111,13 +111,4 @@ export class ApiService {
     let key = { key: 12345 };
     this.http.post<any>(this.baseURL + 'restapi/bot/restart', key).subscribe();
   }
-
-  /*
-   addPerson(person:Person): Observable<any> {
-     const headers = { 'content-type': 'application/json'}
-     const body=JSON.stringify(person);
-     console.log(body)
-     return this.http.post(this.baseURL + 'people', body,{'headers':headers})
-   }*/
-
 }
