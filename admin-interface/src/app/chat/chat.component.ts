@@ -1,20 +1,33 @@
 // Origin from https://github.com/pareshjoshi2468/chatbot/blob/master/chatbot-client/src/app/app.component.ts
 // Code was adjusted for this project
 
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { SocketService } from './socket.service';
 import { Title } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
-//import { send } from 'process';
+import { ApiService } from '../admin-interface/api.service';
+import { AllgemeinSettings } from '../admin-interface/allgemein/allgemein';
+import { Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss'],
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, OnDestroy {
+  // Subscriptions of the Bot
+  subArray: Subscription[] = [];
+
   webtitle = 'Webchat';
-  constructor(private socketService: SocketService, private title: Title, private keycloakService: KeycloakService) {}
+  constructor(private socketService: SocketService, private title: Title, private keycloakService: KeycloakService, private apiService: ApiService) { }
+
+  // DataModel of Allgmein Website
+  allgemeinData: AllgemeinSettings = {
+    botName: '',
+    selectedIcon: { name: '', condition: false, src: '' }
+  };
+
   currentUser = {
     name: 'John Wick',
     id: 1,
@@ -48,12 +61,22 @@ export class ChatComponent implements OnInit {
   //Function that is applied when AppComponent is initialized
   ngOnInit() {
     this.title.setTitle(this.webtitle);
-    this.socketService.receivedReply().subscribe((data) => {
+    let sub = this.socketService.receivedReply().subscribe((data) => {
       //console.log(data);
       // Bot Answer is added to the Chat Stack
       this.addMessage(data.outputMessage, this.bot);
     });
+    this.subArray.push(sub);
+    // Get the Info from the ChatBot
+    this.refreshAllgemein();
   }
+
+  //Function that is applied when AppComponent is destroyed
+  ngOnDestroy(): void {
+    // unsubscribe the subscriptions
+    this.subArray.forEach((subscription) => { subscription.unsubscribe() });
+  }
+
   // Function to send a Message to the Bot
   sendMessage() {
     const data = { msg: this.chatInputMessage, roles: this.keycloakService.getUserRoles() };
@@ -80,4 +103,31 @@ export class ChatComponent implements OnInit {
     this.chatListContainer.nativeElement.scrollTop =
       this.chatListContainer.nativeElement.scrollHeight;
   }
+
+  // Bot Methods
+  changeBotName(s: string) {
+    this.bot.name = s;
+  }
+  changeBotIcon(s: string) {
+    this.bot.profileImageUrl = s;
+  }
+
+  /// REST API
+  /**
+   * Gets the AllgemeinData
+   */
+  refreshAllgemein() {
+    // Retrieve AllgemeinData
+    let sub = this.apiService.getAllgemein().subscribe(data => {
+      console.log(data);
+      // Retrieve the AllgmeinData
+      this.allgemeinData = data;
+      // Change the Name of the Bot
+      this.changeBotName(this.allgemeinData.botName);
+      // Change the Icon of the Bot
+      this.changeBotIcon(this.allgemeinData.selectedIcon.src);
+    })
+    this.subArray.push(sub);
+  }
+  // END REST API
 }
