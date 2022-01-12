@@ -21,11 +21,11 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-const { containerBootstrap } = require('@nlpjs/core');
+const { containerBootstrap } = require("@nlpjs/core");
 
-const { createServer } = require('http');
-const { Server } = require('socket.io');
-const { Connector } = require('@nlpjs/connector');
+const { createServer } = require("http");
+const { Server } = require("socket.io");
+const { Connector } = require("@nlpjs/connector");
 
 class SocketioConnector extends Connector {
   constructor(settings, container) {
@@ -69,14 +69,14 @@ class SocketioConnector extends Connector {
     const httpServer = createServer(app);
     // create a socketio server
     // here address from angular
-    const io = new Server(httpServer,{
+    const io = new Server(httpServer, {
       cors: {
         origin: "http://localhost:4200",
         methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
-        allowedHeaders:["secretHeader"],
-        credentials: true
-      }
-      })
+        allowedHeaders: ["secretHeader"],
+        credentials: true,
+      },
+    });
 
     // Event on connecting user
     io.on("connection", (socket) => {
@@ -92,10 +92,18 @@ class SocketioConnector extends Connector {
         //io.to(anotherSocketId).emit("private message", socket.id, msg);
 
         // Process users request
-        nlp.process('de', data.msg).then((result) => {
+        nlp.process("de", data.msg).then((result) => {
+          // Check if Admin Link should be shown
+          let link = false;
+          if (result.intent === "admin.address") link = true;
+
+          // Message Data to send back
           const replyData = {
             outputMessage: result.answer,
+            showLink: link,
           };
+          
+          // Send Message back to specific browser
           io.to(anotherSocketId).emit("private message", socket.id, replyData);
         });
       });
@@ -105,7 +113,6 @@ class SocketioConnector extends Connector {
       console.log("Bot listening on *:3000");
     });
   }
-
 }
 
 module.exports = SocketioConnector;

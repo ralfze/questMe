@@ -10,7 +10,7 @@
           }"
         >
           <img id="avatar" [src]="item?.user?.profileImageUrl" />
-          <p id="message-body">{{ item?.message }}</p>
+          <p id="message-body">{{ item?.message }}<a *ngIf='item?.showLink' routerLink={{link}}>Admin Website</a></p>
           <span id="time-details">{{
             item?.created_at | date: "shortTime"
           }}</span>

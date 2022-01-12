@@ -820,6 +820,15 @@ db.dataC.insertOne({
       ],
     },
     {
+      intent: "admin.address",
+      utterances: [
+        "Wie heißt der Link zur Admin Website",
+        "Wie komme ich zur Admin Seite",
+        "Wie lautet der Link zur Admin Website",
+      ],
+      answers: ["Link zur Admin-Website: "],
+    },
+    {
       intent: "None",
       utterances: [
         "ich brauche rat",
