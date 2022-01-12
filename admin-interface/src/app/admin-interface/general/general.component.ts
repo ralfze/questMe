@@ -3,15 +3,15 @@ import { Title } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
 import { Observable } from 'rxjs';
 import { ApiService } from '../api.service';
-import { AllgemeinSettings } from './allgemein';
+import { GeneralSettings } from './general';
 
 @Component({
-  selector: 'app-allgemein',
-  templateUrl: './allgemein.component.html',
-  styleUrls: ['./allgemein.component.scss'],
+  selector: 'app-general',
+  templateUrl: './general.component.html',
+  styleUrls: ['./general.component.scss'],
 })
-export class AllgemeinComponent implements OnInit, AfterContentInit {
-  webtitle = 'Admin Allgemein';
+export class GeneralComponent implements OnInit, AfterContentInit {
+  webtitle = 'Admin General Page';
 
   constructor(private title: Title, private keycloakService: KeycloakService, private apiService: ApiService) {
   }
@@ -19,7 +19,7 @@ export class AllgemeinComponent implements OnInit, AfterContentInit {
   isChanged = false;
 
   // DataModel of Allgmein Website
-  allgemeinData: AllgemeinSettings = {
+  generalData: GeneralSettings = {
     botName: '',
     selectedIcon: { name: '', condition: false, src: '' }
   };
@@ -47,7 +47,7 @@ export class AllgemeinComponent implements OnInit, AfterContentInit {
     if (iconObj !== undefined) {
       iconObj.condition = true;
       //choosen icon copy datamodel
-      this.allgemeinData.selectedIcon = iconObj;
+      this.generalData.selectedIcon = iconObj;
     }
     // Something has changed update needed at the db
     this.isChanged = true;
@@ -55,11 +55,11 @@ export class AllgemeinComponent implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {
     // Create an Observer to update changes of Allgemein
 
-    const observer = new Observable<AllgemeinSettings>(observer => {
+    const observer = new Observable<GeneralSettings>(observer => {
       setInterval(() => {
         if (this.isChanged === true) {
-          observer.next(this.allgemeinData);      // Update the AllgemeinData
-          this.updateAllgemein();
+          observer.next(this.generalData);      // Update the AllgemeinData
+          this.updateGeneral();
           // set needed update back
           this.isChanged = false;
         }
@@ -69,9 +69,9 @@ export class AllgemeinComponent implements OnInit, AfterContentInit {
   }
   ngOnInit(): void {
     this.title.setTitle(this.webtitle);
-    this.allgemeinData.selectedIcon = this.iconArray[0];
+    this.generalData.selectedIcon = this.iconArray[0];
     // Fetch from mongodb
-    this.refreshAllgemein();
+    this.refreshGeneral();
   }
   logout() {
     this.keycloakService.logout('http://localhost:4200');
@@ -84,15 +84,15 @@ export class AllgemeinComponent implements OnInit, AfterContentInit {
   /**
    * Gets the AllgemeinData
    */
-  refreshAllgemein() {
+  refreshGeneral() {
     // Retrieve AllgemeinData
-    this.apiService.getAllgemein().subscribe(data => {
+    this.apiService.getGeneral().subscribe(data => {
       console.log(data);
       // Retrieve the AllgmeinData
-      this.allgemeinData = data;
+      this.generalData = data;
       // Change the condition of the actual chosen element
       this.iconArray.forEach((ele) => {
-        if (ele.name === this.allgemeinData.selectedIcon.name) {
+        if (ele.name === this.generalData.selectedIcon.name) {
           // update the chosen element
           ele.condition = true;
         }
@@ -100,9 +100,9 @@ export class AllgemeinComponent implements OnInit, AfterContentInit {
     })
   }
 
-  updateAllgemein() {
+  updateGeneral() {
     // Updates the data Model
-    this.apiService.updateAllgemein(this.allgemeinData);
+    this.apiService.updateGeneral(this.generalData);
   }
   // END REST API
 

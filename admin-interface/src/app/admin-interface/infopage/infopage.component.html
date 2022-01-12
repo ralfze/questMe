@@ -1,5 +1,5 @@
 <!--
-  Infoseite
+  Info Page
  -->
 
 <!-- Toolbar -->
@@ -12,25 +12,28 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a [routerLink]="['/admin-interface/allgemein']"
+    <a [routerLink]="['/admin-interface/general']"
       ><button mat-menu-item>
         <mat-icon>person</mat-icon>
-        <span>Allgemein</span>
+        <span>General</span>
       </button>
     </a>
     <a [routerLink]="['/admin-interface/corpus']"
       ><button mat-menu-item>
         <mat-icon>library_books</mat-icon>
-        <span>Korpus</span>
+        <span>Corpus</span>
       </button>
     </a>
-    <a
-      [routerLink]="['/admin-interface/einstellungen']"
-      routerLinkActive="active"
-    >
+    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Infopage</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface/settings']" routerLinkActive="active">
       <button mat-menu-item>
         <mat-icon>settings</mat-icon>
-        <span>Einstellungen</span>
+        <span>Settings</span>
       </button>
     </a>
     <a>
@@ -49,26 +52,10 @@
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
     <img src="{{ selectedIcon.src }}" alt="{{ selectedIcon.name }}" />
-    <span>Willkommen zu admin-interface !</span>
+    <span>Welcome to the Admin-interface !</span>
   </div>
 
   <!-- Information -->
   <h2>Information</h2>
-  <p>
-    Links oben befindet sich das Hamburger Menu. <br />
-    Im Menu kann man die Punkte Allgemein, Korpus, Einstellungen und LogOut
-    auswählen.
-  </p>
+  <p>TODO</p>
 </div>
-<!-- Beispiel von Routing
-  <h1>Angular Router App</h1>
-   This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule)
-  <nav>
-    <ul>
-      <li><a routerLink="/allgemein-interface" routerLinkActive="active">First Component</a></li>
-      <li><a routerLink="/app-root" routerLinkActive="active">Second Component</a></li>
-    </ul>
-  </nav>
-  The routed views render in the <router-outlet>
-  <router-outlet></router-outlet>
-  -->

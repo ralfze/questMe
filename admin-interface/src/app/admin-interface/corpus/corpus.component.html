@@ -13,25 +13,28 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a [routerLink]="['/admin-interface/allgemein']" routerLinkActive="active"
+    <a [routerLink]="['/admin-interface/general']" routerLinkActive="active"
       ><button mat-menu-item>
         <mat-icon>person</mat-icon>
-        <span>Allgemein</span>
+        <span>General</span>
       </button>
     </a>
     <a [routerLink]="['/admin-interface/corpus']" routerLinkActive="active"
       ><button mat-menu-item>
         <mat-icon>library_books</mat-icon>
-        <span>Korpus</span>
+        <span>Corpus</span>
       </button>
     </a>
-    <a
-      [routerLink]="['/admin-interface/einstellungen']"
-      routerLinkActive="active"
-    >
+    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Infopage</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface/settings']" routerLinkActive="active">
       <button mat-menu-item>
         <mat-icon>settings</mat-icon>
-        <span>Einstellungen</span>
+        <span>Settings</span>
       </button>
     </a>
     <a>
@@ -50,15 +53,15 @@
   <!-- Highlight Card -->
   <div class="card highlight-card card-small">
     <img src="{{ selectedIcon.src }}" alt="{{ selectedIcon.name }}" />
-    <span>Korpus</span>
+    <span>Corpus</span>
   </div>
 
-  <!--Korpus Domains
+  <!--Corpus Domains
       "basis" is per default selected
       with 2-way binding-->
-  <div class="card card-korpusdaten">
-    <mat-form-field class="korpus-daten" appearance="fill">
-      <mat-label>Korpusdaten Thema</mat-label>
+  <div class="card card-corpus-data">
+    <mat-form-field class="corpus-data" appearance="fill">
+      <mat-label>Corpus Data subject</mat-label>
       <mat-select [(value)]="selected" (valueChange)="changeSelected(true)">
         <mat-option value="Basis">Basis</mat-option>
         <mat-option value="Hochschule">Hochschule</mat-option>
@@ -68,7 +71,7 @@
   </div>
   <div class="button-div">
     <button mat-raised-button color="primary" (click)="restartBot()">
-      Bot updaten
+      Update Bot
     </button>
   </div>
   <!-- Intent Array List-->

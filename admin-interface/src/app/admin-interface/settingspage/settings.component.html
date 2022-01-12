@@ -1,5 +1,5 @@
 <!--
-  Einstellungen-Seite
+  Settings-Page
  -->
 
 <!-- Toolbar -->
@@ -9,29 +9,32 @@
     [matMenuTriggerFor]="menu"
     aria-label="questMe icon-button with a menu"
   >
-    <!-- Hamburger menu mit Verlinkung-->
+    <!-- Hamburger menu with Links-->
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a [routerLink]="['/admin-interface/allgemein']" routerLinkActive="active"
+    <a [routerLink]="['/admin-interface/general']" routerLinkActive="active"
       ><button mat-menu-item>
         <mat-icon>person</mat-icon>
-        <span>Allgemein</span>
+        <span>General</span>
       </button>
     </a>
     <a [routerLink]="['/admin-interface/corpus']" routerLinkActive="active"
       ><button mat-menu-item>
         <mat-icon>library_books</mat-icon>
-        <span>Korpus</span>
+        <span>Corpus</span>
       </button>
     </a>
-    <a
-      [routerLink]="['/admin-interface/einstellungen']"
-      routerLinkActive="active"
-    >
+    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Infopage</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface/settings']" routerLinkActive="active">
       <button mat-menu-item>
         <mat-icon>settings</mat-icon>
-        <span>Einstellungen</span>
+        <span>Settings</span>
       </button>
     </a>
     <a>
@@ -67,10 +70,10 @@
       <mat-label>Corpus Data</mat-label>
       <mat-chip-list #chipListProf aria-label="CorpusData">
         <mat-chip
-          *ngFor="let prof of einstData.professor"
+          *ngFor="let prof of settingsData.professor"
           [selectable]="selectableProf"
           [removable]="profRemoveable"
-          (removed)="removeChip('Professor',prof)"
+          (removed)="removeChip('Professor', prof)"
         >
           {{ prof }}
           <button matChipRemove *ngIf="profRemoveable">
@@ -98,10 +101,10 @@
       <mat-label>Corpus Data</mat-label>
       <mat-chip-list #chipListStud aria-label="CorpusData">
         <mat-chip
-          *ngFor="let stud of einstData.student"
+          *ngFor="let stud of settingsData.student"
           [selectable]="selectableStud"
           [removable]="studRemoveable"
-          (removed)="removeChip('Student',stud)"
+          (removed)="removeChip('Student', stud)"
         >
           {{ stud }}
           <button matChipRemove *ngIf="studRemoveable">
@@ -121,7 +124,7 @@
     </mat-form-field>
   </div>
 
-  <!--  Nicht registrierte Benutzer -->
+  <!--  Unregistered -->
   <div class="card card-group-users">
     <span class="unregistered">Unregistered</span>
 
@@ -129,10 +132,10 @@
       <mat-label>Corpus Data</mat-label>
       <mat-chip-list #chipListUnregistered aria-label="CorpusData">
         <mat-chip
-          *ngFor="let unregistered of einstData.unregistered"
+          *ngFor="let unregistered of settingsData.unregistered"
           [selectable]="selectableUnregistered"
           [removable]="unregisteredRemoveable"
-          (removed)="removeChip('Unregistered',unregistered)"
+          (removed)="removeChip('Unregistered', unregistered)"
         >
           {{ unregistered }}
           <button matChipRemove *ngIf="unregisteredRemoveable">

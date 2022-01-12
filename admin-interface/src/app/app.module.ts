@@ -6,12 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 // END REST API
 
 import { AppComponent } from './app.component';
-import { AllgemeinComponent } from './admin-interface/allgemein/allgemein.component';
+import { GeneralComponent } from './admin-interface/general/general.component';
 import { InfopageComponent } from './admin-interface/infopage/infopage.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminInterfaceComponent } from './admin-interface/admin-interface.component';
 import { CorpusComponent } from './admin-interface/corpus/corpus.component';
-import { EinstellungenComponent } from './admin-interface/einstellungen/einstellungen.component';
+import { SettingsComponent } from './admin-interface/settingspage/settings.component';
 import { ChatComponent as ChatComponent } from './chat/chat.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
@@ -42,11 +42,11 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 @NgModule({
   declarations: [
     AppComponent,
-    AllgemeinComponent,
+    GeneralComponent,
     InfopageComponent,
     AdminInterfaceComponent,
     CorpusComponent,
-    EinstellungenComponent,
+    SettingsComponent,
     ChatComponent,
     IntentCard,
     IntentArray,

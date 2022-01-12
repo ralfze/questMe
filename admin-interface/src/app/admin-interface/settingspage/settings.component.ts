@@ -1,24 +1,23 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl } from '@angular/forms';
-import { MatChipInputEvent } from '@angular/material/chips';
 import { Title } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
 import { ApiService } from '../api.service';
-import { EinstData } from './einstellungen';
+import { SettingsData} from './settings';
 
 
 @Component({
-  selector: 'app-einstellungen',
-  templateUrl: './einstellungen.component.html',
-  styleUrls: ['./einstellungen.component.scss']
+  selector: 'app-settings',
+  templateUrl: './settings.component.html',
+  styleUrls: ['./settings.component.scss']
 })
-export class EinstellungenComponent implements OnInit {
-  webtitle = 'Admin Einstellungen';
+export class SettingsComponent implements OnInit {
+  webtitle = 'Admin Settings Page';
 
   selectable: string[] = ['Basis', 'Hochschule', 'Interna'];
   // dataModel of Einstellungen
-  einstData: EinstData = {
+  settingsData: SettingsData = {
     professor: [],
     student: [],
     unregistered: []
@@ -43,14 +42,14 @@ export class EinstellungenComponent implements OnInit {
     name: '', src: ''
   };
 
-  @ViewChild('unregisteredInput')
-  unregisteredInput!: ElementRef<HTMLInputElement>;
+  //@ViewChild('unregisteredInput')
+  //unregisteredInput!: ElementRef<HTMLInputElement>;
 
-  @ViewChild('studInput')
-  studInput!: ElementRef<HTMLInputElement>;
+  //@ViewChild('studInput')
+  //studInput!: ElementRef<HTMLInputElement>;
 
-  @ViewChild('profInput')
-  profInput!: ElementRef<HTMLInputElement>;
+  //@ViewChild('profInput')
+ // profInput!: ElementRef<HTMLInputElement>;
 
   constructor(private title: Title, private apiService: ApiService, private keycloakService: KeycloakService) {
 
@@ -62,23 +61,23 @@ export class EinstellungenComponent implements OnInit {
     switch (s) {
       case "Professor":
         if (!this.chipExists(s)) {
-          this.einstData.professor.push(this.profCtrl.value);
+          this.settingsData.professor.push(this.profCtrl.value);
           // update remote data model
-          this.updateEinstellungen();
+          this.updateSettings();
         }
         this.profCtrl.setValue(null); break;
       case "Student":
         if (!this.chipExists(s)) {
-          this.einstData.student.push(this.studCtrl.value);
+          this.settingsData.student.push(this.studCtrl.value);
           // update remote data model
-          this.updateEinstellungen();
+          this.updateSettings();
         }
         this.studCtrl.setValue(null); break;
       case "Unregistered":
         if (!this.chipExists(s)) {
-          this.einstData.unregistered.push(this.unregisteredCtrl.value);
+          this.settingsData.unregistered.push(this.unregisteredCtrl.value);
           // update remote data model
-          this.updateEinstellungen();
+          this.updateSettings();
         }
         this.unregisteredCtrl.setValue(null); break;
       default: break;
@@ -90,19 +89,19 @@ export class EinstellungenComponent implements OnInit {
     // Depending on which Select is triggered
     switch (s) {
       case "Professor":
-        this.removeFromArray(item, this.einstData.professor);
+        this.removeFromArray(item, this.settingsData.professor);
         // update remote data model
-        this.updateEinstellungen();
+        this.updateSettings();
         break;
       case "Student":
-        this.removeFromArray(item, this.einstData.student);
+        this.removeFromArray(item, this.settingsData.student);
         // update remote data model
-        this.updateEinstellungen();
+        this.updateSettings();
         break;
       case "Unregistered":
-        this.removeFromArray(item, this.einstData.unregistered);
+        this.removeFromArray(item, this.settingsData.unregistered);
         // update remote data model
-        this.updateEinstellungen();
+        this.updateSettings();
         break;
       default: break;
     }
@@ -111,9 +110,9 @@ export class EinstellungenComponent implements OnInit {
   chipExists(s: string): boolean {
     // Returns true when exits in Array
     switch (s) {
-      case "Professor": if (!this.checkArray(this.profCtrl.value, this.einstData.professor)) return false; else return true;
-      case "Student": if (!this.checkArray(this.studCtrl.value, this.einstData.student)) return false; else return true;
-      case "Unregistered": if (!this.checkArray(this.unregisteredCtrl.value, this.einstData.unregistered)) return false; else return true;
+      case "Professor": if (!this.checkArray(this.profCtrl.value, this.settingsData.professor)) return false; else return true;
+      case "Student": if (!this.checkArray(this.studCtrl.value, this.settingsData.student)) return false; else return true;
+      case "Unregistered": if (!this.checkArray(this.unregisteredCtrl.value, this.settingsData.unregistered)) return false; else return true;
       default: return true;
     }
   }
@@ -136,9 +135,9 @@ export class EinstellungenComponent implements OnInit {
   ngOnInit(): void {
     this.title.setTitle(this.webtitle);
     // Get the selected icon from allgemeinData
-    this.refreshAllgemein();
+    this.refreshGeneral();
     // Get the einstData
-    this.refreshEinstellungen();
+    this.refreshSettings();
   }
   logout() {
     this.keycloakService.logout('http://localhost:4200');
@@ -149,29 +148,29 @@ export class EinstellungenComponent implements OnInit {
   /**
    * Gets the AllgemeinData
    */
-  refreshAllgemein() {
+  refreshGeneral() {
     // Retrieve AllgemeinData
-    this.apiService.getAllgemein().subscribe(data => {
-      // Retrieve the AllgmeinData
+    this.apiService.getGeneral().subscribe(data => {
+      // Retrieve the generalData
       this.selectedIcon = data.selectedIcon;
     })
   }
   /**
      * Gets the EinstData
      */
-  refreshEinstellungen() {
+  refreshSettings() {
     // Retrieve AllgemeinData
-    this.apiService.getEinstellungen().subscribe(data => {
+    this.apiService.getSettings().subscribe(data => {
       // console.log(data);
-      // Retrieve the AllgmeinData
-      this.einstData = data;
+      // Retrieve the generalData
+      this.settingsData = data;
     })
   }
   /**
    * Updates the EinstData Remote Data Model
    */
-  updateEinstellungen() {
+  updateSettings() {
     // Updates the data Model
-    this.apiService.updateEinstellungen(this.einstData);
+    this.apiService.updateSettings(this.settingsData);
   }
 }

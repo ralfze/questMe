@@ -2,12 +2,9 @@
 db = new Mongo().getDB("corpus");
 
 // Create the collection
-db.createCollection("allgemein", { capped: false });
-
-// Create the collection
-db.createCollection("allgemein", { capped: false });
-// Create Allgemein
-db.allgemein.insertOne({
+db.createCollection("general", { capped: false });
+// Create General
+db.general.insertOne({
   botName: "questMe",
   selectedIcon: {
     name: "Bot picture 01",

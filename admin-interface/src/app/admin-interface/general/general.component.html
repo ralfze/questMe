@@ -9,29 +9,35 @@
     [matMenuTriggerFor]="menu"
     aria-label="questMe icon-button with a menu"
   >
-    <!-- Hamburger menu mit Verlinkung-->
+    <!-- Hamburger menu with links-->
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a [routerLink]="['/admin-interface/allgemein']" routerLinkActive="active"
+    <a [routerLink]="['/admin-interface/general']" routerLinkActive="active"
       ><button mat-menu-item>
         <mat-icon>person</mat-icon>
-        <span>Allgemein</span>
+        <span>General</span>
       </button>
     </a>
     <a [routerLink]="['/admin-interface/corpus']" routerLinkActive="active"
       ><button mat-menu-item>
         <mat-icon>library_books</mat-icon>
-        <span>Korpus</span>
+        <span>Corpus</span>
+      </button>
+    </a>
+    <a [routerLink]="['/admin-interface/infopage']" routerLinkActive="active"
+      ><button mat-menu-item>
+        <mat-icon>library_books</mat-icon>
+        <span>Infopage</span>
       </button>
     </a>
     <a
-      [routerLink]="['/admin-interface/einstellungen']"
+      [routerLink]="['/admin-interface/settings']"
       routerLinkActive="active"
     >
       <button mat-menu-item>
         <mat-icon>settings</mat-icon>
-        <span>Einstellungen</span>
+        <span>Settings</span>
       </button>
     </a>
     <a>
@@ -51,10 +57,10 @@
   <div class="card highlight-card card-small">
     <img
       class="icon-img-chosen"
-      src="{{ allgemeinData.selectedIcon.src }}"
-      alt="{{ allgemeinData.selectedIcon.name }}"
+      src="{{ generalData.selectedIcon.src }}"
+      alt="{{ generalData.selectedIcon.name }}"
     />
-    <span>Allgemein</span>
+    <span>General</span>
   </div>
 
   <!-- Image Slider with <Flicking>-->
@@ -129,7 +135,7 @@
     <input
       matInput
       placeholder="default name"
-      [(ngModel)]="allgemeinData.botName"
+      [(ngModel)]="generalData.botName"
       (change)="onChange()"
     />
   </mat-form-field>
