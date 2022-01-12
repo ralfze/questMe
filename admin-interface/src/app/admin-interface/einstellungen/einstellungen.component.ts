@@ -1,10 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { FormControl } from '@angular/forms';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 import { Title } from '@angular/platform-browser';
 import { KeycloakService } from 'keycloak-angular';
 import { ApiService } from '../api.service';
@@ -19,6 +16,7 @@ import { EinstData } from './einstellungen';
 export class EinstellungenComponent implements OnInit {
   webtitle = 'Admin Einstellungen';
 
+  selectable: string[] = ['Basis', 'Hochschule', 'Interna'];
   // dataModel of Einstellungen
   einstData: EinstData = {
     professor: [],
@@ -39,9 +37,6 @@ export class EinstellungenComponent implements OnInit {
   studCtrl = new FormControl();
   profCtrl = new FormControl();
   unregisteredCtrl = new FormControl();
-  //corpusStud: string[] = ['Basis', 'Hochschule'];
-  //corpusProfessor.prof: string[] = ['Basis', 'Hochschule', 'Interna'];
-  //corpusUnregistered: string[] = ['Basis'];
 
   // Info about the selected icon in allgemein
   selectedIcon = {
@@ -61,98 +56,82 @@ export class EinstellungenComponent implements OnInit {
 
   }
 
-
-  //add chips
-  addProf(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
-
-    // Add our Korpusdata
-    if (value) {
-
-      this.einstData.professor.push(value);
-
+  // Add Chip
+  addChip(s: string) {
+    // Depending on which Select is triggered
+    switch (s) {
+      case "Professor":
+        if (!this.chipExists(s)) {
+          this.einstData.professor.push(this.profCtrl.value);
+          // update remote data model
+          this.updateEinstellungen();
+        }
+        this.profCtrl.setValue(null); break;
+      case "Student":
+        if (!this.chipExists(s)) {
+          this.einstData.student.push(this.studCtrl.value);
+          // update remote data model
+          this.updateEinstellungen();
+        }
+        this.studCtrl.setValue(null); break;
+      case "Unregistered":
+        if (!this.chipExists(s)) {
+          this.einstData.unregistered.push(this.unregisteredCtrl.value);
+          // update remote data model
+          this.updateEinstellungen();
+        }
+        this.unregisteredCtrl.setValue(null); break;
+      default: break;
     }
-
-    // Clear the input value
-    event.chipInput!.clear();
-
-
-    this.profCtrl.setValue(null);
-
   }
 
-  addStud(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
-
-    // Add our Korpusdata
-    if (value) {
-      this.einstData.student.push(value);
-
+  // Remove Chip
+  removeChip(s: string, item: string) {
+    // Depending on which Select is triggered
+    switch (s) {
+      case "Professor":
+        this.removeFromArray(item, this.einstData.professor);
+        // update remote data model
+        this.updateEinstellungen();
+        break;
+      case "Student":
+        this.removeFromArray(item, this.einstData.student);
+        // update remote data model
+        this.updateEinstellungen();
+        break;
+      case "Unregistered":
+        this.removeFromArray(item, this.einstData.unregistered);
+        // update remote data model
+        this.updateEinstellungen();
+        break;
+      default: break;
     }
-
-    // Clear the input value
-    event.chipInput!.clear();
-
-    this.studCtrl.setValue(null);
-
+  }
+  // Check if already chosen
+  chipExists(s: string): boolean {
+    // Returns true when exits in Array
+    switch (s) {
+      case "Professor": if (!this.checkArray(this.profCtrl.value, this.einstData.professor)) return false; else return true;
+      case "Student": if (!this.checkArray(this.studCtrl.value, this.einstData.student)) return false; else return true;
+      case "Unregistered": if (!this.checkArray(this.unregisteredCtrl.value, this.einstData.unregistered)) return false; else return true;
+      default: return true;
+    }
+  }
+  checkArray(checkItem: string, array: string[]): boolean {
+    // Return true if checkItem exists in the given Array
+    let exists = false;
+    array.forEach((item) => { if (item === checkItem) exists = true; })
+    return exists;
   }
 
-  addUnregistered(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
-
-    // Add our Korpusdata
-    if (value) {
-
-      this.einstData.unregistered.push(value);
-    }
-
-    // Clear the input value
-    event.chipInput!.clear();
-
-    this.unregisteredCtrl.setValue(null);
-  }
-
-  //remove chips
-  removeProf(prof: string): void {
-    const index = this.einstData.professor.indexOf(prof);
+  // Removes an item from the array
+  removeFromArray(removeItem: string, array: string[]) {
+    const index = array.indexOf(removeItem);
 
     if (index >= 0) {
-      this.einstData.professor.splice(index, 1);
+      array.splice(index, 1);
     }
   }
-
-  removeStud(stud: string): void {
-    const index = this.einstData.student.indexOf(stud);
-
-    if (index >= 0) {
-      this.einstData.student.splice(index, 1);
-    }
-  }
-
-  removeUnregistered(unregistered: string): void {
-    const index = this.einstData.unregistered.indexOf(unregistered);
-
-    if (index >= 0) {
-      this.einstData.unregistered.splice(index, 1);
-    }
-  }
-
-  /* selected(event: MatAutocompleteSelectedEvent): void {
-     this.users.push(event.option.viewValue);
-     this.userInput.nativeElement.value = '';
-     this.userCtrl.setValue(null);
-   }
-
-   private _filter(value: string): string[] {
-     const filterValue = value.toLowerCase();
-
-     return this.allusers.filter(prof => prof.toLowerCase().includes(filterValue)),
-     this.allusers.filter(stud => stud.toLowerCase().includes(filterValue))
-     ;
-   }
- */
-
-
 
   ngOnInit(): void {
     this.title.setTitle(this.webtitle);
@@ -183,7 +162,7 @@ export class EinstellungenComponent implements OnInit {
   refreshEinstellungen() {
     // Retrieve AllgemeinData
     this.apiService.getEinstellungen().subscribe(data => {
-      console.log(data);
+      // console.log(data);
       // Retrieve the AllgmeinData
       this.einstData = data;
     })
