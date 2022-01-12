@@ -169,6 +169,8 @@ export class IntentArray implements OnInit, AfterContentInit {
     // remove intent from  the data model
     let index = this.corpus.data.indexOf(intent);
     this.corpus.data.splice(index, 1);
+    // set values has been changed
+    this.valuesChanged = true;
   }
   /**
    * Method to create a dialog to insert new Intents
