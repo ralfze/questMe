@@ -52,6 +52,7 @@
     <requires type="static">
       <file>blx-dm.def</file>
       <file>iso-authoryear.dbx</file>
+      <file>blx-unicode.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>iso.bbx</file>
