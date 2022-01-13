@@ -1,5 +1,6 @@
 // Border Radius of the icons
 $borderRadius: 8px;
+$imgsize: 5em;
 
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -185,6 +186,8 @@ a:hover {
 // Icon img
 .icon-img {
   border-radius: $borderRadius;
+  width: $imgsize;
+  height: $imgsize;
 }
 // Toggle of the chosen icon
 // highlights the chosen card
