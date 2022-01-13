@@ -21,7 +21,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.informationspsychologie.room",
+      intent: "swb4.informationspsychologie.raum",
       utterances: [
         "Wo findet das Modul Informationspsychologie statt",
         "Wo finde ich den Raum für Informationspsychologie",
@@ -32,7 +32,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.informationspsychologie.time",
+      intent: "swb4.informationspsychologie.zeit",
       utterances: ["Wann findet die Vorlesung Informationspsychologie statt"],
       answers: [
         "Am Montag von 9:30-12:45(wöchentlich) findet die Vorlesung Informationspsychologie statt",
@@ -50,7 +50,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.datenschutz.room",
+      intent: "swb4.datenschutz.raum",
       utterances: [
         "Wo findet das Modul Datenschutz statt",
         "Wo finde ich den Raum für Datenschutz",
@@ -61,7 +61,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.datenschutz.time",
+      intent: "swb4.datenschutz.zeit",
       utterances: ["Wann findet die Vorlesung Datenschutz statt"],
       answers: [
         "Am Montag von 9:30-12:45(wöchentlich) findet die Vorlesung Datenschutz statt",
@@ -79,7 +79,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.labordatenbanken2.room",
+      intent: "swb4.labordatenbanken2.raum",
       utterances: [
         "Wo findet das Modul Labor Datenbanken 2 statt",
         "Wo finde ich den Raum für Labor Datenbanken 2",
@@ -90,7 +90,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.labordatenbanken2.time",
+      intent: "swb4.labordatenbanken2.zeit",
       utterances: ["Wann findet die Vorlesung Labor Datenbanken 2 statt"],
       answers: [
         "Am Dienstag von 9:30-11:00(wöchentlich) findet die Vorlesung Labor Datenbanken 2 statt",
@@ -107,7 +107,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.laborsoftwarearchitektur.room",
+      intent: "swb4.laborsoftwarearchitektur.raum",
       utterances: [
         "Wo findet das Modul Labor Softwarearchitektur statt",
         "Wo finde ich den Raum für Labor Softwarearchitektur",
@@ -118,7 +118,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.laborsoftwarearchitektur.time",
+      intent: "swb4.laborsoftwarearchitektur.zeit",
       utterances: ["Wann findet die Vorlesung Labor Softwarearchitektur statt"],
       answers: [
         "Am Mittwoch von 9:30-12:45(wöchentlich) findet die Vorlesung Labor Softwarearchitektur statt",
@@ -136,7 +136,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.softwarearchitektur.room",
+      intent: "swb4.softwarearchitektur.raum",
       utterances: [
         "Wo findet das Modul Softwarearchitektur statt",
         "Wo finde ich den Raum für Softwarearchitektur",
@@ -147,7 +147,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.softwarearchitektur.time",
+      intent: "swb4.softwarearchitektur.zeit",
       utterances: ["Wann findet die Vorlesung Softwarearchitektur statt"],
       answers: [
         "Am Mittwoch von 9:30-12:45(wöchentlich) findet die Vorlesung Softwarearchitektur statt",
@@ -165,7 +165,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.mci2.room",
+      intent: "swb4.mci2.raum",
       utterances: [
         "Wo findet das Modul Mensch-Computer-Interaktion 2 statt",
         "Wo finde ich den Raum für Mensch-Computer-Interaktion 2",
@@ -176,7 +176,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.mci2.time",
+      intent: "swb4.mci2.zeit",
       utterances: [
         "Wann findet die Vorlesung Mensch-Computer-Interaktion 2 statt",
       ],
@@ -196,7 +196,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.labormci2.room",
+      intent: "swb4.labormci2.raum",
       utterances: [
         "Wo findet das Modul Labor Mensch-Computer-Interaktion 2 statt",
         "Wo finde ich den Raum für Labor Mensch-Computer-Interaktion 2",
@@ -207,7 +207,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.labormci2.time",
+      intent: "swb4.labormci2.tzeit",
       utterances: [
         "Wann findet die Vorlesung Labor Mensch-Computer-Interaktion 2 statt",
       ],
@@ -227,7 +227,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.datenbanken2.room",
+      intent: "swb4.datenbanken2.raum",
       utterances: [
         "Wo findet das Modul Datenbanken 2 statt",
         "Wo finde ich den Raum für Datenbanken 2",
@@ -238,7 +238,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.datenbanken2.time",
+      intent: "swb4.datenbanken2.zeit",
       utterances: ["Wann findet die Vorlesung Datenbanken 2 statt"],
       answers: [
         "Am Donnerstag von 9:30-12:45(wöchentlich) findet die Vorlesung Datenbanken 2 statt",
@@ -256,7 +256,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.kfzsysteme.room",
+      intent: "swb4.kfzsysteme.raum",
       utterances: [
         "Wo findet das Modul Kfz-Systeme statt",
         "Wo finde ich den Raum für Kfz-Systeme",
@@ -267,7 +267,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.kfzsysteme.time",
+      intent: "swb4.kfzsysteme.zeit",
       utterances: ["Wann findet die Vorlesung Kfz-Systeme statt"],
       answers: [
         "Am Freitag von 7:35-11:00(wöchentlich) findet die Vorlesung Kfz-Systeme statt",
@@ -285,7 +285,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.cloudcomputing.room",
+      intent: "swb4.cloudcomputing.raum",
       utterances: [
         "Wo findet das Modul Cloud Computing statt",
         "Wo finde ich den Raum für Cloud Computinge",
@@ -297,7 +297,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.cloudcomputing.time",
+      intent: "swb4.cloudcomputing.zeit",
       utterances: ["Wann findet die Vorlesung Cloud Computing statt"],
       answers: [
         "Am Freitag von 7:30-11:00(wöchentlich) findet die Vorlesung Cloud Computing statt",
@@ -315,7 +315,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.laborcomputerarchitektur.room",
+      intent: "swb4.laborcomputerarchitektur.raum",
       utterances: [
         "Wo findet das Modul Labor Computerarchitektur statt",
         "Wo finde ich den Raum für Labor Computerarchitektur",
@@ -326,7 +326,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.laborcomputerarchitektur.time",
+      intent: "swb4.laborcomputerarchitektur.zeit",
       utterances: ["Wann findet die Vorlesung Labor Computerarchitektur statt"],
       answers: [
         "Am Montag von 14:00-17:15(wöchentlich) findet die Vorlesung Labor Computerarchitektur statt",
@@ -344,7 +344,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.algorithmenunddatenstruktur.room",
+      intent: "swb4.algorithmenunddatenstruktur.raum",
       utterances: [
         "Wo findet das Modul Algorithmen und Datenstruktur statt",
         "Wo finde ich den Raum für Algorithmen und Datenstruktur",
@@ -355,7 +355,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.algorithmenunddatenstruktur.time",
+      intent: "swb4.algorithmenunddatenstruktur.zeit",
       utterances: [
         "Wann findet die Vorlesung Algorithmen und Datenstruktur statt",
       ],
@@ -375,7 +375,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.computergrafik.room",
+      intent: "swb4.computergrafik.raum",
       utterances: [
         "Wo findet das Modul Computergrafik statt",
         "Wo finde ich den Raum für Computergrafik",
@@ -386,7 +386,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.computergrafik.time",
+      intent: "swb4.computergrafik.zeit",
       utterances: ["Wann findet die Vorlesung Computergrafik statt"],
       answers: [
         "Am Mittwoch von 14:00-17:15(wöchentlich) findet die Vorlesung Computergrafik statt",
@@ -404,7 +404,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.computerarchitektur.room",
+      intent: "swb4.computerarchitektur.raum",
       utterances: [
         "Wo findet das Modul Computerarchitektur statt",
         "Wo finde ich den Raum für Computerarchitektur",
@@ -415,7 +415,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.computerarchitektur.time",
+      intent: "swb4.computerarchitektur.zeit",
       utterances: ["Wann findet die Vorlesung Computerarchitektur statt"],
       answers: [
         "Am Mittwoch von 14:00-17:15(wöchentlich) findet die Vorlesung Computerarchitektur statt",
@@ -433,7 +433,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.introductiontorealtimekernels.room",
+      intent: "swb4.introductiontorealtimekernels.raum",
       utterances: [
         "Wo findet das Modul Introduction to Real Time Kernels statt",
         "Wo finde ich den Raum für Introduction to Real Time Kernels",
@@ -444,7 +444,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.introductiontorealtimekernels.time",
+      intent: "swb4.introductiontorealtimekernels.zeit",
       utterances: [
         "Wann findet die Vorlesung Introduction to Real Time Kernels statt",
       ],
@@ -464,7 +464,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.angewandtekryptografie.room",
+      intent: "swb4.angewandtekryptografie.raum",
       utterances: [
         "Wo findet das Modul Angewandte Kryptografie statt",
         "Wo finde ich den Raum für Angewandte Kryptografie",
@@ -475,7 +475,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.angewandtekryptografie.time",
+      intent: "swb4.angewandtekryptografie.zeit",
       utterances: ["Wann findet die Vorlesung Angewandte Kryptografie statt"],
       answers: [
         "Am Donnerstag von 14:00-15:30(wöchentlich) findet die Vorlesung Angewandte Kryptografie statt",
@@ -493,7 +493,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.automotivesecurity.room",
+      intent: "swb4.automotivesecurity.raum",
       utterances: [
         "Wo findet das Modul Automotive Security statt",
         "Wo finde ich den Raum für Automotive Security",
@@ -504,7 +504,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.automotivesecurity.time",
+      intent: "swb4.automotivesecurity.zeit",
       utterances: ["Wann findet die Vorlesung Automotive Security statt"],
       answers: [
         "Am Donnerstag von 15:45-19:00(wöchentlich) findet die Vorlesung Automotive Security statt",
@@ -522,7 +522,7 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.projektarbeit.room",
+      intent: "swb4.projektarbeit.raum",
       utterances: [
         "Wo findet das Modul Projektarbeit statt",
         "Wo finde ich den Raum für Projektarbeit",
@@ -533,14 +533,14 @@ db.swb4.insertOne({
       ],
     },
     {
-      intent: "swb4.projektarbeit.time",
+      intent: "swb4.projektarbeit.zeit",
       utterances: ["Wann findet die Vorlesung Projektarbeit statt"],
       answers: [
         "Am Freitag von 14:00-17:15(wöchentlich) findet die Vorlesung Projektarbeit statt",
       ],
     },
     {
-      intent: "swb4.mensa.main",
+      intent: "swb4.mensa.ort",
       utterances: [
         "Wo finde ich die Mensa",
         "Ich habe hunger",

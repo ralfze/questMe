@@ -95,7 +95,7 @@ class SocketioConnector extends Connector {
         nlp.process("de", data.msg).then((result) => {
           // Check if Admin Link should be shown
           let link = false;
-          if (result.intent === "admin.address") link = true;
+          if (result.intent === "admin.addresse") link = true;
 
           // Message Data to send back
           const replyData = {
