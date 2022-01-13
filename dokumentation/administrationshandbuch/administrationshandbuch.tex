@@ -1,24 +1,24 @@
 \section{Administrationshandbuch}
-Hier wird mit Beispielbildern erklärt, wie die Software bedient wird und was der Benutzer alles 
+Hier wird erklärt, wie die Software bedient wird und was der Benutzer alles 
 in der Software ausführen kann.
 
 \subsection{Chat}
 Den Chat kann man mit localhost:4200/chat erreichen. Wenn localhost:4200
 eingegeben wird, wird der Benutzer zu der Adresse vom chat weitergeleitet.
 An der Seite angekommen kann der Nutzer dann mit dem ChatBot schreiben. 
-Der Benutzer kann mit dem ChatBot interagieren indem er eine Frage in dem Textfeld schreibt
+Der Benutzer kann mit dem ChatBot interagieren indem er eine Frage in das Textfeld schreibt
 und dann mit dem Sendebutton versendet.
 
 \subsection{Admin-Interface}
 Das Admininterface ist nur für Admins erreichbar mit localhost:4200/admin-interface. Der Admin muss sich per Keycloak
-anmelden und wird erst dann weitergeleitet zum Bearbeiten der verschiednen Funktionen
+anmelden und wird erst dann weitergeleitet zum Bearbeiten der verschiedenen Funktionen
 des Chatbots.
 Nach dem Anmelden mit Keycloak wird der Benutzer zur Infopage Seite weitergeleitet.
 welche mit der Adresse localhost:4200/admin-interface/infopage gekennzeichnet ist.
 
-\subsubsection{Allgemein}
-Das Allgemein ist für den Admin erreichber mit localhost:4200/admin-interface/allgemein. 
-Der Admin kann dort den Bot Avatar ändern diese wird dann auch im chat geändert.
+\subsubsection{General}
+Der General Bereich ist für den Admin erreichber mit localhost:4200/admin-interface/general. 
+Der Admin kann dort den Bot Avatar ändern dieser wird dann auch im Chat geändert.
 
 \subsubsection{Korpus}
 Der Korpus ist für den Admin erreichbar mit localhost:4200/admin-interface/corpus.]
@@ -26,15 +26,15 @@ Im Korpus kann der Admin einen neuen Intent hinzufügen und auch diese Entfernen
 Er kann außerdem auch Fragen, die er den Bot stellen will erstellen und auch die 
 dazugehörige Antwort hinzufügen.
 
-\subsubsection{Einstellungen}
-Der Einstellungsbereich ist für den Admin zugänglich mit der Adresse 
-localhost:4200/admin-interface/einstellungen.
+\subsubsection{Settings}
+Der Settings Bereich ist für den Admin zugänglich mit der Adresse 
+localhost:4200/admin-interface/settings.
 Hier kann der Admin seine Domänen zu den Gruppen hinzufügen. Die Korpusdaten, die zugeteilt sind,
-können nur von der Gruppe benutzt werden, welche diese zugeteilt bekommen hat. 
-Zum Beispiel kann ein nicht registrierter Nutzer nur die Basis Korpusdaten einsehen und nicht die von der Hochschule.
+können nur von der Gruppe benutzt werden, welche diese zugeteilt bekommen haben. 
+Zum Beispiel kann ein nicht registrierter Nutzer nur die Basis der Korpusdaten einsehen und nicht die von der Hochschule.
 
 \subsubsection{Keycloak}
-Die Admininstrations Console von Keycloak ist erreichbar mit http://localhost:8080. 
+Die Admininstrations Console von Keycloak ist erreichbar under der Adresse http://localhost:8080. 
 
 \begin{figure}[H]
     \centering
@@ -52,7 +52,7 @@ Die Daten für den Admin-Login lauten:
 
 \noindent Nach dem Login sollte man sicherstellen, dass oben links der Realm ''QuestMe'' eingestellt ist 
 und nicht ''Master''. Der Master-Realm sollte nicht Bearbeitet werden. 
-Zum wechseln des Reamls einfach über die Schaltfläche fahren und über das Dropdown-Menü den richtigen Realm auswählen. 
+Zum Wechseln des Reamls einfach über die Schaltfläche fahren und über das Dropdown-Menü den richtigen Realm auswählen. 
 
 \begin{figure}[H]
     \centering
