@@ -1,5 +1,6 @@
 // margin left of the text
 $textleft: 4%;
+$texttop: 2%;
 $hcorrection: 10pt;
 $rbutwidth: 12%;
 
@@ -57,7 +58,12 @@ $rbutwidth: 12%;
       width: 100%;
       .intent-utterances {
         width: calc(100% - $textleft);
+        margin-top: $texttop;
         margin-left: $textleft;
+        button {
+          margin-left: $textleft;
+          font-size: 0.8em;
+        }
       }
       // Utterance item
       .utterance-item {
@@ -101,9 +107,13 @@ $rbutwidth: 12%;
     // Containes answers
     .answers-div {
       width: 100%;
-      .intent-answers {
+      .intent-answer {
         width: calc(100% - $textleft);
         margin-left: $textleft;
+        button {
+          margin-left: $textleft;
+          font-size: 0.8em;
+        }
       }
       // Answer item
       .answers-item {

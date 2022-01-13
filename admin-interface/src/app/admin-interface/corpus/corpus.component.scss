@@ -6,7 +6,11 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
+
+
 
 //toolbar and highlight card
 h1,
@@ -17,6 +21,8 @@ h5,
 h6 {
   margin: 8px 0;
 }
+
+
 
 p {
   margin: 0;
@@ -36,13 +42,13 @@ a:hover {
   color: pink;
 }
 
+
 .toolbar {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  //height: 60px;
-  height: 8%;
+  height: 60px;
   display: flex;
   align-items: center;
   background-color: royalblue;
@@ -75,11 +81,13 @@ a:hover {
 .content {
   display: flex;
   margin: 82px auto 32px;
-  padding: 0 5px;
+  padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
   align-items: center;
 }
+
+
 
 .card-container {
   display: flex;
@@ -114,6 +122,7 @@ a:hover {
   width: 168px;
 }
 
+
 .card img {
   width: 5em;
   padding: 0;
@@ -134,6 +143,109 @@ a:hover {
 .card.card.highlight-card span {
   margin-left: 0.5em;
 }
+
+/*
+  *
+  *CSS Code for the Korpusdaten Form-field
+  *
+  *
+  */
+
+
+
+  .card-group{
+  background-color: royalblue;
+  color: white;
+  font-weight: 600;
+  border: none;
+  width: 92%;
+  min-width: 30%;
+  position: relative;
+  margin-top: 1em;
+  }
+
+  .title-corpus-data{
+    margin-left: 50vw;
+  }
+
+  //used professor css code for all divs
+
+  //span
+  .professor{
+    color: white;
+    margin-right: 3em;
+  }
+
+  .student{
+    color: white;
+    margin-right: 3.8em;
+  }
+  .unregistered{
+    color: white;
+    margin-right: 4em;
+  }
+
+  .card-group-users{
+    background-color: royalblue;
+
+    font-weight: 600;
+    border: none;
+    width: 92%;
+    height: auto;
+    min-width: 30%;
+    position: relative;
+    margin-top: 1em;
+  }
+
+  .example-chip-list{
+
+    border-radius: 0.5em;
+
+  }
+
+
+
+  .corpus-data-professor{
+  width: 150%;
+  height: 50vw;
+
+  margin-top: 30vw;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .mat-form-field{
+    background-color: lavender;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+
+  }
+  .mat-form-field-flex{
+
+  display: flex;
+  flex-direction: column;
+
+  }
+
+  .mat-chip-list{
+  list-style-position: inside;
+  word-wrap: break-word;
+  word-break: keep-all;
+  flex-direction: column;
+    }
+
+  .mat-chip-list-wrapper{
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mat-form-field-label-wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
 
 /*
   *
@@ -171,134 +283,6 @@ a:hover {
   *
   *
 */
-
-//card for the title
-.card-title {
-  background-color: lavender;
-  color: royalblue;
-  font-weight: 600;
-  border: none;
-  width: 92%;
-  min-width: 30%;
-  position: relative;
-  margin: 0;
-}
-
-//card for the add field and for the add button
-.card-add {
-  background-color: royalblue;
-  color: white;
-  font-weight: 600;
-  border: none;
-  width: auto;
-  min-width: 30%;
-  position: relative;
-  margin: 0;
-}
-
-//horizontal line
-/* Rounded border
-hr.rounded {
-  border-color: royalblue;
-  border-radius: 5px;
-  height: 100%;
-  margin-left: 2em;
-  margin-top: 0;
-}*/
-
-//table
-//input
-.input td {
-  padding: 0;
-  width: 80%;
-}
-
-.input mat-icon {
-  position: fixed;
-  margin-right: auto;
-}
-
-input {
-  width: 70%;
-  height: 2em;
-  word-wrap: break-all;
-}
-
-//output not in tables in divs
-
-//div output for Question
-.output-div1 {
-  width: 50%;
-}
-
-//div output for Answer
-.output-div2 {
-  width: 50%;
-
-  margin-left: 1.5em;
-  margin-right: 0;
-}
-
-// list
-
-li {
-  list-style-position: inside;
-  list-style-type: none;
-  word-wrap: break-word;
-  word-break: keep-all;
-  //word-break: break-all;
-  width: 100%;
-  display: flex;
-  margin-bottom: 1em;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-//button add and remove
-.add {
-  border-style: none;
-  background-color: lavender;
-}
-
-.add:hover {
-  border-style: none;
-  background-color: lightgreen;
-}
-
-.remove {
-  background-color: pink;
-  border-style: none;
-  margin-left: 1em;
-  position: relative;
-}
-
-.remove:hover {
-  background-color: red;
-}
-
-//div-container with y-scroll
-div.scroll {
-  border-style: groove;
-  border-radius: 0.5em;
-  margin: 0px, 0px;
-  //margin-top: 1em;
-  padding: 4px;
-  //background-color: #08c708;
-  width: 97%;
-  height: 150px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-color: rgb(0, 26, 255);
-  scroll-behavior: smooth;
-  display: flex;
-}
-
-.mat-form-field {
-  //margin-right: 0px;
-}
 
 #intent-array {
   width: 100%;

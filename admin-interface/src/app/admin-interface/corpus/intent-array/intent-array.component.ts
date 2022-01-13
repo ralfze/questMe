@@ -117,6 +117,12 @@ export class IntentArray implements OnInit, AfterContentInit {
   updateCorpus() {
     this.apiService.updateCorpus(this.corpus);
   }
+
+
+  // Corpus in Bot laden
+  restartBot() {
+    this.apiService.restartBot();
+  }
   // END REST API
 
 
