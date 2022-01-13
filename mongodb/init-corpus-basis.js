@@ -10,7 +10,7 @@ db.dataC.insertOne({
   locale: "de-DE",
   data: [
     {
-      intent: "agent.acquaintance",
+      intent: "agent.bekannter",
       utterances: [
         "sag was über dich",
         "warum bist du hier",
@@ -32,7 +32,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.age",
+      intent: "agent.alter",
       utterances: [
         "was ist dein alter",
         "wie alt ist deine plattform",
@@ -48,7 +48,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.annoying",
+      intent: "agent.nervig",
       utterances: [
         "du nervst mich",
         "du bist nervig",
@@ -65,7 +65,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.bad",
+      intent: "agent.schlecht",
       utterances: [
         "du bist schlecht",
         "du bist schrecklich",
@@ -82,7 +82,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.beclever",
+      intent: "agent.klug",
       utterances: [
         "werde kleverer",
         "kannst du klüger werden",
@@ -95,7 +95,7 @@ db.dataC.insertOne({
       answers: ["Gewiss gebe ich mir Mühe", "Ich arbeite definitv daran"],
     },
     {
-      intent: "agent.beautiful",
+      intent: "agent.schoen",
       utterances: [
         "du siehst toll aus",
         "du siehst gut aus",
@@ -110,7 +110,7 @@ db.dataC.insertOne({
       answers: ["Oh! Vielen Dank!", "Danke, du aber auch", "Du Schmeichler"],
     },
     {
-      intent: "agent.birthday",
+      intent: "agent.geburtstag",
       utterances: [
         "wann ist dein geburtstag",
         "wann feierst du deinen geburtstag",
@@ -125,7 +125,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.boring",
+      intent: "agent.langweilig",
       utterances: [
         "wie langweilig bist du",
         "du bist langweilig",
@@ -157,7 +157,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.busy",
+      intent: "agent.beschaeftigt",
       utterances: [
         "bist du beschäftigt",
         "bist du am arbeiten",
@@ -176,7 +176,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.canyouhelp",
+      intent: "agent.hilfe",
       utterances: [
         "kannst du mit jetzt helfen",
         "ich brauche dich etwas für mich zu tun",
@@ -207,7 +207,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.clever",
+      intent: "agent.intelligent",
       utterances: [
         "du bist klug",
         "du bist qualifiziert",
@@ -224,7 +224,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.crazy",
+      intent: "agent.verrueckt",
       utterances: [
         "du bist ein verrückter",
         "du bist ein narr",
@@ -241,7 +241,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.fire",
+      intent: "agent.entlassen",
       utterances: [
         "ich feuer dich",
         "du solltest gefeuert werden",
@@ -259,7 +259,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.funny",
+      intent: "agent.witzig",
       utterances: [
         "du bringst mich zum lachen",
         "du bist witzig",
@@ -275,7 +275,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.good",
+      intent: "agent.gut",
       utterances: [
         "du bist so lieblich",
         "du arbeitest gut",
@@ -291,7 +291,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.happy",
+      intent: "agent.gluecklich",
       utterances: [
         "du bist voll von fröhlichkeit",
         "du bist sehr glücklich",
@@ -321,7 +321,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.hungry",
+      intent: "agent.hungrig",
       utterances: [
         "du könntest hungrig sein",
         "bist du hungrig",
@@ -332,7 +332,7 @@ db.dataC.insertOne({
       answers: ["Hungrig nach Wissen", "Ich hatte gerade einen bissen"],
     },
     {
-      intent: "agent.marryuser",
+      intent: "agent.heiraten",
       utterances: [
         "Würdest du mich heiraten",
         "ich liebe dich heirate mich",
@@ -349,7 +349,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.myfriend",
+      intent: "agent.freund",
       utterances: [
         "bist du mein freund",
         "du bist mein einziger freund",
@@ -367,7 +367,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.occupation",
+      intent: "agent.arbeitsplatz",
       utterances: [
         "wo arbeitest du",
         "wo ist dein büro",
@@ -382,7 +382,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.origin",
+      intent: "agent.geburtsort",
       utterances: [
         "woher kommst du",
         "wo ist dein land",
@@ -398,7 +398,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.ready",
+      intent: "agent.bereit",
       utterances: [
         "bist du bereit",
         "bist du vorbereitet",
@@ -425,7 +425,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.residence",
+      intent: "agent.lebensort",
       utterances: [
         "wo ist dein zu Hause",
         "erzähl mir von deiner Stadt",
@@ -441,7 +441,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.right",
+      intent: "agent.richtig",
       utterances: [
         "du hast recht",
         "das ist wahr",
@@ -452,7 +452,7 @@ db.dataC.insertOne({
       answers: ["Gewiss doch!", "Das ist mein Job"],
     },
     {
-      intent: "agent.sure",
+      intent: "agent.sicher",
       utterances: [
         "bist du sicher",
         "bist du dir gerade sicher",
@@ -461,7 +461,7 @@ db.dataC.insertOne({
       answers: ["Ja", "Na, klar!"],
     },
     {
-      intent: "agent.talktome",
+      intent: "agent.sprichzumir",
       utterances: [
         "spreche zu mir",
         "spreche mit mir",
@@ -476,7 +476,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "agent.there",
+      intent: "agent.da",
       utterances: [
         "bist du da",
         "bist du immernoch da",
@@ -491,7 +491,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "appraisal.bad",
+      intent: "bewertung.schlecht",
       utterances: [
         "das ist schlecht",
         "schlechte idee",
@@ -505,7 +505,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "appraisal.good",
+      intent: "bewertung.gut",
       utterances: [
         "das ist gut",
         "gut zu wissen",
@@ -516,7 +516,7 @@ db.dataC.insertOne({
       answers: ["Ich stimme dir zu!", "Erfreulich dass du auch so denkst"],
     },
     {
-      intent: "appraisal.noproblem",
+      intent: "bewertung.keinproblem",
       utterances: [
         "kein problem",
         "kein umstände",
@@ -527,7 +527,7 @@ db.dataC.insertOne({
       answers: ["Erfreulich zu hören!", "Alles klar!"],
     },
     {
-      intent: "appraisal.thankyou",
+      intent: "bewertung.dankedir",
       utterances: [
         "danke",
         "schön danke",
@@ -541,7 +541,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "appraisal.welcome",
+      intent: "bewertung.willkommen",
       utterances: [
         "du bist willkommen",
         "sicher willkommen",
@@ -552,7 +552,7 @@ db.dataC.insertOne({
       answers: ["Freundliche Mannieren!", "Du bist so höflich"],
     },
     {
-      intent: "appraisal.welldone",
+      intent: "bewertung.gutgemacht",
       utterances: [
         "gut gemacht",
         "gute arbeit",
@@ -565,7 +565,7 @@ db.dataC.insertOne({
       answers: ["Mein Vergnügen", "Erfreulich, dass ich helfen konnte"],
     },
     {
-      intent: "dialog.holdon",
+      intent: "dialog.warte",
       utterances: [
         "halt an",
         "warte für eine sekunde",
@@ -575,7 +575,7 @@ db.dataC.insertOne({
       answers: ["Ich werde warten", "Ok, ich bin da"],
     },
     {
-      intent: "dialog.hug",
+      intent: "dialog.umarmen",
       utterances: [
         "umarme mich",
         "möchtest du mich umarmen",
@@ -590,7 +590,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "dialog.idontcare",
+      intent: "dialog.miregal",
       utterances: [
         "mich interessiert es nicht",
         "es interessiert mich nicht",
@@ -617,7 +617,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "greetings.bye",
+      intent: "gruesse.ciao",
       utterances: ["ciao", "tschüss", "cis später", "byebye", "ich muss gehen"],
       answers: ["Bis zum nächsten Mal", "Wir sehen uns!"],
     },
@@ -627,7 +627,7 @@ db.dataC.insertOne({
       answers: ["Hallo", "Willkommen!", "Hey"],
     },
     {
-      intent: "greetings.howareyou",
+      intent: "gruesse.wiegehtesdir",
       utterances: [
         "wie ist dein tag",
         "wie läuft dein tag",
@@ -642,7 +642,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "greetings.nicetomeetyou",
+      intent: "gruesse.nettdichkennenzulernen",
       utterances: [
         "schön dich kennen zu lernen",
         "erfreut dich kennen zu lernen",
@@ -658,7 +658,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "greetings.nicetoseeyou",
+      intent: "gruesse.schoendichzusehen",
       utterances: [
         "schön dich zu sehen",
         "großartig dich zu sehen",
@@ -671,7 +671,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "greetings.nicetotalktoyou",
+      intent: "gruesse.schoenmitdirzureden",
       utterances: [
         "schön mit dir zu reden",
         "es ist schön mit dir zu reden",
@@ -684,7 +684,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.angry",
+      intent: "benutzer.wuetend",
       utterances: [
         "ich bin wütend",
         "ich bin aufgebracht",
@@ -699,7 +699,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.back",
+      intent: "benutzer.zurueck",
       utterances: [
         "ich bin zurück",
         "ich bin zurück gekommen",
@@ -714,7 +714,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.bored",
+      intent: "benutzer.langweilig",
       utterances: [
         "langweilig",
         "das ist langweilig",
@@ -728,7 +728,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.busy",
+      intent: "benutzer.beschaeftigt",
       utterances: [
         "ich habe arbeit zu tun",
         "ich bin beschäftigt",
@@ -742,7 +742,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.cannotsleep",
+      intent: "benutzer.kannnichtschlafen",
       utterances: [
         "ich bin schlaflosig",
         "ich kann nicht schlafen",
@@ -756,7 +756,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.excited",
+      intent: "benutzer.aufgeregt",
       utterances: [
         "ich bin aufgeregt",
         "ich bin begeistert",
@@ -769,7 +769,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.likeagent",
+      intent: "benutzer.magagent",
       utterances: [
         "ich mag dich",
         "ich mag dich sehr",
@@ -779,7 +779,7 @@ db.dataC.insertOne({
       answers: ["Gleichfalls!", "Das ist großartig zu hören"],
     },
     {
-      intent: "user.testing",
+      intent: "benutzer.testet",
       utterances: [
         "test",
         "teste",
@@ -793,7 +793,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.lovesagent",
+      intent: "benutzer.liebtagent",
       utterances: [
         "liebe dich",
         "ich liebe dich",
@@ -807,7 +807,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "user.needsadvice",
+      intent: "benutzer.brauchtrat",
       utterances: [
         "ich brauche deinen rat",
         "ich brauche einen ratschlag",
@@ -820,7 +820,7 @@ db.dataC.insertOne({
       ],
     },
     {
-      intent: "admin.address",
+      intent: "admin.addresse",
       utterances: [
         "Wie heißt der Link zur Admin Website",
         "Wie komme ich zur Admin Seite",
