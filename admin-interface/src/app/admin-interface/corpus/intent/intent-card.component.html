@@ -25,7 +25,6 @@
         <button
           matSuffix
           mat-raised-button
-          mat-raised-button
           aria-label="edit-intent"
           (click)="editIntent(inputInt)"
         >
@@ -43,7 +42,8 @@
         <mat-icon>close</mat-icon>
       </button>
       <!-- Remove Intent Button-->
-      <button *ngIf="!inputIntIsDisabled"
+      <button
+        *ngIf="!inputIntIsDisabled"
         matTooltip="Remove Intent"
         matTooltipPosition="left"
         matTooltipClass="intent-remove-tooltip"
@@ -57,15 +57,13 @@
     <div class="utterance-div">
       <div class="intent-utterances">
         utterances<button
-          mat-icon-button
-          matTooltip="Add Utterance"
-          matTooltipPosition="left"
-          matTooltipClass="utterance-add-tooltip"
-          aria-label="add-utterance-icon"
+          mat-raised-button
+          aria-label="add-utterance-button"
           (click)="actInputUtt()"
           [disabled]="butUttIsDisabled"
+          color="primary"
         >
-          <mat-icon>add</mat-icon>
+          Add Utterance
         </button>
       </div>
 
@@ -116,17 +114,15 @@
 
     <!-- Answers Section -->
     <div class="answers-div">
-      <div class="intent-answers">
+      <div class="intent-answer">
         answers<button
-          mat-icon-button
-          matTooltip="Add Answer"
-          matTooltipPosition="left"
-          matTooltipClass="answer-add-tooltip"
-          aria-label="add-answers-icon"
+          mat-raised-button
+          aria-label="add-answer-button"
           (click)="actInputAns()"
           [disabled]="butAnsIsDisabled"
+          color="primary"
         >
-          <mat-icon>add</mat-icon>
+          Add Answer
         </button>
       </div>
 

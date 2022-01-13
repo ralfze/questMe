@@ -1,6 +1,22 @@
-<div class="intent-list">
-  <button matTooltip="Add Intent" matTooltipPosition="left" class="intent-button" mat-icon-button color="primary" (click)="openDialog()">
-    <mat-icon>add</mat-icon>
-  </button>
+<div class="intent-container">
+  <div class="button-container">
+    <button
+      class="update-bot-button"
+      mat-raised-button
+      color="primary"
+      (click)="restartBot()"
+    >
+      Update Bot
+    </button>
+    <button
+      class="intent-button"
+      mat-raised-button
+      color="primary"
+      (click)="openDialog()"
+    >
+      Add Intent
+    </button>
+  </div>
+
   <div #cardContainer></div>
 </div>
