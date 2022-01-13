@@ -27,12 +27,12 @@ export class GeneralComponent implements OnInit, AfterContentInit {
   selectedIcon: string = '';
   condition = false;
   iconArray: any[] = [
-    { name: 'Bot picture 01', condition: false, src: 'assets/images/Bot Picture.png' },
-    { name: 'Bot picture 02', condition: false, src: 'assets/images/Bot Picture(1).png' },
-    { name: 'Bot picture 03', condition: false, src: 'assets/images/Bot Picture(2).png' },
-    { name: 'Bot picture 04', condition: false, src: 'assets/images/Bot Picture(3).png' },
-    { name: 'Bot picture default', condition: false, src: 'assets/images/image 10.png' },
-    { name: 'Bot picture fun', condition: false, src: 'assets/images/image 16.png' },
+    { name: 'Bot picture 00', condition: false, src: 'assets/images/chatbot_00.png' },
+    { name: 'Bot picture 01', condition: false, src: 'assets/images/chatbot_01.png' },
+    { name: 'Bot picture 02', condition: false, src: 'assets/images/chatbot_02.png' },
+    { name: 'Bot picture 03', condition: false, src: 'assets/images/chatbot_03.png' },
+    { name: 'Bot picture 04', condition: false, src: 'assets/images/chatbot_04.png' },
+    { name: 'Bot picture 05', condition: false, src: 'assets/images/chatbot_05.png' },
   ];
 
   chooseIcon(event: any) {

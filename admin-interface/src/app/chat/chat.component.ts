@@ -32,17 +32,17 @@ export class ChatComponent implements OnInit, OnDestroy {
   };
 
   currentUser = {
-    name: 'John Wick',
+    name: 'User',
     id: 1,
     profileImageUrl:
-      'assets/images/MV5BMDE0ZjMzOTAtMzU2OS00ZDVmLWFlMjYtMThlOWYwMDBiN2E3XkEyXkFqcGdeQWFsZWxvZw@@._V1_.jpg',
+      'assets/images/avatar.png',
   };
 
   bot = {
     name: 'ChatBot',
     id: 2,
     profileImageUrl:
-      'assets/images/cat-robot-cartoon-vector-icon-260nw-1801648348.jpg',
+      'assets/images/chatbot_00.png',
   };
   // Chat Message Stack
   chatMessages: {

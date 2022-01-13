@@ -31,10 +31,7 @@
         <span>Infopage</span>
       </button>
     </a>
-    <a
-      [routerLink]="['/admin-interface/settings']"
-      routerLinkActive="active"
-    >
+    <a [routerLink]="['/admin-interface/settings']" routerLinkActive="active">
       <button mat-menu-item>
         <mat-icon>settings</mat-icon>
         <span>Settings</span>
@@ -76,6 +73,7 @@
         class="button mr-2 is-white"
         (click)="chooseIcon($event)"
         ><img
+          class="icon-img"
           src="{{ iconArray[0].src }}"
           alt="{{ iconArray[0].name }}"
           [ngClass]="{ 'toggle-class': iconArray[0].condition }"
@@ -85,6 +83,7 @@
         class="button mr-2 is-white"
         (click)="chooseIcon($event)"
         ><img
+          class="icon-img"
           src="{{ iconArray[1].src }}"
           alt="{{ iconArray[1].name }}"
           [ngClass]="{ 'toggle-class': iconArray[1].condition }"
@@ -94,6 +93,7 @@
         class="button mr-2 is-white"
         (click)="chooseIcon($event)"
         ><img
+          class="icon-img"
           src="{{ iconArray[2].src }}"
           alt="{{ iconArray[2].name }}"
           [ngClass]="{ 'toggle-class': iconArray[2].condition }"
@@ -103,6 +103,7 @@
         class="button mr-2 is-white"
         (click)="chooseIcon($event)"
         ><img
+          class="icon-img"
           src="{{ iconArray[3].src }}"
           alt="{{ iconArray[3].name }}"
           [ngClass]="{ 'toggle-class': iconArray[3].condition }"
@@ -122,6 +123,7 @@
         class="button mr-2 is-white"
         (click)="chooseIcon($event)"
         ><img
+          class="icon-img"
           src="{{ iconArray[5].src }}"
           alt="{{ iconArray[5].name }}"
           [ngClass]="{ 'toggle-class': iconArray[5].condition }"
