@@ -1,6 +1,6 @@
 \section{Installationshandbuch}
 In diesem Abschnitt wird die Installation von den einzelnen Komponeneten
-ausführlich erklärt, damit die Software, nach dem herunterladen der questMe repository, erfolgreich gestartet werden kann.
+ausführlich erklärt, damit die Software, nach dem Herunterladen der questMe repository, erfolgreich gestartet werden kann.
 
 \subsection{Erste Schritte um die Software zum Laufen zu bringen}
 Hier werden die ersten Schritte erklärt, die ein Benutzer haben sollte um die
@@ -24,7 +24,7 @@ gibt man in dem Terminal Window \textbf{npm -v} ein.\newline
 \textbf{npm install -g @angular/cli}
 
 \subsubsection{Docker Comnpose zum Laufen bringen}
-Der Benutzer sollte Docker Desktop installiert haben um die images zu pullen und den Docker compose zu starten.
+Der Benutzer sollte Docker Desktop installiert haben um die Images zu pullen und den Docker compose zu starten.
 
 \begin{figure}[H]
     \centering
@@ -32,9 +32,9 @@ Der Benutzer sollte Docker Desktop installiert haben um die images zu pullen und
     \caption{Docker Desktop Windows}
     \label{fig:Docker_Desktop_Windows}
 \end{figure}
-\noindent Wir benutzen hier bei unserer Software die Windows Version vom Docker Desktop.\newline
+\noindent Wir benutzen bei unserer Software die Windows Version vom Docker Desktop.\newline
 
-\noindent Da wir auf einem Docker arbeiten muss der User nur die docker images installieren um den Docker compose zu starten.\newline
+\noindent Da wir auf einem Docker arbeiten muss der User nur die Docker Images installieren um den Docker compose zu starten.\newline
 Dabei muss er ins Terminal Window und die Images pullen.\newline
 
 
@@ -47,13 +47,14 @@ Dabei muss er ins Terminal Window und die Images pullen.\newline
     \item docker pull openjdk:11
 \end{itemize}
 
-\noindent Nachdem die images gepullt sind kann der Nutzer dann mit \textbf{docker compose build} den docker compose erstellen, indem er es diese 
+\noindent Nachdem die Images gepullt sind kann der Nutzer dann mit \textbf{docker compose build} den docker compose erstellen, indem er es diese 
 im Terminal eingibt.\newline
 
 \noindent Um den Docker hochzufahren muss der Benutzer im Terminal \textbf{docker compose up} eingeben.\newline
 
-\noindent Es könnten Schwierigkeiten beim builden entstehen, weil wir unsere Daten im mongoDb in einer file 
-.db-data speichern. Um die existierenden Korpus zu löschen muss diese file gelöscht werden und das build erfolgt dann ohne Probleme.
+\noindent Es könnten Schwierigkeiten beim builden entstehen, weil wir den Inhalt der mongoDb im Ordner 
+.db-data speichern. 
+Um den existierenden Korpus zu löschen muss der Ordner gelöscht werden und das Build erzeugt automatisch eine frisch gefüllte mongoDb mit einem Buildscript beim Starten von mongoDb.
 
 \subsubsection{Docker Desktop mit den Container}
 So sollten die Container aussehen und wenn der \textbf{docker compose up} geschieht leuchten die Container grün, wenn nichts 
