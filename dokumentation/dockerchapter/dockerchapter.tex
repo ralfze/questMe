@@ -1,0 +1,35 @@
+\subsection{Docker Images}
+Unsere Anwendung besteht aus vier Docker Images,
+die aus verschiedenen Komponenten aufgebaut sind.
+Bei der Basis der Docker Images haben wir die nach Möglichkeit die Linux Alpine Version 3.14 verwendet.
+Dadurch war es uns möglich Images von einer kleineren Speichergröße zu erstellen.
+
+\subsubsection{Angular-Frontend}
+\begin{itemize}
+    \item Basis: Alpine Version 3.14
+    \item Nodejs Version: 16.13.0
+    \item Angular Port: 4200
+\end{itemize}
+
+\subsubsection{NodeWebApp}
+\begin{itemize}
+    \item Basis: Alpine Version 3.14
+    \item Nodejs Version: 16.13.0
+    \item Chatbot Port: 3000
+    \item REST Port: 3001
+\end{itemize}
+
+\subsubsection{mongoDb}
+\begin{itemize}
+    \item Basis: Ubuntu focal mit mongoDb 5.0.4
+    \item mongoDb Port: 27017
+\end{itemize}
+
+\subsubsection{Keycloak}
+\begin{itemize}
+    \item Basis: Alpine Version 3.14
+    \item Java: Openjdk Version 11
+    \item Keycloak Port: 8080
+\end{itemize}
+
+
