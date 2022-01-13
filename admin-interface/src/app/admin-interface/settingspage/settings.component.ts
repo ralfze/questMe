@@ -42,15 +42,6 @@ export class SettingsComponent implements OnInit {
     name: '', src: ''
   };
 
-  //@ViewChild('unregisteredInput')
-  //unregisteredInput!: ElementRef<HTMLInputElement>;
-
-  //@ViewChild('studInput')
-  //studInput!: ElementRef<HTMLInputElement>;
-
-  //@ViewChild('profInput')
- // profInput!: ElementRef<HTMLInputElement>;
-
   constructor(private title: Title, private apiService: ApiService, private keycloakService: KeycloakService) {
 
   }
