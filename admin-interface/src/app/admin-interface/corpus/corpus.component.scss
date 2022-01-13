@@ -289,11 +289,17 @@ a:hover {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 767px) {
-  .card.highlight-card span {
-    margin-left: 72px;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (orientation: portrait) {
+  .professor {
+    margin-right: 20em;
   }
-}
 
-@media screen and (max-width: 575px) {
+  .student {
+    margin-right: 20em;
+  }
+
+  .unregistered {
+    margin-right: 18em;
+  }
 }
