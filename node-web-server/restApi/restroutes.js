@@ -14,6 +14,8 @@ const MongoClient = require("mongodb").MongoClient;
 const ObjectId = require("mongodb").ObjectId;
 const dbName = "corpus";
 const cName = "dataC";
+const swb4Name = "swb4";
+const inName = "interna";
 const generalName = "general";
 const settingsName = "settings";
 
@@ -466,6 +468,79 @@ router.post("/bot/restart", keycloak.protect("admin"), function (req, res) {
         // Close DB connection
         client.close();
       });
+       // query collection 'dataC'
+       db.collection(cName).findOne({}, async function (err, result) {
+        if (err) throw err;
+
+        // Adds the Corpus to the ChatBot
+        console.log("Add Corpus");
+
+        // Remove the Corpus from the Bot
+        router.nlp.nluManager.domainManagers["de"].stemDict = {};
+        router.nlp.nluManager.domainManagers["de"].intentDict = {};
+        router.nlp.nluManager.domainManagers["de"].sentences = [];
+        router.nlp.nlgManager.responses.de = {};
+        // console.log(router.nlp.nluManager.intentDomains);
+        // Add Corpus
+        await router.nlp.addCorpus(result);
+        //console.log(result);
+        // Start Bot
+        await router.nlp.train();
+
+        // Close DB connection
+        client.close();
+      });
+       // query collection 'interna'
+       db.collection(cName).findOne({}, async function (err, result) {
+        if (err) throw err;
+
+        // Adds the Corpus to the ChatBot
+        console.log("Add Corpus");
+
+        // Remove the Corpus from the Bot
+        router.nlp.nluManager.domainManagers["de"].stemDict = {};
+        router.nlp.nluManager.domainManagers["de"].intentDict = {};
+        router.nlp.nluManager.domainManagers["de"].sentences = [];
+        router.nlp.nlgManager.responses.de = {};
+        // console.log(router.nlp.nluManager.intentDomains);
+        // Add Corpus
+        await router.nlp.addCorpus(result);
+        //console.log(result);
+        // Start Bot
+        //await router.nlp.train();
+
+        // Close DB connection
+        client.close();
+      });
+      
+    // query collection 'swb4'
+    db.collection(swb4Name).findOne({}, async function (err, result) {
+      if (err) throw err;
+
+      // Adds the Corpus to the ChatBot
+      console.log("Add Corpus SWB4");
+
+      // Add Corpus
+      await router.nlp.addCorpus(result);
+      //console.log(result);
+    });
+
+    // query collection 'interna'
+    db.collection(inName).findOne({}, async function (err, result) {
+      if (err) throw err;
+
+      // Adds the Corpus to the ChatBot
+      console.log("Add Corpus Interna");
+
+      // Add Corpus
+      await router.nlp.addCorpus(result);
+      //console.log(result);
+      // Start Bot
+      await router.nlp.train();
+
+      // Close DB connection
+      client.close();
+    });
     });
     console.log("Finished");
     res.status(201).json("Accessible");

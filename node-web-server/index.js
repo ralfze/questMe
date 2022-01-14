@@ -51,6 +51,7 @@ const restPort = 3001;
   const dbName = "corpus";
   const cName = "dataC";
   const swb4Name = "swb4";
+  const inName = "interna";
 
   const client = new MongoClient(connString, {
     useUnifiedTopology: true,
@@ -82,6 +83,18 @@ const restPort = 3001;
 
       // Adds the Corpus to the ChatBot
       console.log("Add Corpus SWB4");
+
+      // Add Corpus
+      await nlp.addCorpus(result);
+      //console.log(result);
+    });
+
+    // query collection 'interna'
+    db.collection(inName).findOne({}, async function (err, result) {
+      if (err) throw err;
+
+      // Adds the Corpus to the ChatBot
+      console.log("Add Corpus Interna");
 
       // Add Corpus
       await nlp.addCorpus(result);
