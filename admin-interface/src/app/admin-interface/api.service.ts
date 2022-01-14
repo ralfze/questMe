@@ -69,7 +69,7 @@ export class ApiService {
       case 'Corpus':
         corpusUrl = 'restapi/corpus/collection/dataC';
         break;
-      case 'SWB4':
+      case 'Hochschule':
         corpusUrl = 'restapi/corpus/collection/swb4';
         break;
       case 'Interna':
