@@ -285,21 +285,13 @@ a:hover {
 */
 
 #intent-array {
-  width: 100%;
+  min-width: 92%;
+  width: 92%;
+  margin-left: 4%;
 }
 
 /* Responsive Styles */
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) and (orientation: portrait) {
-  .professor {
-    margin-right: 20em;
-  }
 
-  .student {
-    margin-right: 20em;
-  }
-
-  .unregistered {
-    margin-right: 18em;
-  }
 }

@@ -135,7 +135,15 @@ export class IntentArray implements OnInit, AfterContentInit {
         observer.next(this.corpus.data);      // Update the Corpus
       }, 1000);
     });
-    observer.subscribe(data => { if (this.valuesChanged) { this.updateCorpus(); console.log("Update"); this.valuesChanged = false; } });
+    observer.subscribe(data => {
+      if (this.valuesChanged) {
+        this.updateCorpus(); console.log("Update");
+        this.valuesChanged = false;
+
+        // Restart the ChatBot when changes happen
+        this.restartBot();
+      }
+    });
 
     // Create an Observer to change to the selected Corpus
     const observer2 = new Observable<string>(observer => {
@@ -159,7 +167,6 @@ export class IntentArray implements OnInit, AfterContentInit {
         // change Corpus
         this.refreshCorpus();
         console.log(this.corpus);
-
       }
     });
   }
