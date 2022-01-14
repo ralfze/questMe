@@ -31,6 +31,17 @@ the build script of the corpus will not be executed.
 Cause mongodb uses the existing files.
 Erase the folder ".db-data" and the build script will be used. 
 
+# Testing of the Admin UI
+The Admin Interface has been tested in Google Chrome with Iphone XR 414 x 896.
+We setup the Admin Interface to look best on the Iphone XR.
+
+We also tested the Admin UI on the Ipad Air 820 x 1180. 
+We setup the style to look as close as good like on the Iphone XR.  
+
+On other Devices, so optical Glitches will occur.
+Due to the Time Limit we only could setup the preferred style on one device.
+
+
 # Git Graph before the Clean of 2021-12-17
 
 In the following picture is the Graph of the Branches from 2021-12-17.

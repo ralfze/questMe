@@ -6,6 +6,16 @@
   //margin-left: calc(100% - 80%);
 }
 
-.intent-container{
+.intent-container {
+  min-width: 100%;
   width: 100%;
+}
+/* Responsive Styles */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .intent-container {
+    margin-left: 2%;
+    min-width: 96%;
+    width: 96%;
+  }
 }

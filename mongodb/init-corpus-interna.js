@@ -10,12 +10,14 @@ db.interna.insertOne({
   locale: "de-DE",
   data: [
     {
-      intent: "interna.test",
+      intent: "interna.nachricht.spezialtermin",
       utterances: [
-       "Was ist mein Spezialtermin?"
+       "Wann ist der nächste Spezialtermin bei dem ich teilnehmen kann und wo findet er statt",
+       "Welche Informationen gibt es zum nächsten Spezialtermin und wo wird dieser sehr wahrscheinlich stattfinden"
       ],
       answers: [
-        "Du hast bisher keinen Spezialtermin",
+        "Der nächste Spezialtermin ist nächste Woche geplant und muss noch auf einen Tag festgelegt werden, der Ort ist bisher noch nicht festgelegt",
+        "Ein Termin für den nächsten Spezialtermin ist für nächste Woche angesetzt"
       ],
     },
   ],

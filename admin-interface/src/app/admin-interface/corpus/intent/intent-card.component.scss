@@ -14,25 +14,29 @@ $rbutwidth: 12%;
   left: 0;
   padding: 0;
   margin-top: 3%;
+  overflow: visible;
   .intent-card {
-    width: 100%;
     left: 0;
     padding: 0;
     background-color: lavender;
     border-radius: 0.5em;
     overflow: hidden;
-
+    width: 100%;
+    min-width: 100%;
     // Contains Intent
     .intent-div {
       //text-indent: 12pt;
       display: flex;
       align-items: center;
+      min-width: 100%;
       width: 100%;
       background-color: royalblue;
       // contains the name and the edit button
       .intent-name-div {
         margin-left: $textleft;
         width: calc(100% - $rbutwidth - $textleft * 2);
+        word-wrap: break-word;
+        word-break: break-all;
       }
       // toggled form field to change intent.name
       .intent-form-field {
